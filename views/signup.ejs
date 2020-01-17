@@ -1,29 +1,16 @@
 <%- include('partials/head') -%>
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-4">
-
-        </div>
-        <div class="col-md-8">
-            <form>
-                <div class="form-group">
-                    <label for="exampleInputEmail1"><i class="fas fa-user"></i></label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="E-Mail">
-                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputPassword1"><i class="fas fa-lock"></i></label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                </div>
-                <button type="submit" class="btn btn-primary">Log In</button>
-              </form>
-              <div class="social-login">
-                    <span>Sign Up with </span>
-                    <i class="fab fa-google"></i>
-              </div>
-        </div>
-    </div>
-</div>
+<form class="form-signin">
+    <h1 class="h3 mb-3 font-weight-normal">Sign Up</h1>
+    <label for="inputEmail" class="sr-only">E-Mail</label>
+    <input type="email" id="inputEmail" class="form-control" placeholder="E-Mail" required="" autofocus="">
+    <label for="firstName" class="sr-only">First Name</label>
+    <input type="text" id="firstName" class="form-control" placeholder="First Name" required="" autofocus="">
+    <label for="lastName" class="sr-only">Last Name</label>
+    <input type="text" id="lastName" class="form-control" placeholder="Last Name" required="" autofocus="">
+    <label for="inputPassword" class="sr-only">Password</label>
+    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
+</form>
 
 <%- include('partials/footer') -%>
