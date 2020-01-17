@@ -47,3 +47,14 @@ body {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+
+/*************************************************
+ERROR
+*************************************************/
+.error-message {
+  background-image: url('/images/error-img.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center bottom;
+  height: 100%;
+}
