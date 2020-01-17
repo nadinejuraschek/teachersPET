@@ -11,6 +11,15 @@ module.exports = function(app) {
     });
   });
 
+  // Login & Sign Up Pages
+  app.get('/login', function(req, res){
+    res.render('login');
+  });
+
+  app.get('/signup', function(req, res){
+    res.render('signup');
+  });
+
   // Load example page and pass in an example by id
   app.get("/example/:id", function(req, res) {
     db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {

@@ -1,0 +1,32 @@
+<%- include('partials/head') -%>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+
+        </div>
+        <div class="col-md-8">
+            <form>
+                <div class="form-group">
+                    <label class=login-label" for="enter_mail"><i class="fas fa-user"></i></label>
+                    <input class=login-input" type="email" id="enter_mail" aria-describedby="emailHelp" placeholder="E-Mail">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
+                <div class="form-group">
+                    <label for="enter_password"><i class="fas fa-lock"></i></label>
+                    <input type="password" id="enter_password" placeholder="Password">
+                </div>
+                <button type="submit" class="btn btn-primary">Log In</button>
+              </form>
+              <div class="social-login">
+                    <span>Log In with </span>
+                    <a href="#"><i class="fab fa-google"></i></a>
+              </div>
+              <div class="new-account">
+                <a href="/signup">Don't have an account, yet?</a>
+              </div>
+        </div>
+    </div>
+</div>
+
+<%- include('partials/footer') -%>

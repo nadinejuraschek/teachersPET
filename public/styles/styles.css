@@ -1,3 +1,11 @@
 .list-group-item {
   line-height: 2.5;
 }
+
+/*************************************************
+LOGIN
+*************************************************/
+.login-input {
+  border: none;
+  border-bottom: 2px solid red;
+}
