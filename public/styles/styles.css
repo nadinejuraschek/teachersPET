@@ -1,3 +1,22 @@
+/****************************************************************
+ NAVBAR
+****************************************************************/
+body {
+  background-color: #131854;
+}
+
+.navbar {
+  height: 4rem;
+}
+.logo {
+  height: 3rem;
+  margin-top: -0.5rem;
+  width: 3rem;
+}
+.navbar-brand {
+  color: #ffffff;
+}
+
 .list-group-item {
   line-height: 2.5;
 }
