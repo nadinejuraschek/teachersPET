@@ -2,109 +2,112 @@
 
 <%- include('partials/navbar') -%>
 
-<div class="container-fluid">
-    <div class="row">
-      <br>
-      <div class="col-sm-2"></div>
-      <div class="col-sm-8 rounded content">
-        <div class="student-header">
-            <img class="student-img" src="https://via.placeholder.com/150" alt="Student Picture">
-            <h2 class="student-name">last_name, first_name</h2>
-        </div>
-        <hr>
-        <div class="student-body">
-            <div class="row">
-                <div class="col-md-4 col-12">
-                    <p>
-                        <i class="fas fa-at"></i>
-                        <a href="mailto:email"></a>
-                    </p>
-                    <p>
-                        <i class="fas fa-home"></i>
-                        address
-                    </p>
-                    <p>
-                        <i class="fas fa-user-friends"></i>
-                        contact_name
-                    </p>
-                    <p>
-                        <i class="fas fa-phone"></i>
-                        contact_phone
-                    </p>
-                </div>
-                <div class="col-md-8 col-12">
-                    <p>
-                        <i class="far fa-edit"></i><br>
-                        notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes
-                    </p>
-                    <a class="add-btn" href="#"><i class="fas fa-plus"></i></i></a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6 col-12 assignment-view">
-                    <h4>Attendance</h4>
-                        <p>
-                            <input type="checkbox">
-                            <label for="">task_name</label>
-                        </p>
-                        <p>
-                            <input type="checkbox">
-                            <label for="">task_name</label>
-                        </p>
-                        <p>
-                            <input type="checkbox">
-                            <label for="">task_name</label>
-                        </p>
-                        <p>
-                            <input type="checkbox">
-                            <label for="">task_name</label>
-                        </p>
-                        <p>
-                            <input type="checkbox">
-                            <label for="">task_name</label>
-                        </p>
-                </div>
-                <div class="col-md-6 col-12 grades-view">
-                    <h4>Overall Grade</h4>
-                    <p>math function to calculate grade</p>
-                </div>
-                <div class="row">
-                    <div class="col-12 grades-view">
-                        <h4>Assignments</h4>
-                        <table>
-                            <tr>
-                                <td><input type="checkbox"></td>
-                                <td>task_name</td>
-                                <td>rating</td>
-                                <td>notes</td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox"></td>
-                                <td>task_name</td>
-                                <td>rating</td>
-                                <td>notes</td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox"></td>
-                                <td>task_name</td>
-                                <td>rating</td>
-                                <td>notes</td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox"></td>
-                                <td>task_name</td>
-                                <td>rating</td>
-                                <td>notes</td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-      </div>
-      <div class="col-sm-2"></div>
+<div class="container content">
+    <div class="header">
+        <img class="profile-img" src="https://via.placeholder.com/150" alt="Student Picture">
+        <h2 class="profile-name">last_name, first_name</h2>
     </div>
-  </div>
+    <hr>
+    <div class="student-body">
+        <div class="row detail-view">
+            <div class="col-md-4 col-12">
+                <p>
+                    <i class="fas fa-at"></i>
+                    <a href="mailto:email"></a>
+                </p>
+                <p>
+                    <i class="fas fa-home"></i>
+                    address
+                </p>
+                <p>
+                    <i class="fas fa-user-friends"></i>
+                    contact_name
+                </p>
+                <p>
+                    <i class="fas fa-phone"></i>
+                    contact_phone
+                </p>
+            </div>
+            <div class="col-md-8 col-12">
+                <p>
+                    <i class="far fa-edit"></i><br>
+                    notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes
+                </p>
+                <a class="add-btn" href="#"><i class="fas fa-plus"></i></i></a>
+            </div>
+        </div>
+        <div class="row detail-view">
+            <div class="col-md-4 col-12">
+                <h4>
+                    <i class="fas fa-graduation-cap"></i>
+                    Overall Grade
+                </h4>
+                <p>math function to calculate grade</p>
+            </div>
+            <div class="col-md-8 col-12">
+                <h4>
+                    <i class="fas fa-clipboard-check"></i>
+                    Attendance
+                </h4>
+                <table>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>date</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>date</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>date</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>date</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>date</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="row detail-view">
+            <div class="col-12">
+                <h4>
+                    <i class="fas fa-clipboard-list"></i>
+                    Assignments
+                </h4>
+                <table>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>task_name</td>
+                        <td>rating</td>
+                        <td>notes</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>task_name</td>
+                        <td>rating</td>
+                        <td>notes</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>task_name</td>
+                        <td>rating</td>
+                        <td>notes</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>task_name</td>
+                        <td>rating</td>
+                        <td>notes</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
 </div>
 
 
