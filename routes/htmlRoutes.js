@@ -29,8 +29,8 @@ module.exports = function (app) {
   });
 
   // Calendar View
-  app.get('/calender', function(req, res){
-    res.render('calender');
+  app.get('/calendar', function(req, res){
+    res.render('calendar');
   });
 
   // Load example page and pass in an example by id
