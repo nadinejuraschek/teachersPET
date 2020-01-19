@@ -77,3 +77,31 @@ ERROR
   background-position: center bottom;
   height: 100%;
 }
+
+/*************************************************
+STUDENT + CLASSES VIEW
+*************************************************/
+.content {
+  background-color: #ffffff;
+  border: none;
+  border-radius: 1rem;
+  padding: 2rem 3rem;
+}
+
+.profile-img {
+  border: 2px solid #000000;
+  border-radius: 50%;
+  padding: 4px;
+  height: 6rem;
+}
+.profile-name {
+  display: inline-block;
+  font-size: 3rem;
+  margin-left: 1rem;
+}
+.detail-view {
+  margin-top: 2rem;
+}
+.add-btn {
+  border: none;
+}
