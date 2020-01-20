@@ -13,10 +13,17 @@ body {
   margin-top: -0.5rem;
   width: 3rem;
 }
-.navbar-brand {
+.navbar a {
   color: #ffffff;
 }
-
+.navbar a:hover {
+  color: #81e2ff;
+  text-decoration: none;
+}
+.logo-text {
+  font-family: "Englebert", Arial, sans-serif;
+  font-size: 1.7rem;
+}
 .list-group-item {
   line-height: 2.5;
 }
@@ -107,7 +114,7 @@ STUDENT + CLASSES VIEW
 }
 
 /************************************************
-Calendar
+CALENDAR
 ************************************************/
 .responsiveCal{
   position: relative;
