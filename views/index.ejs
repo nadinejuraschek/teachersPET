@@ -3,17 +3,17 @@
 <%- include('partials/navbar') -%>
 
 <div class="container content">
-  <div class="header">
-    <img class="profile-img" src="https://via.placeholder.com/150" alt="Teacher Picture">
-    <h2 class="profile-name">Welcome back, teacher_name!</h2>
-  </div>
-  <hr>
   <div class="row details-view">
-    <div class="col-sm-6">
-      <h4>
+    <div class="col-12 section welcome">
+      <img class="profile-img" src="https://via.placeholder.com/150" alt="Teacher Picture">
+      <h2 class="profile-name">Welcome back, teacher_name!</h2>
+    </div>
+    <div class="col-sm-6 section">
+      <h4 class="section-header">
         <i class="fas fa-calendar-alt"></i>
         Calendar
       </h4>
+      <hr>
       <div class="responsiveCal">
         <iframe
         src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FLos_Angeles&amp;src=dGhpc2lzYXBwbGVhbm5hQGdtYWlsLmNvbQ&amp;src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&amp;src=dGllYzRpY2cwM3NsZXBmdjY4amZ0OXFsazBAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;src=ZW4udXNhI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%2322AA99&amp;color=%23329262&amp;color=%239F3501&amp;color=%231F753C&amp;title=School%20Events"
@@ -21,18 +21,26 @@
         </iframe>
       </div>
     </div>
-    <div class="col-sm-6">
-      <h4>
+    <div class="col-sm-6 section">
+      <h4 class="section-header">
         <i class="fas fa-chalkboard"></i>
         Classes
       </h4>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro dolore, dicta sequi ex excepturi pariatur
-        tempore facilis non veniam neque? Harum commodi dolore suscipit incidunt cum iusto aliquid cumque ducimus! Lorem
-        ipsum, dolor sit amet consectetur adipisicing elit. Animi asperiores ipsam est quo labore facere quibusdam,
-        voluptatem totam voluptatibus quasi esse aliquid eligendi voluptate iure eum delectus, nostrum rerum dolorem.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores fugit suscipit quidem reprehenderit veniam
-        ducimus, tenetur vitae unde non repellat magni aut quod dignissimos voluptas alias, labore animi.
-      </p>
+      <hr>
+      <div class="row">
+        <div class="col-12 section overview-item">
+          <h3 class="overview-header">Composition</h3>
+          <h5 class="overview-text">Grade 9</h5>
+        </div>
+        <div class="col-12 section overview-item">
+          <h3 class="overview-header">Creative Writing</h3>
+          <h5 class="overview-text">Grade 11</h5>
+        </div>
+        <div class="col-12 section overview-item">
+          <h3 class="overview-header">Linguistics</h3>
+          <h5 class="overview-text">Grade 10</h5>
+        </div>
+      </div>
     </div>
   </div>
 </div>

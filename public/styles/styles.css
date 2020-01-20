@@ -1,8 +1,19 @@
 /****************************************************************
+ COLORS
+ #edf7fa background
+ #373F47 text
+ #ffffff content
+ #5f6caf
+ #ffb677
+ #ff8364
+****************************************************************/
+
+/****************************************************************
  NAVBAR
 ****************************************************************/
 body {
-  background-color: #131854;
+  background-color: #edf7fa;
+  color: #373F47;
 }
 
 .navbar {
@@ -14,10 +25,10 @@ body {
   width: 3rem;
 }
 .navbar a {
-  color: #ffffff;
+  color: #373F47;
 }
 .navbar a:hover {
-  color: #81e2ff;
+  color: #5f6caf;
   text-decoration: none;
 }
 .logo-text {
@@ -42,7 +53,7 @@ body {
   align-items: center;
   padding-top: 40px;
   padding-bottom: 40px;
-  background-color: #f5f5f5;
+  background-color: #ffffff;
 }
 .form-signin {
   width: 100%;
@@ -73,6 +84,10 @@ body {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+.logo-text-lg {
+  font-family: "Englebert", Arial, sans-serif;
+  font-size: 5rem;
+}
 .signin-header {
   font-size: 2rem;
   font-weight: 400;
@@ -99,7 +114,7 @@ STUDENT + CLASSES VIEW
   padding: 2rem 3rem;
 }
 .profile-img {
-  border: 2px solid #000000;
+  border: 2px solid #ffffff;
   border-radius: 50%;
   padding: 4px;
   height: 6rem;
@@ -125,11 +140,50 @@ CALENDAR
   height: 0;
   overflow: hidden;
 }
-
 .responsiveCal iframe{
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+/************************************************
+ DASHBOARD
+************************************************/
+.welcome {
+  background-color: #5f6caf;
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-size: cover;
+  color: #ffffff;
+  font-size: 4rem;
+  height: 10rem;
+  margin-bottom: 1rem;
+}
+.section {
+  border: none;
+  border-radius: 1rem;
+  padding: 1.25rem;
+}
+.section-header {
+  color: #5f6caf;
+}
+.overview-item {
+  color: #ffffff;
+  margin: 0.5rem;
+}
+.overview-item:nth-child(odd) {
+  background-color: #ffb677;
+}
+.overview-item:nth-child(even) {
+  background-color: #ff8364;
+}
+.overview-header {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.overview-text {
+  color: #ffffff;
+  font-size: 1rem;
 }
