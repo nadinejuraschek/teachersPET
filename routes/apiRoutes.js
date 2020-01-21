@@ -1,24 +1,27 @@
+/* eslint-disable camelcase */
 var db = require("../models");
 
 module.exports = function(app) {
-  // Get all examples
-  app.get("/api/examples", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.json(dbExamples);
+  // Get all classes
+  app.get("/api/classes", function(req, res) {
+    db.Class.findAll({}).then(function(project2_db) {
+      res.json(project2_db);
     });
   });
 
-  // Create a new example
-  app.post("/api/examples", function(req, res) {
-    db.Example.create(req.body).then(function(dbExample) {
-      res.json(dbExample);
+  // Create a new class
+  app.post("/api/classes", function(req, res) {
+    db.Class.create(req.body).then(function(project2_db) {
+      res.json(project2_db);
     });
   });
 
-  // Delete an example by id
-  app.delete("/api/examples/:id", function(req, res) {
-    db.Example.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.json(dbExample);
+  // Delete a class by id
+  app.delete("/api/classes/:id", function(req, res) {
+    db.Class.destroy({ where: { id: req.params.id } }).then(function(
+      project2_db
+    ) {
+      res.json(project2_db);
     });
   });
 };
