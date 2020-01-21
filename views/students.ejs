@@ -10,45 +10,60 @@
     <hr>
     <div class="student-body">
         <div class="row detail-view">
-            <div class="col-md-4 col-12">
-                <p>
-                    <i class="fas fa-at"></i>
-                    <a href="mailto:email"></a>
-                </p>
-                <p>
-                    <i class="fas fa-home"></i>
-                    address
-                </p>
-                <p>
-                    <i class="fas fa-user-friends"></i>
-                    contact_name
-                </p>
-                <p>
-                    <i class="fas fa-phone"></i>
-                    contact_phone
-                </p>
+            <div class="col-md-4 col-12 section section-height bg-grey">
+                <h4 class="section-header">
+                    <i class="fas fa-address-book"></i>
+                    <span class="section-header-space">Contact</span>
+                </h4>
+                <hr>
+                <div class="contact-details">
+                    <p>
+                        <a class="muted-link" href="mailto:email"><i class="fas fa-at"></i>
+                            email
+                        </a>
+                    </p>
+                    <p>
+                        <i class="fas fa-home"></i>
+                        address
+                    </p>
+                    <p>
+                        <i class="fas fa-user-friends"></i>
+                        contact_name
+                    </p>
+                    <p>
+                        <i class="fas fa-phone"></i>
+                        contact_phone
+                    </p>
+                </div>
             </div>
-            <div class="col-md-8 col-12">
-                <p>
-                    <i class="far fa-edit"></i><br>
-                    notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes
-                </p>
-                <a class="add-btn" href="#"><i class="fas fa-plus"></i></i></a>
+            <div class="col-md-8 col-12 section section-height scroll bg-grey">
+                <h4 class="section-header">
+                    <i class="far fa-edit"></i>
+                    <span class="section-header-space">Notes</span>
+                </h4>
+                <hr>
+                <div class="overview-item">notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes</div>
+                <div class="overview-item">notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes</div>
+                <div class="col-11 more-overview-items">
+                    <a class="add-btn" href="#"><i class="fas fa-plus"></i></i></a>
+                </div>
             </div>
         </div>
         <div class="row detail-view">
-            <div class="col-md-4 col-12">
-                <h4>
+            <div class="col-md-4 col-12 section section-height bg-grey">
+                <h4 class="section-header">
                     <i class="fas fa-graduation-cap"></i>
-                    Overall Grade
+                    <span class="section-header-space">Overall Grade</span>
                 </h4>
+                <hr>
                 <p>math function to calculate grade</p>
             </div>
-            <div class="col-md-8 col-12">
-                <h4>
+            <div class="col-md-8 col-12 section section-height scroll bg-grey">
+                <h4 class="section-header">
                     <i class="fas fa-clipboard-check"></i>
-                    Attendance
+                    <span class="section-header-space">Attendance</span>
                 </h4>
+                <hr>
                 <table>
                     <tr>
                         <td><input type="checkbox"></td>
@@ -74,11 +89,12 @@
             </div>
         </div>
         <div class="row detail-view">
-            <div class="col-12">
-                <h4>
+            <div class="col-12 section section-height scrollbg-grey">
+                <h4 class="section-header">
                     <i class="fas fa-clipboard-list"></i>
-                    Assignments
+                    <span class="section-header-space">Assignments</span>
                 </h4>
+                <hr>
                 <table>
                     <tr>
                         <td><input type="checkbox"></td>
@@ -109,6 +125,5 @@
         </div>
     </div>
 </div>
-
 
 <%- include('partials/footer') -%>

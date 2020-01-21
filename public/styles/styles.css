@@ -17,6 +17,13 @@ footer {
   height: 4rem;
   margin-top: 1rem;
 }
+.bg-grey {
+  background-color: #fafafa;
+}
+.bg-purple {
+  background-color: #5f6caf;
+  color: #ffffff;
+}
 
 /****************************************************************
  NAVBAR + FOOTER
@@ -166,6 +173,22 @@ STUDENT + CLASSES VIEW
 }
 .add-btn {
   border: none;
+  color: #373F47;
+}
+.add-btn:hover,
+  .muted-link:hover {
+  color: #ffb677;
+  text-decoration: none;
+}
+.contact-details {
+  margin-top: 1.5rem;
+}
+.muted-link {
+  color: #373F47;
+}
+.lesson-date {
+  font-size: 1.25rem;
+  font-weight: 700;
 }
 
 /************************************************
@@ -200,7 +223,6 @@ CALENDAR
   box-shadow: 0px 0px 4px #364754;
 }
 .welcome {
-  background-color: #5f6caf;
   border: none;
   box-shadow: 0px 0px 4px #eee;
   border-radius: 1rem;
@@ -210,12 +232,20 @@ CALENDAR
   margin-bottom: 1rem;
 }
 .section {
-  background-color: #fcfcfc;
   padding: 1.25rem;
   margin-top: 0.5rem;
 }
 .section-header {
   color: #5f6caf;
+}
+.section-header-space {
+  margin-left: 0.5rem;
+}
+.section-height {
+  height: 16rem;
+}
+.scroll {
+overflow: scroll;
 }
 .overview-item {
   color: #ffffff;
