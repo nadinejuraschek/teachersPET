@@ -1,22 +1,28 @@
 /****************************************************************
  COLORS
- #edf7fa background
+ #edf7fa background #364754
  #373F47 text
  #ffffff content
  #5f6caf
  #ffb677
  #ff8364
 ****************************************************************/
-
-/****************************************************************
- NAVBAR
-****************************************************************/
+html,
 body {
-  background-color: #edf7fa;
+  background-color: #364754;
   color: #373F47;
+  height: 100%;
+}
+footer {
+  height: 4rem;
+  margin-top: 1rem;
 }
 
+/****************************************************************
+ NAVBAR + FOOTER
+****************************************************************/
 .navbar {
+  background-color: #364754;
   height: 4rem;
 }
 .logo {
@@ -25,7 +31,7 @@ body {
   width: 3rem;
 }
 .navbar a {
-  color: #373F47;
+  color: #ffffff;
 }
 .navbar a:hover {
   color: #5f6caf;
@@ -38,17 +44,29 @@ body {
 .list-group-item {
   line-height: 2.5;
 }
-
-h5{
-  color: #868e96;
+.footer-div {
+  width: 95%;
+}
+.dev-name {
+  color: #ffffff;
+  font-size: 1rem;
+  margin-bottom: 0.15rem;
+}
+.dev-links {
+  color: #ffffff;
+  font-size: 1.25rem;
+  margin: 0 0.2rem 0 0;
+}
+.icon-smaller {
+  font-size: 1rem;
+}
+.logo-footer {
+  height: 2.5rem;
+  width: 2.5rem;
 }
 /*************************************************
 LOGIN
 *************************************************/
-html,
-body {
-  height: 100%;
-}
 .content-center {
   align-items: center;
   padding-top: 40px;
@@ -112,6 +130,7 @@ STUDENT + CLASSES VIEW
   border: none;
   border-radius: 1rem;
   padding: 2rem 3rem;
+  width: 95%;
 }
 .profile-img {
   border: 2px solid #ffffff;
@@ -151,27 +170,40 @@ CALENDAR
 /************************************************
  DASHBOARD
 ************************************************/
+.welcome, 
+  .section, 
+  .content,
+  .overview-item {
+    border: none;
+    box-shadow: 0px 0px 4px #eee;
+    border-radius: 1rem;
+}
+.content {
+  box-shadow: 0px 0px 4px #364754;
+}
 .welcome {
   background-color: #5f6caf;
-  background-repeat: no-repeat;
-  background-position: bottom right;
-  background-size: cover;
+  border: none;
+  box-shadow: 0px 0px 4px #eee;
+  border-radius: 1rem;
   color: #ffffff;
   font-size: 4rem;
-  height: 10rem;
+  height: 8rem;
   margin-bottom: 1rem;
 }
 .section {
-  border: none;
-  border-radius: 1rem;
+  background-color: #fcfcfc;
   padding: 1.25rem;
+  margin-top: 0.5rem;
 }
 .section-header {
   color: #5f6caf;
 }
 .overview-item {
   color: #ffffff;
-  margin: 0.5rem;
+  height: 5rem;
+  margin: 0.25rem auto;
+  padding: 0.75rem 1rem;
 }
 .overview-item:nth-child(odd) {
   background-color: #ffb677;
@@ -180,10 +212,16 @@ CALENDAR
   background-color: #ff8364;
 }
 .overview-header {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 700;
 }
 .overview-text {
   color: #ffffff;
   font-size: 1rem;
+}
+.more-overview-items {
+  color: #ffffff;
+  height: 1.5rem;
+  margin: 0.25rem auto;
+  text-align: center;
 }
