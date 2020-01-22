@@ -1,6 +1,7 @@
 require("dotenv").config();
-const express = require("express"),
-  ejs = require("ejs");
+const express = require("express");
+const favicon = require('serve-favicon');
+ejs = require("ejs");
 
 const db = require("./models");
 
@@ -11,6 +12,7 @@ const PORT = process.env.PORT || 3000;
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static("public"));
+app.use(favicon(__dirname + '/public/images/favicon.ico'));
 
 // EJS
 app.set("view engine", "ejs");
