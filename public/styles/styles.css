@@ -11,6 +11,7 @@ html,
 body {
   background-color: #364754;
   color: #373F47;
+  font-family: "Englebert", Arial, sans-serif;
   height: 100%;
 }
 footer {
@@ -115,7 +116,7 @@ LOGIN
   border-top-right-radius: 0;
 }
 .logo-text-lg {
-  font-family: "Englebert", Arial, sans-serif;
+  font-family: "Quicksand", Arial, sans-serif;
   font-size: 5rem;
 }
 .signin-header {
@@ -129,10 +130,8 @@ LOGIN
   font-weight: 700;
   margin-left: 0.5rem;
 }
-
 .add-remove{
   display: inline;
-  font-family: "Englebert", Arial, sans-serif;
 }
 
 /*************************************************
@@ -167,7 +166,6 @@ STUDENT + CLASSES VIEW
   border: none;
   border-radius: 1rem;
   padding: 2rem 3rem;
-  width: 95%;
 }
 .profile-img {
   border: 2px solid #ffffff;
@@ -204,7 +202,7 @@ STUDENT + CLASSES VIEW
 }
 
 /************************************************
-CALENDAR
+ CALENDAR
 ************************************************/
 .responsiveCal{
   position: relative;
