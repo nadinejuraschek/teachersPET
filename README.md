@@ -1,5 +1,5 @@
-# Project-Two
-
+# teachersPET
+## Plan, Educate, Track
 
 ### UC Davis Coding Bootcamp - Project 2
 
@@ -17,7 +17,11 @@
 * JavaScript
 * jQuery
 * Node.js
-    * Express.js
+    * express
+    * express-session
     * dotenv
+    * ejs
     * sequelize
+    * passport
+* Bootstrap
 * mySQL

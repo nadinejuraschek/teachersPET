@@ -1,3 +1,285 @@
+/****************************************************************
+ COLORS
+ #edf7fa background #364754
+ #373F47 text
+ #ffffff content
+ #5f6caf
+ #ffb677
+ #ff8364
+****************************************************************/
+html,
+body {
+  background-color: #364754;
+  color: #373F47;
+  font-family: "Englebert", Arial, sans-serif;
+  height: 100%;
+}
+footer {
+  height: 4rem;
+  margin-top: 1rem;
+}
+.bg-grey {
+  background-color: #fafafa;
+}
+.bg-purple {
+  background-color: #5f6caf;
+  color: #ffffff;
+}
+
+/****************************************************************
+ NAVBAR + FOOTER
+****************************************************************/
+.navbar {
+  background-color: #364754;
+  height: 4rem;
+}
+.logo {
+  height: 3rem;
+  margin-top: -0.5rem;
+  width: 3rem;
+}
+.navbar a,
+  .footer a {
+  color: #ffffff;
+}
+.navbar a:hover {
+  color: #ffb677;
+  text-decoration: none;
+}
+.logo-text {
+  font-family: "Englebert", Arial, sans-serif;
+  font-size: 1.7rem;
+}
 .list-group-item {
   line-height: 2.5;
+}
+.footer-div {
+  width: 95%;
+}
+.dev-name {
+  color: #ffffff;
+  font-size: 1rem;
+  margin-bottom: 0.15rem;
+}
+.dev-links {
+  color: #ffffff;
+  font-size: 1.25rem;
+  margin: 0 0.2rem 0 0;
+}
+.dev-links:hover {
+  color: #ffb677;
+}
+.icon-smaller {
+  font-size: 1rem;
+}
+.logo-footer {
+  height: 2.5rem;
+  width: 2.5rem;
+}
+
+/*************************************************
+LOGIN
+*************************************************/
+.content-center {
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #ffffff;
+}
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+.form-signin .checkbox {
+  font-weight: 400;
+}
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.logo-text-lg {
+  font-family: "Quicksand", Arial, sans-serif;
+  font-size: 5rem;
+}
+.signin-header {
+  font-size: 2rem;
+  font-weight: 400;
+}
+.signup-link {
+  margin-top: 0.5rem;
+}
+.signup-link-btn {
+  font-weight: 700;
+  margin-left: 0.5rem;
+}
+.add-remove{
+  display: inline;
+}
+
+/*************************************************
+ERROR
+*************************************************/
+.error-message {
+  background-image: linear-gradient(#36475440, #36475440), url('/images/error-img.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center bottom;
+  height: 80vh;
+}
+.error {
+  color: #ffffff90;
+  font-size: 3rem;
+  margin-top: 2rem;
+}
+.back-btn {
+  color: #ffffff;
+  font-size: 3rem;
+}
+.back-btn:hover {
+  color: #ffb677;
+  font-size: 3rem;
+}
+
+/*************************************************
+STUDENT + CLASSES VIEW
+*************************************************/
+.content {
+  background-color: #ffffff;
+  border: none;
+  border-radius: 1rem;
+  padding: 2rem 3rem;
+}
+.profile-img {
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  padding: 4px;
+  height: 6rem;
+}
+.profile-name {
+  display: inline-block;
+  font-size: 3rem;
+  margin-left: 1rem;
+}
+.detail-view {
+  margin-top: 2rem;
+}
+.add-btn {
+  border: none;
+  color: #373F47;
+}
+.add-btn:hover,
+  .muted-link:hover {
+  color: #ffb677;
+  text-decoration: none;
+}
+.contact-details {
+  margin-top: 1.5rem;
+}
+.muted-link {
+  color: #373F47;
+}
+.lesson-date {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+/************************************************
+ CALENDAR
+************************************************/
+.responsiveCal{
+  position: relative;
+  padding-bottom: 75%;
+  height: 0;
+  overflow: hidden;
+}
+.responsiveCal iframe{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/************************************************
+ DASHBOARD
+************************************************/
+.welcome, 
+  .section, 
+  .content,
+  .overview-item {
+    border: none;
+    box-shadow: 0px 0px 4px #eee;
+    border-radius: 1rem;
+}
+.content {
+  box-shadow: 0px 0px 4px #364754;
+}
+.welcome {
+  border: none;
+  box-shadow: 0px 0px 4px #eee;
+  border-radius: 1rem;
+  color: #ffffff;
+  font-size: 4rem;
+  height: 8rem;
+  margin-bottom: 1rem;
+}
+.section {
+  padding: 1.25rem;
+  margin-top: 0.5rem;
+}
+.section-header {
+  color: #5f6caf;
+}
+.section-header-space {
+  margin-left: 0.5rem;
+}
+.section-height {
+  height: 16rem;
+}
+.scroll {
+overflow: scroll;
+}
+.overview-item {
+  color: #ffffff;
+  height: 5rem;
+  margin: 0.25rem auto;
+  padding: 0.75rem 1rem;
+}
+.overview-item:nth-child(odd) {
+  background-color: #ffb677;
+}
+.overview-item:nth-child(even) {
+  background-color: #ff8364;
+}
+.overview-header {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+.overview-text {
+  color: #ffffff;
+  font-size: 1rem;
+}
+.more-overview-items {
+  color: #ffffff;
+  height: 1.5rem;
+  margin: 0.25rem auto;
+  text-align: center;
 }
