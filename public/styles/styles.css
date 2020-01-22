@@ -148,6 +148,7 @@ ERROR
   color: #ffffff90;
   font-size: 3rem;
   margin-top: 2rem;
+  width: 25rem;
 }
 .back-btn {
   color: #ffffff;
@@ -239,6 +240,7 @@ STUDENT + CLASSES VIEW
   color: #ffffff;
   font-size: 4rem;
   height: 8rem;
+  line-height: 7.5rem;
   margin-bottom: 1rem;
 }
 .section {
@@ -272,6 +274,9 @@ overflow: scroll;
 .overview-header {
   font-size: 1.25rem;
   font-weight: 700;
+}
+.overview-header a {
+  color: #ffffff;
 }
 .overview-text {
   color: #ffffff;

@@ -27,6 +27,9 @@ module.exports = function(app) {
   app.get("/students", function(req, res) {
     res.render("students");
   });
+  app.get('/lessonplan', function(req, res){
+    res.render('lessonplan');
+  });
 
   // Calendar View
   app.get("/calendar", function(req, res) {
