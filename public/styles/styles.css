@@ -130,6 +130,11 @@ LOGIN
   margin-left: 0.5rem;
 }
 
+.add-remove{
+  display: inline;
+  font-family: "Englebert", Arial, sans-serif;
+}
+
 /*************************************************
 ERROR
 *************************************************/
