@@ -122,6 +122,13 @@ LOGIN
   font-size: 2rem;
   font-weight: 400;
 }
+.signup-link {
+  margin-top: 0.5rem;
+}
+.signup-link-btn {
+  font-weight: 700;
+  margin-left: 0.5rem;
+}
 
 /*************************************************
 ERROR
