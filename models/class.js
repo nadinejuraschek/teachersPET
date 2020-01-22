@@ -11,9 +11,11 @@ module.exports = function(sequelize, DataTypes) {
     }
   );
   Class.associate = function(models) {
-    // Associating Author with Posts
-    // When an Author is deleted, also delete any associated Posts
+    Class.belongsTo(models.User);
+
     Class.hasMany(models.Student);
+    Class.hasMany(models.Lessonplan);
+    Class.hasMany(models.Assignment);
   };
 
   return Class;
