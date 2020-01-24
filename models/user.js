@@ -6,7 +6,8 @@ module.exports = function(sequelize, DataTypes) {
       // eslint-disable-next-line camelcase
       first_name: DataTypes.STRING,
       last_name: DataTypes.STRING,
-      notes: DataTypes.STRING
+      email: DataTypes.STRING,
+      password: DataTypes.STRING
     },
     {
       timestamps: false
