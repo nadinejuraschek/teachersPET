@@ -3,9 +3,7 @@ var db = require("../models");
 module.exports = function(app) {
   // Load index page
   app.get("/index", function(req, res) {
-    db.Example.findAll({}).then(function() {
       res.render("index");
-    });
   });
 
   // Login & Sign Up Pages
