@@ -1,6 +1,8 @@
 require("dotenv").config();
+
 const express       = require("express"),
       ejs           = require("ejs"),
+      favicon       = require('serve-favicon')
       jwt           = require('jsonwebtoken');
       cookieParser  = require('cookie-parser');
 
@@ -13,6 +15,7 @@ const PORT = process.env.PORT || 3000;
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static("public"));
+app.use(favicon(__dirname + '/public/images/favicon.ico'));
 app.use(cookieParser());
 
 // Login
