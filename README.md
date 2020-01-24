@@ -22,6 +22,8 @@
     * dotenv
     * ejs
     * sequelize
-    * passport
+    * jsonwebtoken
+    * cookie-parser
+    * bcrypt
 * Bootstrap
 * mySQL

@@ -78,7 +78,7 @@ footer {
 }
 
 /*************************************************
-LOGIN
+ LOGIN
 *************************************************/
 .content-center {
   align-items: center;
@@ -133,9 +133,12 @@ LOGIN
 .add-remove{
   display: inline;
 }
+#logout-btn {
+  color: #ffffff;
+}
 
 /*************************************************
-ERROR
+ ERROR
 *************************************************/
 .error-message {
   background-image: linear-gradient(#36475440, #36475440), url('/images/error-img.jpg');
@@ -160,7 +163,7 @@ ERROR
 }
 
 /*************************************************
-STUDENT + CLASSES VIEW
+ STUDENT + CLASSES VIEW
 *************************************************/
 .content {
   background-color: #ffffff;
