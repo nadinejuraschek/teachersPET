@@ -23,7 +23,7 @@ module.exports = function(app) {
   //================ Classes Routes ===============
 
   // Get all classes
-  app.get("/api/user/classes", function(req, res) {
+  app.get("/api/classes", function(req, res) {
     db.Class.findAll({}).then(function(project2_db) {
       res.json(project2_db);
     });
