@@ -1,10 +1,10 @@
 require("dotenv").config();
-const favicon = require('serve-favicon');
+
 const express = require("express"),
   ejs = require("ejs"),
+  favicon = require('serve-favicon'),
   jwt = require('jsonwebtoken');
 cookieParser = require('cookie-parser');
-
 
 const db = require("./models");
 
