@@ -18,7 +18,7 @@ INSERT INTO Assignments (assignment_name, points_possible, ClassId) VALUES
 ("Essay", "100", "1"),
 ("Argument", "50", "2"),
 ("Short Story", "25", "1"),
-("Outline", "10". "3"),
+("Outline", "10", "3"),
 ("Research Paper", "100", "2");
 
 INSERT INTO Lessonplans (lessonplan_name, notes, ClassId) VALUES 
