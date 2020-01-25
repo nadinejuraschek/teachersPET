@@ -6,16 +6,7 @@ var $classList = $("#class-list");
 
 // The API object contains methods for each kind of request we'll make
 var API = {
-  // saveExample: function(example) {
-  //   return $.ajax({
-  //     headers: {
-  //       "Content-Type": "application/json"
-  //     },
-  //     type: "POST",
-  //     url: "api/examples",
-  //     data: JSON.stringify(example)
-  //   });
-  // },
+  
   getUser: function(){ 
     console.log("ajax getUser call");
     return $.ajax({
@@ -76,7 +67,7 @@ const refreshClasses = function() {
 
         let $h3 = $("<h3>").addClass("overview-header");
 
-let $h5 = $("<h5>").addClass("overview-text").text($class[i].class_name)
+        let $h5 = $("<h5>").addClass("overview-text").text($class[i].class_name)
 
         $h3.append($a2);
         $a2.append($i);
@@ -101,14 +92,16 @@ let $h5 = $("<h5>").addClass("overview-text").text($class[i].class_name)
 refreshClasses();
 
 // function to display user's name
-const nameDisplay = function(){
-  API.getUser().then(function(data) {
-    let $userName = data[id].first_name + " " + data[id].last_name;
-      console.log($userName);
-      $(".profile-name").text("Welcome back, " + $userName + "!");
-});
-};
-nameDisplay();
+// const nameDisplay = function(){
+//   API.getUser().then(function(data) {
+//     let $userName = data[id].first_name + " " + data[id].last_name;
+//       console.log($userName);
+//       $(".profile-name").text("Welcome back, " + $userName + "!");
+// });
+// };
+// nameDisplay();
+
+
 // handleFormSubmit is called whenever we submit a new example
 // Save the new example to the db and refresh the list
 const handleFormSubmit = function(event) {

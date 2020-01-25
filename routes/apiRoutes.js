@@ -182,14 +182,14 @@ module.exports = function (app) {
 
   // Get all Students Assignment
   app.get("/api/students/assignments", function (req, res) {
-    db.Studentassignment.findAll({}).then(function (project2_db) {
+    db.StudentAssignment.findAll({}).then(function (project2_db) {
       res.json(project2_db);
     });
   });
 
   // Get one Student Assignment
   app.get("/api/students/assignments/:id", function (req, res) {
-    db.Studentassignment.findAll({ where: { id: req.params.id } }).then(function (
+    db.StudentAssignment.findAll({ where: { id: req.params.id } }).then(function (
       project2_db
     ) {
       res.json(project2_db);
@@ -198,14 +198,14 @@ module.exports = function (app) {
 
   // Create a new Student Assignment
   app.post("/api/students/assignments", function (req, res) {
-    db.Studentassignment.create(req.body).then(function (project2_db) {
+    db.StudentAssignment.create(req.body).then(function (project2_db) {
       res.json(project2_db);
     });
   });
 
   // Delete a Student assignment by id
   app.delete("/api/students/assignments/:id", function (req, res) {
-    db.Studentassignment.destroy({ where: { id: req.params.id } }).then(function (
+    db.StudentAssignment.destroy({ where: { id: req.params.id } }).then(function (
       project2_db
     ) {
       res.json(project2_db);
@@ -244,13 +244,13 @@ module.exports = function (app) {
   app.post('/api/user/login', async function (req, res) {
     const user = await db.User.findOne({ where: { email: req.body.email } });
     if (!user) {
-      return res.json({message: 'No User found.'});
-      
+      res.json({message: 'No User found.'});
+      return;
     }
     const valid = await bcrypt.compare(req.body.password, user.password);
     if (!valid) {
-      return res.json({message: 'Incorrect password!'});
-      
+      res.json({message: 'Incorrect password!'});
+      return;
     }
     const token = jwt.sign({ id: user.id }, process.env.APP_SECRET);
     res.cookie('token', token, {
