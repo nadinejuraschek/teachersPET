@@ -83,7 +83,6 @@ module.exports = function(app) {
     });
   });
 
-
   app.get('/api/user', function(req, res){
     console.log(req.user);
     res.json(req.user);

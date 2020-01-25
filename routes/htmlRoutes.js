@@ -1,21 +1,27 @@
 var db = require("../models");
 
 module.exports = function(app) {
-  // Load index page
-  app.get("/index", function(req, res) {
+  app.get('/', function(req, res){
     if(req.user){
-      res.render("index");
+      res.redirect('/index');
     }
-      res.render("signup");
+      res.redirect('/login');
   });
 
   // Login & Sign Up Pages
   app.get("/login", function(req, res) {
     res.render("login");
   });
-
   app.get("/signup", function(req, res) { 
     res.render("signup");
+  });
+
+  // Load index page
+  app.get("/index", function(req, res) {
+    if(req.user){
+      res.render("index");
+    }
+      res.render("login");
   });
 
   app.post('/api/user/signout', function(req, res) {
@@ -36,7 +42,10 @@ module.exports = function(app) {
 
   // Calendar View
   app.get("/calendar", function(req, res) {
-    res.render("calendar");
+    if(req.user){
+      res.render("calendar");
+    }
+      res.render("login");
   });
 
   // Render 404 page for any unmatched routes

@@ -133,6 +133,26 @@ footer {
 .add-remove{
   display: inline;
 }
+#login-btn,
+  #signup-btn {
+  background-color: #ff8364;
+  border: none;
+  font-weight: 600;
+}
+#login-btn:hover,
+  #signup-btn:hover {
+    background-color: #ffb677;
+}
+.signin-header {
+  color: #5f6caf;
+}
+.signup-link-btn {
+  color: #5f6caf;
+}
+.signup-link-btn:hover {
+  color: #ffb677;
+  text-decoration: none;
+}
 #logout-btn {
   color: #ffffff;
 }
