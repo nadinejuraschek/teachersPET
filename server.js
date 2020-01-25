@@ -1,10 +1,10 @@
 require("dotenv").config();
 
-const express       = require("express"),
-      ejs           = require("ejs"),
-      favicon       = require('serve-favicon')
-      jwt           = require('jsonwebtoken');
-      cookieParser  = require('cookie-parser');
+const express = require("express"),
+  ejs = require("ejs"),
+  favicon = require('serve-favicon'),
+  jwt = require('jsonwebtoken');
+cookieParser = require('cookie-parser');
 
 const db = require("./models");
 
@@ -20,16 +20,16 @@ app.use(cookieParser());
 
 // Login
 //decode the jwt token
-app.use((req,res,next)=>{
+app.use((req, res, next) => {
   //destructure the token
-  const {token} = req.cookies;
+  const { token } = req.cookies;
   //if the token exists
 
   console.log('token', token);
 
-  if(token){
+  if (token) {
     //get the verified userID from jwt
-    const {id}  = jwt.verify(token, process.env.APP_SECRET);
+    const { id } = jwt.verify(token, process.env.APP_SECRET);
     //set that  userId on the request object 
 
     req.user = id;
