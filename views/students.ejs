@@ -44,24 +44,26 @@
             <!-- NOTES -->
             <div class="col-md-8 col-12 section section-height scroll bg-grey">
                 <h4 class="section-header">
-                    <i class="far fa-edit"></i>
-                    <span class="section-header-space">Notes</span>
-                    <div class="float-right add-remove">
-                        <i class="fas fa-plus" data-toggle="modal" data-target="#addstudent"></i>
-                    </div>
-                    <%- include('partials/addnote') -%>
+                  <i class="far fa-edit"></i>
+                  <span class="section-header-space">Notes</span>
+                  <div class="float-right add-remove">
+                    <i class="fas fa-plus" data-toggle="modal" data-target="#addnote" style="color: #5f6caf;"></i>
+                  </div>
+                  <%- include('partials/addnote') -%>
                 </h4>
                 <hr>
-                <div class="overview-item">notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes</div>
-                <div class="overview-item">notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes</div>
+                <div class="overview-item">notes notes notes notes notes notes notes notes notes notes notes notes notes notes
+                  notes notes notes</div>
+                <div class="overview-item">notes notes notes notes notes notes notes notes notes notes notes notes notes notes
+                  notes notes notes</div>
+              </div>
             </div>
-        </div>
-        <div class="row detail-view">
+            <div class="row detail-view">
             <!-- GRADE -->
             <div class="col-md-4 col-12 section section-height bg-grey">
                 <h4 class="section-header">
-                    <i class="fas fa-graduation-cap"></i>
-                    <span class="section-header-space">Overall Grade</span>
+                  <i class="fas fa-graduation-cap"></i>
+                  <span class="section-header-space">Overall Grade</span>
                 </h4>
                 <hr>
                 <p>math function to calculate grade</p>
@@ -69,120 +71,48 @@
             <!-- ASSIGNMENTS -->
             <div class="col-12 col-md-8 section section-height scroll bg-grey">
                 <h4 class="section-header">
-                    <i class="fas fa-clipboard-list"></i>
-                    <span class="section-header-space">Assignments</span>
-                    <div class="float-right add-remove">
-                        <i class="fas fa-plus" data-toggle="modal" data-target="#addstudent"></i>
-                    </div>
-                      <%- include('partials/addassignment') -%>
+                  <i class="fas fa-clipboard-list"></i>
+                  <span class="section-header-space">Assignments</span>
+                  <div class="float-right add-remove">
+                    <i class="fas fa-plus" data-toggle="modal" data-target="#addstudentassignment" style="color: #5f6caf;"></i>
+                  </div>
+                  <%- include('partials/addstudentassignment') -%>
                 </h4>
                 <hr>
                 <table>
-                    <th>
-                        <td>Assignment</td>
-                        <td>Rating</td>
-                        <td>Notes</td>
-                    </th>
-                    <tr>
-                        <td><input type="checkbox"></td>
-                        <td>task_name</td>
-                        <td>rating</td>
-                        <td>notes</td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox"></td>
-                        <td>task_name</td>
-                        <td>rating</td>
-                        <td>notes</td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox"></td>
-                        <td>task_name</td>
-                        <td>rating</td>
-                        <td>notes</td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox"></td>
-                        <td>task_name</td>
-                        <td>rating</td>
-                        <td>notes</td>
-                    </tr>
+                  <th>
+                  <td>Assignment</td>
+                  <td>Rating</td>
+                  <td>Notes</td>
+                  </th>
+                  <tr>
+                    <td><input type="checkbox"></td>
+                    <td>task_name</td>
+                    <td>rating</td>
+                    <td>notes</td>
+                  </tr>
+                  <tr>
+                    <td><input type="checkbox"></td>
+                    <td>task_name</td>
+                    <td>rating</td>
+                    <td>notes</td>
+                  </tr>
+                  <tr>
+                    <td><input type="checkbox"></td>
+                    <td>task_name</td>
+                    <td>rating</td>
+                    <td>notes</td>
+                  </tr>
+                  <tr>
+                    <td><input type="checkbox"></td>
+                    <td>task_name</td>
+                    <td>rating</td>
+                    <td>notes</td>
+                  </tr>
                 </table>
             </div>
         </div>
-      </div>
-      <!-- NOTES -->
-      <div class="col-md-8 col-12 section section-height scroll bg-grey">
-        <h4 class="section-header">
-          <i class="far fa-edit"></i>
-          <span class="section-header-space">Notes</span>
-          <div class="float-right add-remove">
-            <i class="fas fa-plus" data-toggle="modal" data-target="#addnote" style="color: #5f6caf;"></i>
-          </div>
-          <%- include('partials/addnote') -%>
-        </h4>
-        <hr>
-        <div class="overview-item">notes notes notes notes notes notes notes notes notes notes notes notes notes notes
-          notes notes notes</div>
-        <div class="overview-item">notes notes notes notes notes notes notes notes notes notes notes notes notes notes
-          notes notes notes</div>
-      </div>
     </div>
-    <div class="row detail-view">
-      <!-- GRADE -->
-      <div class="col-md-4 col-12 section section-height bg-grey">
-        <h4 class="section-header">
-          <i class="fas fa-graduation-cap"></i>
-          <span class="section-header-space">Overall Grade</span>
-        </h4>
-        <hr>
-        <p>math function to calculate grade</p>
-      </div>
-      <!-- ASSIGNMENTS -->
-      <div class="col-12 col-md-8 section section-height scroll bg-grey">
-        <h4 class="section-header">
-          <i class="fas fa-clipboard-list"></i>
-          <span class="section-header-space">Assignments</span>
-          <div class="float-right add-remove">
-            <i class="fas fa-plus" data-toggle="modal" data-target="#addstudentassignment" style="color: #5f6caf;"></i>
-          </div>
-          <%- include('partials/addstudentassignment') -%>
-        </h4>
-        <hr>
-        <table>
-          <th>
-          <td>Assignment</td>
-          <td>Rating</td>
-          <td>Notes</td>
-          </th>
-          <tr>
-            <td><input type="checkbox"></td>
-            <td>task_name</td>
-            <td>rating</td>
-            <td>notes</td>
-          </tr>
-          <tr>
-            <td><input type="checkbox"></td>
-            <td>task_name</td>
-            <td>rating</td>
-            <td>notes</td>
-          </tr>
-          <tr>
-            <td><input type="checkbox"></td>
-            <td>task_name</td>
-            <td>rating</td>
-            <td>notes</td>
-          </tr>
-          <tr>
-            <td><input type="checkbox"></td>
-            <td>task_name</td>
-            <td>rating</td>
-            <td>notes</td>
-          </tr>
-        </table>
-      </div>
-    </div>
-  </div>
 </div>
 
 <%- include('partials/footer') -%>
