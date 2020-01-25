@@ -43,6 +43,9 @@
                 <h4 class="section-header">
                     <i class="far fa-edit"></i>
                     <span class="section-header-space">Notes</span>
+                    <div class="float-right add-remove">
+                        <i class="fas fa-plus" data-toggle="modal" data-target="#addstudent" style="color: #5f6caf;"></i></div>
+                      <%- include('partials/addnote') -%>
                 </h4>
                 <hr>
                 <div class="overview-item">notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes notes</div>
@@ -64,6 +67,9 @@
                 <h4 class="section-header">
                     <i class="fas fa-clipboard-list"></i>
                     <span class="section-header-space">Assignments</span>
+                    <div class="float-right add-remove">
+                        <i class="fas fa-plus" data-toggle="modal" data-target="#addstudent" style="color: #5f6caf;"></i></div>
+                      <%- include('partials/addassignment') -%>
                 </h4>
                 <hr>
                 <table>

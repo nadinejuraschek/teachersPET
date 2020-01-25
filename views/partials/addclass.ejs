@@ -1,8 +1,7 @@
 <!-- MODAL: ADD CLASS -->
-<div class="modal fade" id="addclass" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-  aria-hidden="true">
+<div class="modal fade" id="addclass" tabindex="-1" role="dialog" aria-labelledby="addClassLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
+    <div class="modal-content bg-grey">
       <div class="modal-header">
         <h5 class="modal-title" id="addclass">Add A Class</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -12,18 +11,17 @@
       <div class="modal-body">
         <form>
           <div class="form-group">
-            <label for="nameofclass" class="col-form-label">Name of Class:</label>
+            <label class="input-title" for="nameofclass" class="col-form-label">Name of Class:</label>
             <input type="text" class="form-control" id="nameofclass">
           </div>
           <div class="form-group">
-            <label for="classmessagetext" class="col-form-label">Notes:</label>
+            <label class="input-title" for="classmessagetext" class="col-form-label">Notes:</label>
             <textarea class="form-control" id="classmessagetext"></textarea>
           </div>
         </form>
       </div>
       <div class="modal-footer">
-
-        <button type="button" class="btn btn-primary" id="addclasssubmit">Submit</button>
+        <button type="button" class="btn modal-btn" id="addclasssubmit">Submit</button>
       </div>
     </div>
   </div>
