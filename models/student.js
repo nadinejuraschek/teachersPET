@@ -1,5 +1,5 @@
 /* eslint-disable camelcase */
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   var Student = sequelize.define(
     "Student",
     {
@@ -16,8 +16,8 @@ module.exports = function(sequelize, DataTypes) {
       timestamps: false
     }
   );
-  Student.associate = function(models) {
+  Student.associate = function (models) {
     Student.belongsTo(models.Class);
-    return Student;
   };
+  return Student;
 };
