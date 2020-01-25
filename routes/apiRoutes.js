@@ -59,13 +59,8 @@ module.exports = function (app) {
   //============= Assignments Routes ==============
 
   // Get all assignments in a class
-<<<<<<< HEAD
-  app.get("/api/assignments/classes/:id", function(req, res) {
-    db.Assignment.findAll({ where: { ClassId: req.params.id } }).then(function(
-=======
   app.get("/api/assignments/classes/:id", function (req, res) {
     db.Assignment.findAll({ where: { ClassId: req.params.id } }).then(function (
->>>>>>> 9137a3a5691af13cb544e5f7846ddfe9385d299d
       project2_db
     ) {
       res.json(project2_db);
