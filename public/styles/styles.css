@@ -311,6 +311,9 @@ overflow: scroll;
   margin: 0.25rem auto;
   text-align: center;
 }
+.delete-btn {
+  font-size: 0.8rem;
+}
 
 /************************************************
  MODALS
