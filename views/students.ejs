@@ -7,6 +7,9 @@
     <div class="header">
         <img class="profile-img" src="https://via.placeholder.com/150" alt="Student Picture">
         <h2 class="profile-name">last_name, first_name</h2>
+        <div class="float-right add-remove">
+            <a href="/classes"><i class="fas fa-arrow-circle-left" style="color: #5f6caf;"></i></a>
+          </div>
     </div>
     <hr>
     <div class="student-body">
@@ -44,7 +47,8 @@
                     <i class="far fa-edit"></i>
                     <span class="section-header-space">Notes</span>
                     <div class="float-right add-remove">
-                        <i class="fas fa-plus" data-toggle="modal" data-target="#addstudent" style="color: #5f6caf;"></i></div>
+                        <i class="fas fa-plus" data-toggle="modal" data-target="#addstudent" style="color: #5f6caf;"></i>
+                    </div>
                       <%- include('partials/addnote') -%>
                 </h4>
                 <hr>
@@ -68,7 +72,8 @@
                     <i class="fas fa-clipboard-list"></i>
                     <span class="section-header-space">Assignments</span>
                     <div class="float-right add-remove">
-                        <i class="fas fa-plus" data-toggle="modal" data-target="#addstudent" style="color: #5f6caf;"></i></div>
+                        <i class="fas fa-plus" data-toggle="modal" data-target="#addstudent" style="color: #5f6caf;"></i>
+                    </div>
                       <%- include('partials/addassignment') -%>
                 </h4>
                 <hr>
