@@ -19,9 +19,19 @@ module.exports = function(app) {
   // Load index page
   app.get("/index", function(req, res) {
     if(req.user){
-      res.render("index");
+
+      db.Class.findAll().then(function(classes){
+
+        console.log(classes);
+        res.render("index", { data: classes});
+      })
+
+      
     }
+    else{
       res.render("login");
+    }
+     
   });
 
   app.post('/api/user/signout', function(req, res) {
