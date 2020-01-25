@@ -33,11 +33,16 @@ module.exports = function(app) {
   app.get("/classes", function(req, res) {
     res.render("classes");
   });
+
+  app.get("/classes/:id", function(req, res) {
+    res.render("classes");
+  });
+
   app.get("/students", function(req, res) {
     res.render("students");
   });
-  app.get('/lessonplan', function(req, res){
-    res.render('lessonplan');
+  app.get("/lessonplan", function(req, res) {
+    res.render("lessonplan");
   });
 
   // Calendar View

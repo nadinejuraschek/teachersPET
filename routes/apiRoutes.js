@@ -6,7 +6,7 @@ var db = require("../models"),
 module.exports = function (app) {
   //================ User Routes ===============
 
-  //Get user by id
+  // //Get user by id
   // app.get("/api/user/:id", function(req, res) {
   //   db.User.findAll({ where: { id: req.params.id } }).then(function(
   //     project2_db
@@ -25,8 +25,8 @@ module.exports = function (app) {
   //================ Classes Routes ===============
 
   // Get all classes
-  app.get("/api/user/classes", function (req, res) {
-    db.Class.findAll({}).then(function (project2_db) {
+  app.get("/api/classes", function(req, res) {
+    db.Class.findAll({}).then(function(project2_db) {
       res.json(project2_db);
     });
   });
@@ -244,11 +244,13 @@ module.exports = function (app) {
   app.post('/api/user/login', async function (req, res) {
     const user = await db.User.findOne({ where: { email: req.body.email } });
     if (!user) {
-      res.json('No User found.');
+      return res.json({message: 'No User found.'});
+      
     }
     const valid = await bcrypt.compare(req.body.password, user.password);
     if (!valid) {
-      res.json('Incorrect password!');
+      return res.json({message: 'Incorrect password!'});
+      
     }
     const token = jwt.sign({ id: user.id }, process.env.APP_SECRET);
     res.cookie('token', token, {

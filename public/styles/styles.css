@@ -337,6 +337,9 @@ overflow: scroll;
   margin: 0.25rem auto;
   text-align: center;
 }
+<<<<<<< HEAD
+
+=======
 .delete-btn {
   font-size: 0.8rem;
 }
@@ -358,3 +361,4 @@ overflow: scroll;
   color: #ffffff;
   font-weight: 600;
 }
+>>>>>>> 9137a3a5691af13cb544e5f7846ddfe9385d299d
