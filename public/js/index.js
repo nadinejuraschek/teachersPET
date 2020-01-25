@@ -1,17 +1,14 @@
-// Get references to page elements
-var $exampleText = $("#example-text");
-var $exampleDescription = $("#example-description");
-var $submitBtn = $("#submit");
-var $classList = $("#class-list");
-
 // The API object contains methods for each kind of request we'll make
 var API = {
+<<<<<<< HEAD
   
+=======
+>>>>>>> ebc5277773ac08998b7cc9c044d923e63ba354d3
   getUser: function(){ 
     console.log("ajax getUser call");
     return $.ajax({
       url: "api/user/:id", 
-      tyoe: "GET"
+      type: "GET"
     })
   },
 
@@ -42,55 +39,56 @@ var API = {
 // refreshClasses gets classes from the db and repopulates the class list
 const refreshClasses = function() {
   API.getClasses().then(function(data) {
-    var $class = data;
-      console.log($class);
-      $classList.empty();
+    // $classList.empty();
 
-      for (i = 0; i < $class.length; i++) {
-        let $col = $("<div>").addClass("col-11 section overview-item");
+      // for (i = 0; i < $class.length; i++) {
+      //   let $col = $("<div>").addClass("col-11 section overview-item");
 
-        let $ul = $("<ul>").addClass("list-group");
+      //   let $ul = $("<ul>").addClass("list-group");
 
-        let $a = $("<a>")
-          .attr("href", "/classes/" + $class[i].id);
+      //   let $a = $("<a>")
+      //     .attr("href", "/classes/" + $class[i].id);
 
-          let $h3 = $("<h3>").addClass("overview-header");
+      //     let $h3 = $("<h3>").addClass("overview-header");
           
 
-        let $i = $("<i>").addClass("fas fa-trash-alt");
+      //   let $i = $("<i>").addClass("fas fa-trash-alt");
 
 
-        let $a2 = $("<a>").attr({
-          class: "float-right",
-          href: "#"
-        });  
+      //   let $a2 = $("<a>").attr({
+      //     class: "float-right",
+      //     href: "#"
+      //   });  
 
-        let $h3 = $("<h3>").addClass("overview-header");
+      //   let $h3 = $("<h3>").addClass("overview-header");
 
+<<<<<<< HEAD
         let $h5 = $("<h5>").addClass("overview-text").text($class[i].class_name)
+=======
+      //   let $h5 = $("<h5>").addClass("overview-text").text($class[i].class_name)
+>>>>>>> ebc5277773ac08998b7cc9c044d923e63ba354d3
 
-        $h3.append($a2);
-        $a2.append($i);
-         $a.append($h3);
-        $a.append($h5);
+      //   $h3.append($a2);
+      //   $a2.append($i);
+      //   $a.append($h3);
+      //   $a.append($h5);
        
-
-        let $li = $("<li>")
-          .attr({
-            class: "list-group-item",
-            "data-id": $class[i].id
-          })
-          .append($a);
+      //   let $li = $("<li>")
+      //     .attr({
+      //       class: "list-group-item",
+      //       "data-id": $class[i].id
+      //     })
+      //     .append($a);
        
-        $classList.append($col);
-        $ul.append($li)
-        $col.append($ul);
-        console.log("appended");
-      }
+      //   $classList.append($col);
+      //   $ul.append($li)
+      //   $col.append($ul);
+        // console.log("appended");
     });   
 };
 refreshClasses();
 
+<<<<<<< HEAD
 // function to display user's name
 // const nameDisplay = function(){
 //   API.getUser().then(function(data) {
@@ -135,11 +133,55 @@ const handleFormSubmit = function(event) {
 //   API.deleteExample(idToDelete).then(function() {
 //     refreshExamples();
 //   });
+=======
+// // function to display user's name
+// const nameDisplay = function(){
+//   API.getUser().then(function(data) {
+//     // let $userName = data[id].first_name + " " + data[id].last_name;
+//     //   console.log($userName);
+//     //   $(".profile-name").text("Welcome back, " + $userName + "!");
+// });
+// };
+// nameDisplay();
+// // handleFormSubmit is called whenever we submit a new example
+// // Save the new example to the db and refresh the list
+// const handleFormSubmit = function(event) {
+//   event.preventDefault();
+
+//   var example = {
+//     text: $exampleText.val().trim(),
+//     description: $exampleDescription.val().trim()
+//   };
+
+//   if (!(example.text && example.description)) {
+//     alert("You must enter an example text and description!");
+//     return;
+//   }
+
+//   //   API.saveExample(example).then(function() {
+//   //     refreshExamples();
+//   //   });
+
+//   //   $exampleText.val("");
+//   //   $exampleDescription.val("");
+>>>>>>> ebc5277773ac08998b7cc9c044d923e63ba354d3
 // };
 
-// Add event listeners to the submit and delete buttons
-$submitBtn.on("click", handleFormSubmit);
-$classList.on("click", ".delete", handleDeleteBtnClick);
+// // handleDeleteBtnClick is called when an example's delete button is clicked
+// // Remove the example from the db and refresh the list
+// // var handleDeleteBtnClick = function() {
+// //   var idToDelete = $(this)
+// //     .parent()
+// //     .attr("data-id");
+
+// //   API.deleteExample(idToDelete).then(function() {
+// //     refreshExamples();
+// //   });
+// // };
+
+// // Add event listeners to the submit and delete buttons
+// $submitBtn.on("click", handleFormSubmit);
+// $classList.on("click", ".delete", handleDeleteBtnClick);
 
 
 $(document).ready(function () {
