@@ -151,6 +151,70 @@ module.exports = function (app) {
     });
   });
 
+  //============= Student Notes Routes ==============
+
+  // Get all students notes in a class
+  app.get("/api/students/notes/:id", function (req, res) {
+    db.Studentnote.findAll({ where: { ClassId: req.params.id } }).then(function (
+      project2_db
+    ) {
+      res.json(project2_db);
+    });
+  });
+
+  // Create a new student notes
+  app.post("/api/students/notes", function (req, res) {
+    db.Studentnote.create(req.body).then(function (project2_db) {
+      res.json(project2_db);
+    });
+  });
+
+  // Delete an assignment by id
+  app.delete("/api/students/notes/:id", function (req, res) {
+    db.Studentnote.destroy({ where: { id: req.params.id } }).then(function (
+      project2_db
+    ) {
+      res.json(project2_db);
+    });
+  });
+
+  //================ Student Assignment Routes ===============
+
+  // Get all Students Assignment
+  app.get("/api/students/assignments", function (req, res) {
+    db.Studentassignment.findAll({}).then(function (project2_db) {
+      res.json(project2_db);
+    });
+  });
+
+  // Get one Student Assignment
+  app.get("/api/students/assignments/:id", function (req, res) {
+    db.Studentassignment.findAll({ where: { id: req.params.id } }).then(function (
+      project2_db
+    ) {
+      res.json(project2_db);
+    });
+  });
+
+  // Create a new Student Assignment
+  app.post("/api/students/assignments", function (req, res) {
+    db.Studentassignment.create(req.body).then(function (project2_db) {
+      res.json(project2_db);
+    });
+  });
+
+  // Delete a Student assignment by id
+  app.delete("/api/students/assignments/:id", function (req, res) {
+    db.Studentassignment.destroy({ where: { id: req.params.id } }).then(function (
+      project2_db
+    ) {
+      res.json(project2_db);
+    });
+  });
+
+
+
+
   app.get('/api/user', function (req, res) {
     console.log(req.user);
     res.json(req.user);

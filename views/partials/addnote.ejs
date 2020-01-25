@@ -1,10 +1,9 @@
 <!-- MODAL: ADD NOTE -->
-<div class="modal fade" id="lessonplan" tabindex="-1" role="dialog" aria-labelledby="addNoteLabel"
-  aria-hidden="true">
+<div class="modal fade" id="addnote" tabindex="-1" role="dialog" aria-labelledby="addNoteLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
+    <div class="modal-content bg-grey">
       <div class="modal-header">
-        <h5 class="modal-title" id="lessonplan">Add A Note</h5>
+        <h5 class="modal-title" id="addnote">Add A Note</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -12,12 +11,13 @@
       <div class="modal-body">
         <form>
           <div class="form-group">
-            <textarea class="form-control" id="lessonmessagetext"></textarea>
+            <label class="input-title" for="notemessagetext" class="col-form-label">Notes:</label>
+            <textarea class="form-control" id="notemessagetext"></textarea>
           </div>
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn modal-btn" id="addlessonplansubmit">Submit</button>
+        <button type="button" class="btn modal-btn" id="addnotesubmit">Submit</button>
       </div>
     </div>
   </div>
