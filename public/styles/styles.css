@@ -11,7 +11,7 @@ html,
 body {
   background-color: #364754;
   color: #373F47;
-  font-family: "Englebert", Arial, sans-serif;
+  font-family: "Lato", Arial, sans-serif;
   height: 100%;
 }
 footer {
@@ -24,6 +24,21 @@ footer {
 .bg-purple {
   background-color: #5f6caf;
   color: #ffffff;
+}
+.logo-text,
+  .logo-text-lg,
+  .signin-header,
+  .section-header,
+  .overview-header,
+  .overview-header a,
+  .modal-title {
+    font-family: "Quicksand", Arial, sans-serif;
+}
+.signin-header,
+  .section-header,
+  .overview-header a,
+  .modal-title {
+    font-weight: 600;
 }
 
 /****************************************************************
@@ -47,7 +62,6 @@ footer {
   text-decoration: none;
 }
 .logo-text {
-  font-family: "Englebert", Arial, sans-serif;
   font-size: 1.7rem;
 }
 .list-group-item {
@@ -116,7 +130,6 @@ footer {
   border-top-right-radius: 0;
 }
 .logo-text-lg {
-  font-family: "Quicksand", Arial, sans-serif;
   font-size: 5rem;
 }
 .signin-header {
@@ -130,8 +143,12 @@ footer {
   font-weight: 700;
   margin-left: 0.5rem;
 }
-.add-remove{
+.add-remove {
   display: inline;
+}
+.add-remove:hover,
+  .add-remove a:hover {
+    color: #ffb677;
 }
 #login-btn,
   #signup-btn {
@@ -143,11 +160,10 @@ footer {
   #signup-btn:hover {
     background-color: #ffb677;
 }
-.signin-header {
-  color: #5f6caf;
-}
-.signup-link-btn {
-  color: #5f6caf;
+.signin-header,
+  .signup-link-btn,
+  .add-remove a{
+    color: #5f6caf;
 }
 .signup-link-btn:hover {
   color: #ffb677;
@@ -155,6 +171,11 @@ footer {
 }
 #logout-btn {
   color: #ffffff;
+  font-family: "Quicksand", Arial, sans-serif;
+  font-weight: 600;
+}
+#logout-btn:hover {
+  color: #ffb677;
 }
 
 /*************************************************
@@ -300,6 +321,11 @@ overflow: scroll;
 }
 .overview-header a {
   color: #ffffff;
+}
+.section-header a:hover,
+  .overview-header a:hover {
+    color: #373F47;
+    text-decoration: none;
 }
 .overview-text {
   color: #ffffff;
