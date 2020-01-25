@@ -11,7 +11,7 @@ html,
 body {
   background-color: #364754;
   color: #373F47;
-  font-family: "Englebert", Arial, sans-serif;
+  font-family: "Lato", Arial, sans-serif;
   height: 100%;
 }
 footer {
@@ -24,6 +24,21 @@ footer {
 .bg-purple {
   background-color: #5f6caf;
   color: #ffffff;
+}
+.logo-text,
+  .logo-text-lg,
+  .signin-header,
+  .section-header,
+  .overview-header,
+  .overview-header a,
+  .modal-title {
+    font-family: "Quicksand", Arial, sans-serif;
+}
+.signin-header,
+  .section-header,
+  .overview-header a,
+  .modal-title {
+    font-weight: 600;
 }
 
 /****************************************************************
@@ -47,7 +62,6 @@ footer {
   text-decoration: none;
 }
 .logo-text {
-  font-family: "Englebert", Arial, sans-serif;
   font-size: 1.7rem;
 }
 .list-group-item {
@@ -116,7 +130,6 @@ footer {
   border-top-right-radius: 0;
 }
 .logo-text-lg {
-  font-family: "Quicksand", Arial, sans-serif;
   font-size: 5rem;
 }
 .signin-header {
@@ -130,11 +143,39 @@ footer {
   font-weight: 700;
   margin-left: 0.5rem;
 }
-.add-remove{
+.add-remove {
   display: inline;
+}
+.add-remove:hover,
+  .add-remove a:hover {
+    color: #ffb677;
+}
+#login-btn,
+  #signup-btn {
+  background-color: #ff8364;
+  border: none;
+  font-weight: 600;
+}
+#login-btn:hover,
+  #signup-btn:hover {
+    background-color: #ffb677;
+}
+.signin-header,
+  .signup-link-btn,
+  .add-remove a{
+    color: #5f6caf;
+}
+.signup-link-btn:hover {
+  color: #ffb677;
+  text-decoration: none;
 }
 #logout-btn {
   color: #ffffff;
+  font-family: "Quicksand", Arial, sans-serif;
+  font-weight: 600;
+}
+#logout-btn:hover {
+  color: #ffb677;
 }
 
 /*************************************************
@@ -281,6 +322,11 @@ overflow: scroll;
 .overview-header a {
   color: #ffffff;
 }
+.section-header a:hover,
+  .overview-header a:hover {
+    color: #373F47;
+    text-decoration: none;
+}
 .overview-text {
   color: #ffffff;
   font-size: 1rem;
@@ -291,4 +337,28 @@ overflow: scroll;
   margin: 0.25rem auto;
   text-align: center;
 }
+<<<<<<< HEAD
 
+=======
+.delete-btn {
+  font-size: 0.8rem;
+}
+
+/************************************************
+ MODALS
+************************************************/
+.modal-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.input-title {
+  color: #373F47;
+  font-size: 1rem;
+}
+.modal-btn {
+  background-color: #ffb677;
+  border: none;
+  color: #ffffff;
+  font-weight: 600;
+}
+>>>>>>> 9137a3a5691af13cb544e5f7846ddfe9385d299d

@@ -2,10 +2,14 @@
 
 <%- include('partials/navbar') -%>
 
+<!-- CLASS VIEW -->
 <div class="container content">
   <h2>
     <i class="fas fa-chalkboard"></i>
     <span class="section-header-space">class_name</span>
+    <div class="float-right add-remove">
+      <a href="/index"><i class="fas fa-arrow-circle-left"></i></a>
+    </div>
   </h2>
   <hr>
   <div class="row detail-view">
@@ -14,7 +18,8 @@
         <i class="fas fa-users"></i>
         <span class="section-header-space">Students</span>
         <div class="float-right add-remove">
-          <i class="fas fa-plus" data-toggle="modal" data-target="#addstudent" style="color: #5f6caf;"></i></div>
+          <i class="fas fa-plus" data-toggle="modal" data-target="#addstudent"></i>
+        </div>
         <%- include('partials/addstudents') -%>
       </h4>
       <hr>
@@ -31,7 +36,7 @@
         <i class="fas fa-clipboard-list"></i>
         <span class="section-header-space">Assignments</span>
         <div class="float-right add-remove" id="#addassignment">
-          <i class="fas fa-plus" data-toggle="modal" data-target="#addassignment" style="color: #5f6caf;"></i>
+          <i class="fas fa-plus" data-toggle="modal" data-target="#addassignment"></i>
         </div>
         <%- include('partials/addassignment') -%>
       </h4>
@@ -61,8 +66,9 @@
             <i class="fas fa-folder-open"></i>
             <span class="section-header-space">Lesson Plans</span>
             <div class="float-right add-remove">
-              <i class="fas fa-plus" data-toggle="modal" data-target="#lessonplan" style="color: #5f6caf;"></i></div>
-            <%- include('partials/lessonplan') -%>
+              <i class="fas fa-plus" data-toggle="modal" data-target="#lessonplan"></i>
+            </div>
+            <%- include('partials/addlessonplan') -%>
           </h4>
           <hr>
           <div class="overview-item">
