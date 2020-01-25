@@ -1,4 +1,5 @@
 $(document).ready(function () {
+  //Add class to database
   $("#addclasssubmit").on("click", function (e) {
     e.preventDefault();
     var classObj = {
@@ -21,6 +22,7 @@ $(document).ready(function () {
     });
   });
 
+  //Add Assignment to Database CLass View
   $("#addassignmentsubmit").on("click", function (e) {
     e.preventDefault();
     var assignObj = {
@@ -45,6 +47,7 @@ $(document).ready(function () {
     });
   });
 
+  //Add Student To Database
   $("#addstudentsubmit").on("click", function (e) {
     e.preventDefault();
     var studentObj = {
@@ -87,6 +90,7 @@ $(document).ready(function () {
     });
   });
 
+  //Add Lesson Plan to Database
   $("#addlessonplansubmit").on("click", function (e) {
     e.preventDefault();
     var lessonObj = {
@@ -104,6 +108,47 @@ $(document).ready(function () {
       url: "/api/lessonplans",
       method: "POST",
       data: lessonObj
+    }).then(function () {
+      location.reload();
+    });
+  });
+
+  //Add notes To Database Students View
+  $("#addnotesubmit").on("click", function (e) {
+    e.preventDefault();
+    var noteObj = {
+      // eslint-disable-next-line camelcase
+      notes: $("#notemessagetext")
+        .val()
+        .trim()
+    };
+    console.log(noteObj);
+
+    $.ajax({
+      url: "/api/students/notes",
+      method: "POST",
+      data: noteObj
+    }).then(function () {
+      location.reload();
+    });
+  });
+
+  //Add Students assignment to Database
+  $("#addstudentassignmentsubmit").on("click", function (e) {
+    e.preventDefault();
+    var studentAssignmentObj = {
+      // eslint-disable-next-line camelcase
+      total_points: $("#totalpoints").val(),
+      notes: $("#studentassignmentmessagetext")
+        .val()
+        .trim()
+    };
+    console.log(studentAssignmentObj);
+
+    $.ajax({
+      url: "/api/students/assignments",
+      method: "POST",
+      data: studentAssignmentObj
     }).then(function () {
       location.reload();
     });
