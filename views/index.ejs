@@ -35,18 +35,21 @@
         <hr>
       </h4>
       <div class="row" id="class-list">
-        <!-- <div class="col-11 section overview-item">  -->
-          <!-- <ul class="list-group"> -->
-          <!-- <a href="/classes">
-            <h3 class="overview-header>
-              Composition
-              <a class="float-right delete-btn" href="#"><i class="fas fa-trash-alt"></i>
+        <div class="col-11 section">
+          
+            <% for ( i = 0 ; i < data.length; i++) { %>
+              <div class="col-11 section overview-item">
+              <a href="/classes">
+                <h3 class="overview-header">
+                  <%= data[i].class_name %>
+                  <a class="float-right delete-btn" href="#"><i class="fas fa-trash-alt"></i>
+                  </a>
+                </h3>
               </a>
-            </h3>
-            <h5 class="overview-text">Grade 9</h5>
-          </a> -->
-          <!-- </ul> -->
-         <!-- </div> -->
+            </div>
+            <% } %>
+          
+         </div>
       </div>
     </div>
   </div>
