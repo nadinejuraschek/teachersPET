@@ -14,6 +14,7 @@ module.exports = function(sequelize, DataTypes) {
   );
   Assignment.associate = function(models) {
     Assignment.belongsTo(models.Class);
+
   };
   return Assignment;
 };

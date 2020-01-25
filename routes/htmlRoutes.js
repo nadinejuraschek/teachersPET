@@ -3,10 +3,10 @@ var db = require("../models");
 module.exports = function(app) {
   // Load index page
   app.get("/index", function(req, res) {
-    if(req.user){
+    if (req.user) {
       res.render("index");
     }
-      res.render("signup");
+    res.render("signup");
   });
 
   // Login & Sign Up Pages
@@ -18,15 +18,20 @@ module.exports = function(app) {
     res.render("signup");
   });
 
-  app.post('/api/user/signout', function(req, res) {
-    res.clearCookie('token');
-    res.json('Signed out.');
+  app.post("/api/user/signout", function(req, res) {
+    res.clearCookie("token");
+    res.json("Signed out.");
   });
 
   // Classes and Students View
   app.get("/classes", function(req, res) {
     res.render("classes");
   });
+
+  app.get("/classes/:id", function(req, res) {
+    res.render("classes");
+  });
+
   app.get("/students", function(req, res) {
     res.render("students");
   });
