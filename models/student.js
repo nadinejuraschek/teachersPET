@@ -17,11 +17,8 @@ module.exports = function(sequelize, DataTypes) {
     }
   );
   Student.associate = function(models) {
-    Student.belongsTo(models.Class);
-<<<<<<< HEAD
-    Student.hasMany(models.Assignment);
-=======
->>>>>>> ebc5277773ac08998b7cc9c044d923e63ba354d3
+ Student.belongsTo(models.Class);
+Student.hasMany(models.Assignment);
   };
   return Student;
 };

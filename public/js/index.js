@@ -1,9 +1,5 @@
 // The API object contains methods for each kind of request we'll make
 var API = {
-<<<<<<< HEAD
-  
-=======
->>>>>>> ebc5277773ac08998b7cc9c044d923e63ba354d3
   getUser: function(){ 
     console.log("ajax getUser call");
     return $.ajax({
@@ -62,11 +58,7 @@ const refreshClasses = function() {
 
       //   let $h3 = $("<h3>").addClass("overview-header");
 
-<<<<<<< HEAD
-        let $h5 = $("<h5>").addClass("overview-text").text($class[i].class_name)
-=======
       //   let $h5 = $("<h5>").addClass("overview-text").text($class[i].class_name)
->>>>>>> ebc5277773ac08998b7cc9c044d923e63ba354d3
 
       //   $h3.append($a2);
       //   $a2.append($i);
@@ -88,52 +80,6 @@ const refreshClasses = function() {
 };
 refreshClasses();
 
-<<<<<<< HEAD
-// function to display user's name
-// const nameDisplay = function(){
-//   API.getUser().then(function(data) {
-//     let $userName = data[id].first_name + " " + data[id].last_name;
-//       console.log($userName);
-//       $(".profile-name").text("Welcome back, " + $userName + "!");
-// });
-// };
-// nameDisplay();
-
-
-// handleFormSubmit is called whenever we submit a new example
-// Save the new example to the db and refresh the list
-const handleFormSubmit = function(event) {
-  event.preventDefault();
-
-  var example = {
-    text: $exampleText.val().trim(),
-    description: $exampleDescription.val().trim()
-  };
-
-  if (!(example.text && example.description)) {
-    alert("You must enter an example text and description!");
-    return;
-  }
-
-  //   API.saveExample(example).then(function() {
-  //     refreshExamples();
-  //   });
-
-  //   $exampleText.val("");
-  //   $exampleDescription.val("");
-};
-
-// handleDeleteBtnClick is called when an example's delete button is clicked
-// Remove the example from the db and refresh the list
-// var handleDeleteBtnClick = function() {
-//   var idToDelete = $(this)
-//     .parent()
-//     .attr("data-id");
-
-//   API.deleteExample(idToDelete).then(function() {
-//     refreshExamples();
-//   });
-=======
 // // function to display user's name
 // const nameDisplay = function(){
 //   API.getUser().then(function(data) {
@@ -164,7 +110,6 @@ const handleFormSubmit = function(event) {
 
 //   //   $exampleText.val("");
 //   //   $exampleDescription.val("");
->>>>>>> ebc5277773ac08998b7cc9c044d923e63ba354d3
 // };
 
 // // handleDeleteBtnClick is called when an example's delete button is clicked
