@@ -1,14 +1,18 @@
 {
   "development": {
     "username": "root",
+<<<<<<< HEAD
     "password": "rootpass",
+=======
+    "password": "password",
+>>>>>>> 9b1ce4937d450c7a3ecccd052330e111e3b66b4c
     "database": "project2_db",
     "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": "root",
+    "password": "password",
     "database": "project2_db",
     "host": "localhost",
     "dialect": "mysql",
