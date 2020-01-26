@@ -6,7 +6,7 @@
 <div class="container content">
   <h2>
     <i class="fas fa-chalkboard"></i>
-    <span class="section-header-space">class_name</span>
+    <span class="section-header-space"><%= classData.class_name %></span>
     <div class="float-right add-remove">
       <a href="/index"><i class="fas fa-arrow-circle-left"></i></a>
     </div>
@@ -24,11 +24,11 @@
       </h4>
       <hr>
       <ol>
-        <li><a href="#">last_name, first_name</a></li>
-        <li><a href="#">last_name, first_name</a></li>
-        <li><a href="#">last_name, first_name</a></li>
-        <li><a href="#">last_name, first_name</a></li>
-        <li><a href="#">last_name, first_name</a></li>
+        <% for( var i = 0; i < studentData.length; i++ ) { %>
+        <li>
+          <a href="/students/<%= studentData[i].id %>"> <%= studentData[i].last_name %>, <%= studentData[i].first_name %></a>
+        </li>
+        <% } %>
       </ol>
     </div>
     <div class="col-md-6 col-12 section section-height scroll bg-grey">

@@ -1,52 +1,66 @@
 var db = require("../models");
 
 module.exports = function(app) {
-  app.get('/', function(req, res){
-    if(req.user){
-      res.redirect('/index');
-    }
-      res.redirect('/login');
-  });
+  
+app.get('/', function(req, res){
+  if(req.user){
+    res.redirect('/index');
+  }
+  res.redirect('/login');
+});
 
-  // Login & Sign Up Pages
-  app.get("/login", function(req, res) {
+// ==================================================
+// USER
+// ==================================================
+app.get("/login", function(req, res) {
+  res.render("login");
+});
+app.get("/signup", function(req, res) { 
+  res.render("signup");
+});
+
+// ==================================================
+// DASHBOARD
+// ==================================================
+// Load index page
+app.get("/index", function(req, res) {
+  if(req.user){
+    Promise.all([db.User.findOne({ where: {id: req.user }}), db.Class.findAll()]).then(function(data) {
+      let userName = data[0].first_name;
+      // console.log(userName);
+      let classData = data[1];
+      res.render("index", { name: userName, classData: classData });
+    });
+    // db.Class.findAll().then(function(classes) {
+    //   // console.log(classes);
+    //   res.render("index", { classData: classes });
+    // });
+    // db.User.findOne({ where: {id: req.user }}).then(function(user){
+
+    // });
+  } else {
     res.render("login");
-  });
-  app.get("/signup", function(req, res) { 
-    res.render("signup");
-  });
+  };
+});
 
-  // Load index page
-  app.get("/index", function(req, res) {
-    if(req.user){
+app.post('/api/user/signout', function(req, res) {
+  res.clearCookie('token');
+  res.json('Signed out.');
+});
 
-      db.Class.findAll().then(function(classes){
-
-        console.log(classes);
-        res.render("index", { data: classes});
-      })
-
-      
-    }
-    else{
-      res.render("login");
-    }
-     
-  });
-
-  app.post('/api/user/signout', function(req, res) {
-    res.clearCookie('token');
-    res.json('Signed out.');
-  });
-
-  // Classes and Students View
-  app.get("/classes", function(req, res) {
-    res.render("classes");
-  });
-
-  app.get("/classes/:id", function(req, res) {
-    res.render("classes");
-  });
+// Classes and Students View
+app.get("/classes/:id", function(req, res) {
+  if(req.user){
+    Promise.all([db.Class.findOne({ where: { id: req.params.id }}), db.Student.findAll({ where: { ClassId: req.params.id }})]).then((data) => {
+      let classData = data[0];
+      let studentData = data[1];
+      // console.log(studentData[0].first_name);
+      res.render("classes", { classData: classData, studentData: studentData });
+    });
+  } else {
+  res.render("login");
+  }
+});
 
   app.get("/students", function(req, res) {
     res.render("students");

@@ -7,13 +7,14 @@
   <div class="row details-view">
     <!-- WELCOME -->
     <div class="col-12 welcome bg-purple">
-      <h2 class="profile-name">Welcome back, teacher_name!</h2>
+      <h2 class="profile-name">Welcome back, <%= name %>!</h2>
     </div>
     <!-- CALENDAR PREVIEW -->
     <div class="col-sm-6 section bg-grey">
-      <h4 class="section-header" style="color: #5f6caf;">
-        <a href="/calendar" style="color: #5f6caf;"><i class="fas fa-calendar-alt" style="color: #5f6caf;"></i>
-          Calendar</a>
+      <h4 class="section-header">
+        <a href="/calendar"><i class="fas fa-calendar-alt"></i>
+          Calendar
+        </a>
       </h4>
       <hr>
       <div class="responsiveCal">
@@ -34,22 +35,17 @@
         <%- include('partials/addclass') -%>
         <hr>
       </h4>
-      <div class="row" id="class-list">
-        <div class="col-11 section">
-          
-            <% for ( i = 0 ; i < data.length; i++) { %>
-              <div class="col-11 section overview-item">
-              <a href="/classes">
-                <h3 class="overview-header">
-                  <%= data[i].class_name %>
-                  <a class="float-right delete-btn" href="#"><i class="fas fa-trash-alt"></i>
-                  </a>
-                </h3>
-              </a>
-            </div>
-            <% } %>
-          
-         </div>
+      <div class="row">
+        <% for ( i = 0 ; i < classData.length; i++) { %>
+        <div class="col-11 section overview-item">
+          <a href="/classes/<%= classData[i].id %>">
+            <h3 class="overview-header">
+              <%= classData[i].class_name %>
+              <a class="float-right delete-btn" href="#"><i class="fas fa-trash-alt"></i></a>
+            </h3>
+          </a>
+        </div>
+        <% } %>
       </div>
     </div>
   </div>
