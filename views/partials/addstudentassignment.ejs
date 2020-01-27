@@ -22,13 +22,10 @@
                 Select An Assignment:
               </button>
               <!--populate with dynamic data-->
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Book Report</a>
-                <a class="dropdown-item" href="#">Essay</a>
-                <a class="dropdown-item" href="#">Argument</a>
-                <a class="dropdown-item" href="#">Short Story</a>
-                <a class="dropdown-item" href="#">Outline</a>
-                <a class="dropdown-item" href="#">Research Paper</a>
+              <!-- <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <% for ( i = 0 ; i < assignmentData.length; i++) { %>
+                <a class="dropdown-item" href="/assignments/<%= assignmentData[i].id %>""><%= assignmentData[i].assignment_name %></a>
+                <% } %> -->
               </div>
             </div>
           </div>

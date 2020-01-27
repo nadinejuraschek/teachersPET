@@ -32,6 +32,7 @@
         <% } %>
       </ol>
     </div>
+
     <div class="col-md-6 col-12 section section-height scroll bg-grey">
       <h4 class="section-header">
         <i class="fas fa-clipboard-list"></i>
@@ -41,8 +42,17 @@
         </div>
         <%- include('partials/addassignment') -%>
       </h4>
+    </div>
       <hr>
-      <p>
+      <!-- <ol>
+      <% for( var i = 0; i < assignmentData.length; i++ ) { %>
+        <li>
+          <a href="/assignments/<%= assignmentData[i].id %>"> <%= assignmentData[i].assignment_name %></a>
+          <a class="float-right delete-btn" href="#"><i class="fas fa-trash-alt"></i></a>
+        </li>
+        <% } %>
+      </ol> -->
+      <!-- <p>
         <a href="#">
           task_name</a>
       </p>
@@ -55,7 +65,7 @@
           task_name</a>
       </p>
     </div>
-    </h4>
+    </h4> -->
     <hr>
 
   </div>

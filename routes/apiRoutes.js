@@ -179,13 +179,18 @@ app.post("/api/students/notes", function (req, res) {
     res.json(project2_db);
   });
 });
-// Delete an assignment by id
+// Delete an note by id
 app.delete("/api/students/notes/:id", function (req, res) {
   db.Studentnote.destroy({ where: { id: req.params.id } }).then(function (project2_db) {
     res.json(project2_db);
   });
 });
-
+// Delete an assignment by 
+app.delete("/api/students/notes/:id", function (req, res) {
+  db.Studentnote.destroy({ where: { id: req.params.id } }).then(function (project2_db) {
+    res.json(project2_db);
+  });
+});
 // ==================================================
 // STUDENT ASSIGNMENTS
 // ==================================================
@@ -209,7 +214,7 @@ app.post("/api/students/assignments", function (req, res) {
 });
 // Delete a Student assignment by id
 app.delete("/api/students/assignments/:id", function (req, res) {
-  db.StudentAssignment.destroy({ where: { id: req.params.id } }).then(function (project2_db) {
+  db.Assignment.destroy({ where: { id: req.params.id } }).then(function (project2_db) {
     res.json(project2_db);
   });
 });
