@@ -61,6 +61,18 @@ $(document).ready(function () {
       location.reload();
     });
   });
+  // Delete Class from Database
+  $(".class-delete-btn").on("click", function (e) {
+    e.preventDefault();
+    // console.log(this.name);
+    
+    $.ajax({
+       type: "DELETE",
+       url: "/api/classes/" + this.name
+     }).then(function() {
+       location.reload();
+     });
+  });
 
   //Add Assignment to Database CLass View
   $("#addassignmentsubmit").on("click", function (e) {

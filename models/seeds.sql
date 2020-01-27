@@ -5,13 +5,17 @@ INSERT INTO Classes (class_name) VALUES
 ("Philosophy"),
 ("Composition");
 
-INSERT INTO Students (first_name, last_name, address, contact_phone, ClassId) VALUES 
-("Henry", "Jacobs", "521 Maple Rd", "555-257-9562", "2"),
-("Jill", "Marks", "234 Oak Dr", "555-324-4213", "1"),
-("Jackie", "Bronson", "809 Bronze St", "555-324-5679", "3"),
-("Joe", "Mama", "777 Elm St", "555-345-6789", "2"),
-("Hugh", "Jassle", "0 Nowhere Rd", "555-666-7777","1"),
-("Some", "Guy", "56 Bumpy Rd", "555-867-5309", "3");
+INSERT INTO Students (first_name, last_name, address, contact_phone, ClassId, notes) VALUES 
+("Henry", "Jacobs", "jacobs@mail.com", "Jacobs, Mary", "521 Maple Rd", "555-257-9562", "2"),
+("Jill", "Marks", "marks@mail.com", "Marks, Karen", "234 Oak Dr", "555-324-4213", "1", "Dyslexia"),
+("Jackie", "Bronson", "bronson@mail.com", "Bronson, Tom", "809 Bronze St", "555-324-5679", "3"),
+("Molly", "Heartly", "heartly@mail.com", "Heartly, Peter", "312 Eagle Drive", "3"),
+('Brian', 'Stevenson', 'stevenson@mail.com', 'Stevenson, Benjamin', '432 Oak Drive', "1"),
+('Jack', 'Nottingham', 'nottingham@mail.com', 'Nottingham, Helen', '726 Lake Drive', 'Peanut Allergy', '2'),
+('Adam', 'Johnson', 'johnson@mail.com', 'Johnson, Brenda', '555-293-4454', '132 Henly Ave', '1'),
+('Abraham', 'Montgomery', 'montgomery@mail.com', 'Montgomery, Lisa', '555-345-2718', '315 Maple Rd', 'ADHD', '2'),
+('Sarah', 'Peterson', 'peterson@mail.com', 'Peterson, Oliver', '555-627-3924', '155 Oak Lane', '3')
+;
 
 INSERT INTO Assignments (assignment_name, points_possible, ClassId) VALUES 
 ("Book Report", "100", "3"),
