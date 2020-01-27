@@ -1,14 +1,14 @@
 // The API object contains methods for each kind of request we'll make
 var API = {
-  getUser: function(){ 
+  getUser: function () {
     console.log("ajax getUser call");
     return $.ajax({
-      url: "api/user/:id", 
+      url: "api/user/:id",
       type: "GET"
-    })
+    });
   },
 
-  getClasses: function() {
+  getClasses: function () {
     console.log("ajax getClasses call");
     return $.ajax({
       url: "api/classes",
@@ -16,7 +16,7 @@ var API = {
     });
   },
 
-  getOneClass: function() {
+  getOneClass: function () {
     console.log("ajax get Oneclass call");
     return $.ajax({
       url: "api/classes/:id",
@@ -24,14 +24,13 @@ var API = {
     });
   },
 
-  deleteExample: function(id) {
+  deleteExample: function (id) {
     return $.ajax({
       url: "api/examples/" + id,
       type: "DELETE"
     });
   }
 };
-
 
 $(document).ready(function () {
   //Add class to database
@@ -184,6 +183,30 @@ $(document).ready(function () {
       url: "/api/students/assignments",
       method: "POST",
       data: studentAssignmentObj
+    }).then(function () {
+      location.reload();
+    });
+  });
+
+  //Delete Classes
+  $(".class-delete-btn").on("click", function (e) {
+    e.preventDefault();
+    // Send the DELETE request.
+    $.ajax({
+      type: "DELETE",
+      url: "/api/classes/" + this.name
+    }).then(function () {
+      location.reload();
+    });
+  });
+
+  //Delete Classes
+  $(".student-delete-btn").on("click", function (e) {
+    e.preventDefault();
+    // Send the DELETE request.
+    $.ajax({
+      type: "DELETE",
+      url: "/api/studnets/:id" + this.name
     }).then(function () {
       location.reload();
     });
