@@ -1,38 +1,44 @@
-// The API object contains methods for each kind of request we'll make
-var API = {
-  getUser: function () {
-    console.log("ajax getUser call");
-    return $.ajax({
-      url: "api/user/:id",
-      type: "GET"
-    });
-  },
-
-  getClasses: function () {
-    console.log("ajax getClasses call");
-    return $.ajax({
-      url: "api/classes",
-      type: "GET"
-    });
-  },
-
-  getOneClass: function () {
-    console.log("ajax get Oneclass call");
-    return $.ajax({
-      url: "api/classes/:id",
-      type: "GET"
-    });
-  },
-
-  deleteExample: function (id) {
-    return $.ajax({
-      url: "api/examples/" + id,
-      type: "DELETE"
-    });
-  }
-};
-
 $(document).ready(function () {
+  // ==================================================
+  // REQUEST LOGIC
+  // ==================================================
+  // The API object contains methods for each kind of request we'll make
+  var API = {
+    getUser: function () {
+      console.log("ajax getUser call");
+      return $.ajax({
+        url: "api/user/:id",
+        type: "GET"
+      })
+    },
+
+    getClasses: function () {
+      console.log("ajax getClasses call");
+      return $.ajax({
+        url: "api/classes",
+        type: "GET"
+      });
+    },
+
+    getOneClass: function () {
+      console.log("ajax get Oneclass call");
+      return $.ajax({
+        url: "api/classes/:id",
+        type: "GET"
+      });
+    },
+
+    deleteExample: function (id) {
+      return $.ajax({
+        url: "api/examples/" + id,
+        type: "DELETE"
+      });
+    }
+  };
+
+  // ==================================================
+  // BUTTON LOGIC
+  // ==================================================
   //Add class to database
   $("#addclasssubmit").on("click", function (e) {
     e.preventDefault();
@@ -51,6 +57,18 @@ $(document).ready(function () {
       url: "/api/classes",
       method: "POST",
       data: classObj
+    }).then(function () {
+      location.reload();
+    });
+  });
+  // Delete Class from Database
+  $(".class-delete-btn").on("click", function (e) {
+    e.preventDefault();
+    // console.log(this.name);
+
+    $.ajax({
+      type: "DELETE",
+      url: "/api/classes/" + this.name
     }).then(function () {
       location.reload();
     });

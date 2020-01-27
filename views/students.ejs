@@ -6,9 +6,9 @@
 <div class="container content">
     <h2>
         <img class="profile-img" src="https://via.placeholder.com/150" alt="Student Picture">
-        <span class="section-header-space">last_name, first_name</span>
+        <span class="section-header-space"><%= studentData.last_name %>, <%= studentData.first_name %></span>
         <div class="float-right add-remove">
-            <a href="/index"><i class="fas fa-arrow-circle-left"></i></a>
+            <a href="/classes/<%= studentData.ClassId %>"><i class="fas fa-arrow-circle-left"></i></a>
         </div>
     </h2>
     <hr>
@@ -23,21 +23,21 @@
                 <hr>
                 <div class="contact-details">
                     <p>
-                        <a class="muted-link" href="mailto:email"><i class="fas fa-at"></i>
-                            <span class="section-header-space">email</span>
+                        <a class="muted-link" href="mailto:<%= studentData.email %>"><i class="fas fa-at"></i>
+                            <span class="section-header-space"><%= studentData.email %></span>
                         </a>
                     </p>
                     <p>
                         <i class="fas fa-home"></i>
-                        <span class="section-header-space">address</span>
+                        <span class="section-header-space"><%= studentData.address %></span>
                     </p>
                     <p>
                         <i class="fas fa-user-friends"></i>
-                        <span class="section-header-space">contact_name</span>
+                        <span class="section-header-space"><%= studentData.contact_name %></span>
                     </p>
                     <p>
                         <i class="fas fa-phone"></i>
-                        <span class="section-header-space">contact_phone</span>
+                        <span class="section-header-space"><%= studentData.contact_phone %></span>
                     </p>
                 </div>
             </div>
@@ -47,15 +47,15 @@
                   <i class="far fa-edit"></i>
                   <span class="section-header-space">Notes</span>
                   <div class="float-right add-remove">
-                    <i class="fas fa-plus" data-toggle="modal" data-target="#addnote" style="color: #5f6caf;"></i>
+                    <i class="fas fa-plus" data-toggle="modal" data-target="#addnote"></i>
                   </div>
                   <%- include('partials/addnote') -%>
                 </h4>
                 <hr>
-                <div class="overview-item">notes notes notes notes notes notes notes notes notes notes notes notes notes notes
-                  notes notes notes</div>
-                <div class="overview-item">notes notes notes notes notes notes notes notes notes notes notes notes notes notes
-                  notes notes notes</div>
+                <div class="overview-item">
+                  <%= studentData.notes %>
+                  <a class="float-right delete-btn" href="#"><i class="fas fa-trash-alt"></i></a>
+                </div>
               </div>
             </div>
             <div class="row detail-view">
@@ -74,7 +74,7 @@
                   <i class="fas fa-clipboard-list"></i>
                   <span class="section-header-space">Assignments</span>
                   <div class="float-right add-remove">
-                    <i class="fas fa-plus" data-toggle="modal" data-target="#addstudentassignment" style="color: #5f6caf;"></i>
+                    <i class="fas fa-plus" data-toggle="modal" data-target="#addstudentassignment"></i>
                   </div>
                   <%- include('partials/addstudentassignment') -%>
                 </h4>

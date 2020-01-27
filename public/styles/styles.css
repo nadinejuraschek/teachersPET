@@ -162,7 +162,8 @@ footer {
 }
 .signin-header,
   .signup-link-btn,
-  .add-remove a{
+  .add-remove a,
+  .section-header a {
     color: #5f6caf;
 }
 .signup-link-btn:hover {

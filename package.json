@@ -1,7 +1,7 @@
 {
-  "name": "project-two",
+  "name": "teachersPET",
   "version": "1.0.0",
-  "description": "Project 2 Starter",
+  "description": "A Class Management Tool for all educators. Individual student data, assignments, and lesson plans can be added, deleted, and displayed for each class. Built with Node.js, jQuery, Sequelize, and Bootstrap.",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
