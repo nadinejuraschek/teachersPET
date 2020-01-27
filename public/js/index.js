@@ -9,7 +9,7 @@ $(document).ready(function () {
       return $.ajax({
         url: "api/user/:id",
         type: "GET"
-      })
+      });
     },
 
     getClasses: function () {
@@ -129,7 +129,7 @@ $(document).ready(function () {
         .trim(),
       notes: $("#studentmessagetext")
         .val()
-        .trim()
+        .trim(),
     };
     console.log(studentObj);
 
