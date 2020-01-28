@@ -29,7 +29,10 @@ app.post('/api/user/signout', function(req, res) {
 // Load index page
 app.get("/index", function(req, res) {
   if(req.user){
-    Promise.all([db.User.findOne({ where: {id: req.user }}), db.Class.findAll()]).then(function(data) {
+    Promise.all([
+      db.User.findOne({ where: {id: req.user }}), 
+      db.Class.findAll()
+    ]).then(function(data) {
       let userName = data[0].first_name;
       // console.log(userName);
       let classData = data[1];
@@ -50,37 +53,45 @@ app.get("/classes/:id", function(req, res) {
       [
         db.Class.findOne({ where: { id: class_id }}), 
         db.Student.findAll({ where: { ClassId: class_id }}),
-        db.Lessonplan.findAll({ where: { ClassId: class_id }})
-        // , db.Assignment.findAll({ where: { ClassId: class_id }})
+        db.Lessonplan.findAll({ where: { ClassId: class_id }}),
+        db.Assignment.findAll({ where: {ClassId: class_id}})
+ 
       ]).then((data) => {
+        console.log(data)
       let classData = data[0];
       let studentData = data[1];
       let lessonplanData = data[2];
-      // let assignmentData = data[3];
+      let assignmentData = data[3];
+
+    
 
       // TEST
-      // console.log(classData);
-      // console.log(studentData);
-      // console.log(lessonplanData);
-      // console.log(assignmentData);
+      console.log(classData);
+      console.log(studentData);
+      console.log(lessonplanData);
+      console.log(assignmentData);
+ 
 
-      res.render("classes", { classData: classData, studentData: studentData, lessonplanData: lessonplanData });
+      res.render("classes", { classData: classData, studentData: studentData, lessonplanData: lessonplanData, assignmentData: assignmentData});
     });
   } else {
   res.render("login");
   }
 });
+
 app.get("/students/:id", function(req, res) {
   if(req.user){
     let student_id = req.params.id;
     Promise.all(
       [
-        db.Student.findOne({ where: { id: student_id }})
+        db.Student.findOne({ where: { id: student_id }}),
+        
       ]).then((data) => {
       let studentData = data[0];
+    
 
       // TEST
-      // console.log(studentData);
+      console.log(studentData);
 
       res.render("students", { studentData: studentData });
     });
@@ -103,6 +114,9 @@ app.get("/classes/lessonplan/:id", function(req, res) {
   res.render("login");
   }
 });
+
+
+
 
 // ==================================================
 // CALENDAR

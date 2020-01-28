@@ -12,10 +12,10 @@ module.exports = function(sequelize, DataTypes) {
   );
   Class.associate = function(models) {
     Class.belongsTo(models.User);
-
     Class.hasMany(models.Student);
     Class.hasMany(models.Lessonplan);
     Class.hasMany(models.Assignment);
+  
   };
 
   return Class;

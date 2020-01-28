@@ -79,7 +79,20 @@
                   <%- include('partials/addstudentassignment') -%>
                 </h4>
                 <hr>
-                <table>
+                <!-- <div class="row">
+                  <% for ( i = 0 ; i < assignmentData.length; i++) { 
+                    if (assignmentData[i].StudentId === studentData.id) %>
+                  <div class="col-11 section overview-item">
+                    <a href="/assignments/<%= assignmentData[i].id %>">
+                      <h3 class="overview-header">
+                        <%= classData[i].class_name %>
+                        <a class="float-right delete-btn" href="#"><i class="fas fa-trash-alt"></i></a>
+                      </h3>
+                    </a>
+                  </div>
+                  <% } %>
+                </div> -->
+                <!-- <table>
                   <th>
                   <td>Assignment</td>
                   <td>Rating</td>
@@ -109,7 +122,7 @@
                     <td>rating</td>
                     <td>notes</td>
                   </tr>
-                </table>
+                </table> -->
             </div>
         </div>
     </div>
