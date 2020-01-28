@@ -15,6 +15,7 @@ module.exports = function(sequelize, DataTypes) {
     Class.hasMany(models.Student);
     Class.hasMany(models.Lessonplan);
     Class.hasMany(models.Assignment);
+  
   };
 
   return Class;

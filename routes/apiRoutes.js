@@ -86,27 +86,7 @@ app.delete("/api/classes/:id", function (req, res) {
   });
 });
 
-// ==================================================
-// ASSIGNMENTS
-// ==================================================
-// Get all assignments in a class
-app.get("/api/assignments/classes/:id", function (req, res) {
-  db.Assignment.findAll({ where: { ClassId: req.params.id } }).then(function (project2_db) {
-    res.json(project2_db);
-  });
-});
-// Create a new assignment
-app.post("/api/assignments", function (req, res) {
-  db.Assignment.create(req.body).then(function (project2_db) {
-    res.json(project2_db);
-  });
-});
-// Delete an assignment by id
-app.delete("/api/students/:id", function (req, res) {
-  db.Assignment.destroy({ where: { id: req.params.id } }).then(function (project2_db) {
-    res.json(project2_db);
-  });
-});
+
 
 // ==================================================
 // STUDENTS
@@ -192,30 +172,18 @@ app.delete("/api/students/notes/:id", function (req, res) {
   });
 });
 // ==================================================
-// STUDENT ASSIGNMENTS
+// ASSIGNMENTS
 // ==================================================
-// Get all Students Assignment
-app.get("/api/students/assignments", function (req, res) {
-  db.StudentAssignment.findAll({}).then(function (project2_db) {
+// app.get("/api/assignments", function (req, res) {
+//   db.Assignment.findAll({}).then(function (project2_db) {
+//     res.json(project2_db);
+//   });
+// });
+
+app.get("/api/classes/assignments/:id", function (req, res) {
+  db.Assignment.findAll({ where: {ClassId : req.params.id}}).then(function (project2_db) {
     res.json(project2_db);
   });
 });
-// Get one Student Assignment
-app.get("/api/students/assignments/:id", function (req, res) {
-  db.StudentAssignment.findAll({ where: { id: req.params.id } }).then(function (project2_db) {
-    res.json(project2_db);
-  });
-});
-// Create a new Student Assignment
-app.post("/api/students/assignments", function (req, res) {
-  db.StudentAssignment.create(req.body).then(function (project2_db) {
-    res.json(project2_db);
-  });
-});
-// Delete a Student assignment by id
-app.delete("/api/students/assignments/:id", function (req, res) {
-  db.Assignment.destroy({ where: { id: req.params.id } }).then(function (project2_db) {
-    res.json(project2_db);
-  });
-});
+
 };

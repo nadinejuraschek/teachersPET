@@ -42,16 +42,18 @@
         </div>
         <%- include('partials/addassignment') -%>
       </h4>
-    </div>
       <hr>
-      <!-- <ol>
-      <% for( var i = 0; i < assignmentData.length; i++ ) { %>
+      <ol>
+        <% for( var i = 0; i < assignmentData.length; i++ ) { %>
         <li>
-          <a href="/assignments/<%= assignmentData[i].id %>"> <%= assignmentData[i].assignment_name %></a>
+          <a href="/classes/assignments<%= assignmentData[i].id %>"> <%= assignmentData[i].assignment_name%></a>
           <a class="float-right delete-btn" href="#"><i class="fas fa-trash-alt"></i></a>
         </li>
         <% } %>
-      </ol> -->
+      </ol>
+    </div>
+     
+      
       <!-- <p>
         <a href="#">
           task_name</a>

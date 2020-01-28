@@ -53,22 +53,26 @@ app.get("/classes/:id", function(req, res) {
       [
         db.Class.findOne({ where: { id: class_id }}), 
         db.Student.findAll({ where: { ClassId: class_id }}),
-        db.Lessonplan.findAll({ where: { ClassId: class_id }})
-        // db.Assignment.findAll({ where: {ClassId: class_id}})
+        db.Lessonplan.findAll({ where: { ClassId: class_id }}),
+        db.Assignment.findAll({ where: {ClassId: class_id}})
+ 
       ]).then((data) => {
+        console.log(data)
       let classData = data[0];
       let studentData = data[1];
       let lessonplanData = data[2];
-      // let assignmentData = data[3];
+      let assignmentData = data[3];
+
     
 
       // TEST
-      // console.log(classData);
-      // console.log(studentData);
-      // console.log(lessonplanData);
-      // console.log(assignmentData);
+      console.log(classData);
+      console.log(studentData);
+      console.log(lessonplanData);
+      console.log(assignmentData);
+ 
 
-      res.render("classes", { classData: classData, studentData: studentData, lessonplanData: lessonplanData});
+      res.render("classes", { classData: classData, studentData: studentData, lessonplanData: lessonplanData, assignmentData: assignmentData});
     });
   } else {
   res.render("login");
@@ -110,6 +114,9 @@ app.get("/classes/lessonplan/:id", function(req, res) {
   res.render("login");
   }
 });
+
+
+
 
 // ==================================================
 // CALENDAR
