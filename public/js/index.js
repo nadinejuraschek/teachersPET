@@ -65,7 +65,7 @@ $(document).ready(function () {
   //Add Assignment to Database CLass View
   $("#addassignmentsubmit").on("click", function (e) {
     e.preventDefault();
-    let ClassId = this.name;
+  
     var assignObj = {
       // eslint-disable-next-line camelcase
       assignment_name: $("#nameofassignment")
@@ -76,7 +76,7 @@ $(document).ready(function () {
       notes: $("#assignmentmessagetext")
         .val()
         .trim(),
-      ClassId: ClassId
+    
     };
     console.log(assignObj);
 
