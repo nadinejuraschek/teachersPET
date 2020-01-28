@@ -130,6 +130,7 @@ $(document).ready(function () {
       notes: $("#studentmessagetext")
         .val()
         .trim(),
+      ClassId: $("#classid").val()
     };
     console.log(studentObj);
 
@@ -225,6 +226,18 @@ $(document).ready(function () {
     $.ajax({
       type: "DELETE",
       url: "/api/studnets/:id" + this.name
+    }).then(function () {
+      location.reload();
+    });
+  });
+
+  //Lesson Plan Classes
+  $(".lesson-delete-btn").on("click", function (e) {
+    e.preventDefault();
+    // Send the DELETE request.
+    $.ajax({
+      type: "DELETE",
+      url: "/api/lessonplans/:id" + this.name
     }).then(function () {
       location.reload();
     });
