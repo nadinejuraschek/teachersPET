@@ -26,8 +26,10 @@
       <ol>
         <% for( var i = 0; i < studentData.length; i++ ) { %>
         <li>
-          <a href="/students/<%= studentData[i].id %>"> <%= studentData[i].last_name %>, <%= studentData[i].first_name %></a>
-          <a class="float-right delete-btn" href="#"><i class="fas fa-trash-alt"></i></a>
+          <a href="/students/<%= studentData[i].id %>"> <%= studentData[i].last_name %>,
+            <%= studentData[i].first_name %></a>
+          <a class="float-right delete-btn student-delete-btn" href="" name="<%= studentData[i].id%>"><i
+              class="fas fa-trash-alt"></i></a>
         </li>
         <% } %>
       </ol>
@@ -88,7 +90,7 @@
           <div class="overview-item">
             <h3 class="lesson-date">
               <%= lessonplanData[i].lessonplan_name %>
-              <a class="float-right delete-btn" href="#"><i class="fas fa-trash-alt"></i></a>
+              <a class="float-right lessons-delete-btn" href="#"><i class="fas fa-trash-alt"></i></a>
             </h3>
             <p><%= lessonplanData[i].notes %></p>
           </div>

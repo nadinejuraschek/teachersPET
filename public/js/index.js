@@ -1,7 +1,7 @@
 $(document).ready(function () {
-// ==================================================
-// REQUEST LOGIC
-// ==================================================
+  // ==================================================
+  // REQUEST LOGIC
+  // ==================================================
   // The API object contains methods for each kind of request we'll make
   // var API = {
   //   getUser: function(){ 
@@ -36,9 +36,9 @@ $(document).ready(function () {
   //   }
   // };
 
-// ==================================================
-// BUTTON LOGIC
-// ==================================================
+  // ==================================================
+  // BUTTON LOGIC
+  // ==================================================
   //Add class to database
   $("#addclasssubmit").on("click", function (e) {
     e.preventDefault();
@@ -65,13 +65,13 @@ $(document).ready(function () {
   $(".class-delete-btn").on("click", function (e) {
     e.preventDefault();
     // console.log(this.name);
-    
+
     $.ajax({
-       type: "DELETE",
-       url: "/api/classes/" + this.name
-     }).then(function() {
-       location.reload();
-     });
+      type: "DELETE",
+      url: "/api/classes/" + this.name
+    }).then(function () {
+      location.reload();
+    });
   });
 
   //Add Assignment to Database CLass View
@@ -129,7 +129,8 @@ $(document).ready(function () {
         .trim(),
       notes: $("#studentmessagetext")
         .val()
-        .trim()
+        .trim(),
+      ClassId: $("#classid").val()
     };
     console.log(studentObj);
 
@@ -201,6 +202,42 @@ $(document).ready(function () {
       url: "/api/students/assignments",
       method: "POST",
       data: studentAssignmentObj
+    }).then(function () {
+      location.reload();
+    });
+  });
+
+  //Delete Classes
+  $(".class-delete-btn").on("click", function (e) {
+    e.preventDefault();
+    // Send the DELETE request.
+    $.ajax({
+      type: "DELETE",
+      url: "/api/classes/" + this.name
+    }).then(function () {
+      location.reload();
+    });
+  });
+
+  //Delete Classes
+  $(".student-delete-btn").on("click", function (e) {
+    e.preventDefault();
+    // Send the DELETE request.
+    $.ajax({
+      type: "DELETE",
+      url: "/api/studnets/:id" + this.name
+    }).then(function () {
+      location.reload();
+    });
+  });
+
+  //Lesson Plan Classes
+  $(".lesson-delete-btn").on("click", function (e) {
+    e.preventDefault();
+    // Send the DELETE request.
+    $.ajax({
+      type: "DELETE",
+      url: "/api/lessonplans/:id" + this.name
     }).then(function () {
       location.reload();
     });

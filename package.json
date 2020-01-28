@@ -32,5 +32,18 @@
     "mocha": "^6.1.4",
     "nodemon": "^2.0.2",
     "prettier": "^1.17.1"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nadinejuraschek/teachersPET.git"
+  },
+  "keywords": [],
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/nadinejuraschek/teachersPET/issues"
+  },
+  "homepage": "https://github.com/nadinejuraschek/teachersPET#readme"
 }
