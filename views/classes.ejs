@@ -50,7 +50,9 @@
         <% for( var i = 0; i < assignmentData.length; i++ ) { %>
         <li>
           <a href="/classes/assignments<%= assignmentData[i].id %>"> <%= assignmentData[i].assignment_name%></a>
-          <a class="float-right delete-btn" href="#"><i class="fas fa-trash-alt"></i></a>
+
+          <a class="float-right assignment-delete-btn" name="<%= assignmentData[i].id %>" href="#"><i class="fas fa-trash-alt"></i></a>
+
         </li>
         <% } %>
       </ol>
@@ -91,7 +93,7 @@
           <div class="overview-item">
             <h3 class="lesson-date">
               <%= lessonplanData[i].lessonplan_name %>
-              <a class="float-right lessons-delete-btn" href="#"><i class="fas fa-trash-alt"></i></a>
+              <a class="float-right lessonplan-delete-btn" href="#" name="<%= lessonplanData[i].id %>"><i class="fas fa-trash-alt"></i></a>
             </h3>
             <p><%= lessonplanData[i].notes %></p>
           </div>

@@ -66,10 +66,10 @@ app.get("/classes/:id", function(req, res) {
     
 
       // TEST
-      console.log(classData);
-      console.log(studentData);
-      console.log(lessonplanData);
-      console.log(assignmentData);
+      // console.log(classData);
+      // console.log(studentData);
+      // console.log(lessonplanData);
+      // console.log(assignmentData);
  
 
       res.render("classes", { classData: classData, studentData: studentData, lessonplanData: lessonplanData, assignmentData: assignmentData});
