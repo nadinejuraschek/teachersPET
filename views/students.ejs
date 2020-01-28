@@ -7,6 +7,7 @@
     <h2>
         <img class="profile-img" src="https://via.placeholder.com/150" alt="Student Picture">
         <span class="section-header-space"><%= studentData.last_name %>, <%= studentData.first_name %></span>
+        <span class="badge badge-id">CLASS ID: <%= studentData.id %></span>
         <div class="float-right add-remove">
             <a href="/classes/<%= studentData.ClassId %>"><i class="fas fa-arrow-circle-left"></i></a>
         </div>
@@ -80,16 +81,11 @@
                 </h4>
                 <hr>
                 <table>
-                  <th>
-                  <td>Assignment</td>
-                  <td>Rating</td>
-                  <td>Notes</td>
-                  </th>
                   <tr>
-                    <td><input type="checkbox"></td>
-                    <td>task_name</td>
-                    <td>rating</td>
-                    <td>notes</td>
+                    <th></th>
+                    <th>Assignment</th>
+                    <th>Rating</th>
+                    <th>Notes</th>
                   </tr>
                   <tr>
                     <td><input type="checkbox"></td>
@@ -105,6 +101,12 @@
                   </tr>
                   <tr>
                     <td><input type="checkbox"></td>
+                    <td>task_name</td>
+                    <td>rating</td>
+                    <td>notes</td>
+                  </tr>
+                  <tr>
+                    <td><input class="checkbox-col" type="checkbox"></td>
                     <td>task_name</td>
                     <td>rating</td>
                     <td>notes</td>

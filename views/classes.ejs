@@ -7,6 +7,7 @@
   <h2>
     <i class="fas fa-chalkboard"></i>
     <span class="section-header-space"><%= classData.class_name %></span>
+    <span class="badge badge-id">CLASS ID: <%= classData.id %></span>
     <div class="float-right add-remove">
       <a href="/index"><i class="fas fa-arrow-circle-left"></i></a>
     </div>
@@ -26,9 +27,9 @@
       <ol>
         <% for( var i = 0; i < studentData.length; i++ ) { %>
         <li>
-          <a href="/students/<%= studentData[i].id %>"> <%= studentData[i].last_name %>,
+          <a class="student-link" href="/students/<%= studentData[i].id %>"> <%= studentData[i].last_name %>,
             <%= studentData[i].first_name %></a>
-          <a class="float-right delete-btn student-delete-btn" href="" name="<%= studentData[i].id%>"><i
+          <a class="float-right delete-btn student-delete-btn" name="<%= studentData[i].id %>"><i
               class="fas fa-trash-alt"></i></a>
         </li>
         <% } %>

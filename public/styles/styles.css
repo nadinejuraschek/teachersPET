@@ -224,8 +224,9 @@ footer {
   font-size: 3rem;
   margin-left: 1rem;
 }
-.detail-view {
-  margin-top: 2rem;
+.badge-id {
+  background-color: #ff8364;
+  font-size: 0.75rem;
 }
 .add-btn {
   border: none;
@@ -245,6 +246,31 @@ footer {
 .lesson-date {
   font-size: 1.25rem;
   font-weight: 700;
+}
+tr:first-child {
+  border-bottom: 1px solid #373F47;
+}
+th {
+  padding: 0.25rem;
+}
+td:first-child {
+  width: 2rem;
+}
+td {
+  border-right: 1px solid #373F47;
+  padding: 0.25rem;
+  width: 8rem;
+}
+td:nth-child(4) {
+  border: none;
+  width: 14rem;
+}
+.student-link {
+  color: #373F47;
+}
+.student-link:hover {
+  font-weight: 800;
+  text-decoration: none;
 }
 
 /************************************************

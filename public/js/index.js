@@ -61,18 +61,6 @@ $(document).ready(function () {
       location.reload();
     });
   });
-  // Delete Class from Database
-  $(".class-delete-btn").on("click", function (e) {
-    e.preventDefault();
-    // console.log(this.name);
-
-    $.ajax({
-      type: "DELETE",
-      url: "/api/classes/" + this.name
-    }).then(function () {
-      location.reload();
-    });
-  });
 
   //Add Assignment to Database CLass View
   $("#addassignmentsubmit").on("click", function (e) {
@@ -219,13 +207,13 @@ $(document).ready(function () {
     });
   });
 
-  //Delete Classes
+  //Delete Students
   $(".student-delete-btn").on("click", function (e) {
     e.preventDefault();
     // Send the DELETE request.
     $.ajax({
       type: "DELETE",
-      url: "/api/studnets/:id" + this.name
+      url: "/api/students/" + this.name
     }).then(function () {
       location.reload();
     });
@@ -237,7 +225,7 @@ $(document).ready(function () {
     // Send the DELETE request.
     $.ajax({
       type: "DELETE",
-      url: "/api/lessonplans/:id" + this.name
+      url: "/api/lessonplans/" + this.name
     }).then(function () {
       location.reload();
     });
