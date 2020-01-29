@@ -195,7 +195,7 @@ app.delete("/api/assignments/:id", function (req, res) {
 });
 
 // Create a new assignment
-app.post("/api/assignments/:id", function (req, res) {
+app.post("/api/assignments/", function (req, res) {
   db.Assignment.create(req.body).then(function (project2_db) {
     res.json(project2_db);
   });
