@@ -138,7 +138,7 @@ $(document).ready(function () {
     e.preventDefault();
     var lessonObj = {
       // eslint-disable-next-line camelcase
-      assignment_name: $("#nameoflesson")
+      lessonplan_name: $("#nameoflesson")
         .val()
         .trim(),
       notes: $("#lessonmessagetext")
