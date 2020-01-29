@@ -364,7 +364,11 @@ overflow: scroll;
   margin: 0.25rem auto;
   text-align: center;
 }
-.delete-btn {
+.delete-btn,
+.class-delete-btn,
+.studnet-delete-btn,
+.lessonplan-delete-btn,
+.assignment-delete-btn {
   font-size: 0.8rem;
 }
 

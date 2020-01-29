@@ -65,7 +65,7 @@ $(document).ready(function () {
   //Add Assignment to Database CLass View
   $("#addassignmentsubmit").on("click", function (e) {
     e.preventDefault();
-  
+
     var assignObj = {
       // eslint-disable-next-line camelcase
       assignment_name: $("#nameofassignment")
@@ -76,7 +76,7 @@ $(document).ready(function () {
       notes: $("#assignmentmessagetext")
         .val()
         .trim(),
-    
+      ClassId: $("#ClassId").val()
     };
     console.log(assignObj);
 
@@ -143,7 +143,8 @@ $(document).ready(function () {
         .trim(),
       notes: $("#lessonmessagetext")
         .val()
-        .trim()
+        .trim(),
+      ClassId: $("#classId").val()
     };
     console.log(lessonObj);
 
