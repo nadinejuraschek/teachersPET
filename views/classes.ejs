@@ -29,7 +29,7 @@
         <li>
           <a class="student-link" href="/students/<%= studentData[i].id %>"> <%= studentData[i].last_name %>,
             <%= studentData[i].first_name %></a>
-          <a class="float-right delete-btn student-delete-btn" name="<%= studentData[i].id %>"><i
+          <a class="float-right delete-btn student-delete-btn" href="" name="<%= studentData[i].id %>"><i
               class="fas fa-trash-alt"></i></a>
         </li>
         <% } %>
@@ -46,33 +46,15 @@
         <%- include('partials/addassignment') -%>
       </h4>
       <hr>
-      <ol>
+      <ul>
         <% for( var i = 0; i < assignmentData.length; i++ ) { %>
         <li>
-          <a href="/classes/assignments<%= assignmentData[i].id %>"> <%= assignmentData[i].assignment_name%></a>
-          <a class="float-right delete-btn" href="#"><i class="fas fa-trash-alt"></i></a>
+          <a class="student-link" href="/classes/assignments/<%= assignmentData[i].id %>"> <%= assignmentData[i].assignment_name%></a>
+          <a class="float-right delete-btn assignment-delete-btn" href="#"><i class="fas fa-trash-alt"></i></a>
         </li>
         <% } %>
-      </ol>
+      </ul>
     </div>
-     
-      
-      <!-- <p>
-        <a href="#">
-          task_name</a>
-      </p>
-      <p>
-        <a href="#">
-          task_name</a>
-      </p>
-      <p>
-        <a href="#">
-          task_name</a>
-      </p>
-    </div>
-    </h4> -->
-    <hr>
-
   </div>
   <div class="row details-view">
     <div class="col-12">
