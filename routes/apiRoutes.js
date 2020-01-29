@@ -180,10 +180,24 @@ app.delete("/api/students/notes/:id", function (req, res) {
 //   });
 // });
 
+// Get all assignments with a class id
 app.get("/api/classes/assignments/:id", function (req, res) {
   db.Assignment.findAll({ where: {ClassId : req.params.id}}).then(function (project2_db) {
     res.json(project2_db);
   });
 });
 
+//Delete an assignment
+app.delete("/api/assignments/:id", function (req, res) {
+  db.Assignment.destroy({ where: { id: req.params.id } }).then(function (project2_db) {
+    res.json(project2_db);
+  });
+});
+
+// Create a new assignment
+app.post("/api/assignments/:id", function (req, res) {
+  db.Assignment.create(req.body).then(function (project2_db) {
+    res.json(project2_db);
+  });
+});
 };

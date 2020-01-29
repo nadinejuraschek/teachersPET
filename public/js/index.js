@@ -65,6 +65,7 @@ $(document).ready(function () {
   //Add Assignment to Database CLass View
   $("#addassignmentsubmit").on("click", function (e) {
     e.preventDefault();
+
     var assignObj = {
       // eslint-disable-next-line camelcase
       assignment_name: $("#nameofassignment")
@@ -74,12 +75,13 @@ $(document).ready(function () {
       points_possible: $("#points").val(),
       notes: $("#assignmentmessagetext")
         .val()
-        .trim()
+        .trim(),
+      ClassId: $("#ClassId").val()
     };
     console.log(assignObj);
 
     $.ajax({
-      url: "/api/assignments",
+      url: "/api/assignments/",
       method: "POST",
       data: assignObj
     }).then(function () {
@@ -136,12 +138,13 @@ $(document).ready(function () {
     e.preventDefault();
     var lessonObj = {
       // eslint-disable-next-line camelcase
-      assignment_name: $("#nameoflesson")
+      lessonplan_name: $("#nameoflesson")
         .val()
         .trim(),
       notes: $("#lessonmessagetext")
         .val()
-        .trim()
+        .trim(),
+      ClassId: $("#classId").val()
     };
     console.log(lessonObj);
 
@@ -219,8 +222,8 @@ $(document).ready(function () {
     });
   });
 
-  //Lesson Plan Classes
-  $(".lesson-delete-btn").on("click", function (e) {
+  //Delete Lesson Plan 
+  $(".lessonplan-delete-btn").on("click", function (e) {
     e.preventDefault();
     // Send the DELETE request.
     $.ajax({
@@ -230,5 +233,19 @@ $(document).ready(function () {
       location.reload();
     });
   });
+
+  //Delete Assignment
+  $(".assignment-delete-btn").on("click", function (e) {
+    e.preventDefault();
+    console.log("delete")
+    // Send the DELETE request.
+    $.ajax({
+      type: "DELETE",
+      url: "/api/assignments/" + this.name
+    }).then(function () {
+      location.reload();
+    });
+  });
+
 });
 
