@@ -29,7 +29,7 @@
         <li>
           <a class="student-link" href="/students/<%= studentData[i].id %>"> <%= studentData[i].last_name %>,
             <%= studentData[i].first_name %></a>
-          <a class="float-right delete-btn student-delete-btn" href="" name="<%= studentData[i].id %>"><i
+          <a class="float-right delete-btn student-delete-btn student-link" href="" name="<%= studentData[i].id %>"><i
               class="fas fa-trash-alt"></i></a>
         </li>
         <% } %>
@@ -49,9 +49,8 @@
       <ul>
         <% for( var i = 0; i < assignmentData.length; i++ ) { %>
         <li>
-          <a href="/classes/assignments<%= assignmentData[i].id %>"> <%= assignmentData[i].assignment_name%></a>
-
-          <a class="float-right assignment-delete-btn" name="<%= assignmentData[i].id %>" href="#"><i
+          <a class="student-link" href="/classes/assignments<%= assignmentData[i].id %>"> <%= assignmentData[i].assignment_name%></a>
+          <a class="float-right assignment-delete-btn student-link" name="<%= assignmentData[i].id %>" href="#"><i
               class="fas fa-trash-alt"></i></a>
 
         </li>
@@ -76,7 +75,7 @@
           <div class="overview-item">
             <h3 class="lesson-date">
               <%= lessonplanData[i].lessonplan_name %>
-              <a class="float-right lessonplan-delete-btn" href="#" name="<%= lessonplanData[i].id %>"><i
+              <a class="float-right lessonplan-delete-btn student-link" href="#" name="<%= lessonplanData[i].id %>"><i
                   class="fas fa-trash-alt"></i></a>
             </h3>
             <p><%= lessonplanData[i].notes %></p>
