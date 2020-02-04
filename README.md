@@ -3,7 +3,7 @@
 
 ### UC Davis Coding Bootcamp - Project 2
 
-A Class Management Tool for all educators. Individual student data, assignments, and lesson plans can be added, deleted, and displayed for each class. Built with Node.js, jQuery, EJS, Sequelize, and Bootstrap. 
+A Class Management Tool for all educators. Individual student data, assignments, and lesson plans can be added, deleted, and displayed for each class.
 
 ### Team of Developers
 * [Tim Gangl](https://github.com/TimGangl)
