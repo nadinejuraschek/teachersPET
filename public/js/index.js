@@ -2,39 +2,6 @@ $(document).ready(function () {
   // ==================================================
   // REQUEST LOGIC
   // ==================================================
-  // The API object contains methods for each kind of request we'll make
-  // var API = {
-  //   getUser: function(){ 
-  //     console.log("ajax getUser call");
-  //     return $.ajax({
-  //       url: "api/user/:id", 
-  //       type: "GET"
-  //     })
-  //   },
-
-  //   getClasses: function() {
-  //     console.log("ajax getClasses call");
-  //     return $.ajax({
-  //       url: "api/classes",
-  //       type: "GET"
-  //     });
-  //   },
-
-  //   getOneClass: function() {
-  //     console.log("ajax get Oneclass call");
-  //     return $.ajax({
-  //       url: "api/classes/:id",
-  //       type: "GET"
-  //     });
-  //   },
-
-  //   deleteExample: function(id) {
-  //     return $.ajax({
-  //       url: "api/examples/" + id,
-  //       type: "DELETE"
-  //     });
-  //   }
-  // };
 
   // ==================================================
   // BUTTON LOGIC
@@ -246,6 +213,12 @@ $(document).ready(function () {
       location.reload();
     });
   });
+
+  // ==================================================
+  // FOOTER YEAR
+  // ==================================================
+  const year = new Date().getFullYear();
+  $('#footer-year').text(year);
 
 });
 
