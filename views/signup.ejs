@@ -1,21 +1,72 @@
 <%- include('partials/head') -%>
-
 <!-- SIGNUP -->
-<div class="container content content-center mt-5">
-  <h1 class="logo-text-lg text-center">teachersPET</h1>
-  <form class="form-signin">
-    <h2 class="signin-header">Sign Up</h2>
-    <label for="inputEmail" class="sr-only">E-Mail</label>
-    <input type="email" id="inputEmail" class="form-control" placeholder="E-Mail" required="" autofocus="">
-    <label for="first_name" class="sr-only">First Name</label>
-    <input type="text" id="first_name" class="form-control" placeholder="First Name" required="" autofocus="">
-    <label for="last_name" class="sr-only">Last Name</label>
-    <input type="text" id="last_name" class="form-control" placeholder="Last Name" required="" autofocus="">
-    <label for="inputPassword" class="sr-only">Password</label>
-    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
-    <button id="signup-btn" class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
-    <p class="signup-link">Already have an account? <a class="signup-link-btn" href="/login">Log In</a></p>
-  </form>
-</div>
 
-<%- include('partials/footer') -%>
+<div class="container content content-center mt-5">
+
+  <h1 class="logo-text-lg text-center">teachersPET</h1>
+
+  <form class="form-signin">
+
+    <h2 class="signin-header">Sign Up</h2>
+
+    <label for="inputEmail" class="sr-only">E-Mail</label>
+
+    <input
+      type="email"
+      id="inputEmail"
+      class="form-control"
+      placeholder="E-Mail"
+      required=""
+      autofocus=""
+    />
+
+    <label for="firstName" class="sr-only">First Name</label>
+
+    <input
+      type="text"
+      id="firstName"
+      class="form-control"
+      placeholder="First Name"
+      required=""
+      autofocus=""
+    />
+
+    <label for="lastName" class="sr-only">Last Name</label>
+
+    <input
+      type="text"
+      id="lastName"
+      class="form-control"
+      placeholder="Last Name"
+      required=""
+      autofocus=""
+    />
+
+    <label for="inputPassword" class="sr-only">Password</label>
+
+    <input
+      type="password"
+      id="inputPassword"
+      class="form-control"
+      placeholder="Password"
+      required=""
+    />
+
+    <button
+      id="signup-btn"
+      class="btn btn-lg btn-primary btn-block"
+      type="submit"
+    >
+       Sign Up
+    </button>
+
+    <p class="signup-link">
+       Already have an account?
+      <a class="signup-link-btn" href="/login">Log In</a>
+
+    </p>
+
+  </form>
+
+</div>
+ <%- include('partials/footer') -%>

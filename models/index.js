@@ -28,11 +28,7 @@ if (config.use_env_variable) {
 }
 
 tables.forEach(table => {
-  db[table.name] = table;
-  /* table(sequelize).sync().then(data => {
-    logger('Models').info(`Table ${table.name} synced successfully!`);
-    logger('Models').debug('Data: ', data);
-  }).catch(err => logger('Models').error(`Table ${table.name} could not sync. Error: `, err)); */
+  db[table.name] = table(sequelize);
 });
 
 

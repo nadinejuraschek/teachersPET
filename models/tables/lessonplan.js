@@ -1,15 +1,16 @@
 import Sequelize from "sequelize";
+const { DataTypes } = Sequelize;
 
 export const Lessonplan = (sequelize) => {
   const LessonplanTable = sequelize.define(
     "Lessonplan",
     {
       lessonplanName: {
-        type: Sequelize.DataTypes.STRING,
+        type: DataTypes.STRING,
         allowNull: false,
       },
       notes: {
-        type: Sequelize.DataTypes.STRING,
+        type: DataTypes.STRING,
         allowNull: false,
       },
     },

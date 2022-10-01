@@ -43,6 +43,7 @@ const signup = async (req, res) => {
   req.body.email = req.body.email.toLowerCase();
   // has the password
   const password = await bcrypt.hash(req.body.password, 10);
+
   // create user in database
   const user = await db.User.create({
     firstName: req.body.first_name,
@@ -50,16 +51,36 @@ const signup = async (req, res) => {
     email: req.body.email,
     password: password,
   }).then(data => {
-    res.json({ message: 'User successfully created!'});
+    // create cookie for user
+    const token = jwt.sign({ id: user.id }, process.env.APP_SECRET);
+    res.cookie("token", token, {
+      httpOnly: true,
+      maxAge: 1000 * 60 * 60 * 24 * 365, // 1 year cookie
+    });
+    res.json(user);
   }).catch(err => {
     res.json({ message: `Could not create user. Error: ${err}` });
   });
+};
 
-  // create cookie for user
+export const loginGuestUser = async (req, res) => {
+  const user = await db.User.findOne({ where: { email: process.env.GUEST_USER_EMAIL } });
+
+  if (!user) {
+    res.json({message: 'No User found.'});
+    return;
+  };
+
+  const valid = await bcrypt.compare(process.env.GUEST_USER_PASSWORD, user.password);
+  if (!valid) {
+    res.json({message: 'Incorrect password!'});
+    return;
+  };
+
   const token = jwt.sign({ id: user.id }, process.env.APP_SECRET);
-  res.cookie("token", token, {
+  res.cookie('token', token, {
     httpOnly: true,
-    maxAge: 1000 * 60 * 60 * 24 * 365, // 1 year cookie
+    maxAge: 1000 * 60 * 60 * 24 * 365
   });
   res.json(user);
 };
@@ -70,9 +91,10 @@ export const signout = (req, res) => {
 };
 
 export const userApiController = {
-  get: getCurrentUser,
   create: createUser,
+  get: getCurrentUser,
   login: login,
+  loginGuest: loginGuestUser,
   signup: signup,
   signout: signout,
 };

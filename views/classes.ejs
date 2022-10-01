@@ -1,90 +1,180 @@
-<%- include('partials/head') -%>
-
-<%- include('partials/navbar') -%>
-
+<%- include('partials/head') -%> <%- include('partials/navbar') -%>
 <!-- CLASS VIEW -->
+
 <div class="container content">
+
   <h2>
+
     <i class="fas fa-chalkboard"></i>
-    <span class="section-header-space"><%= classData.class_name %></span>
+
+    <span class="section-header-space"><%= classData.className %></span>
+
     <span class="badge badge-id">CLASS ID: <%= classData.id %></span>
+
     <div class="float-right add-remove">
+
       <a href="/index"><i class="fas fa-arrow-circle-left"></i></a>
+
     </div>
+
   </h2>
-  <hr>
+
+  <hr />
+
   <div class="row detail-view">
+
     <div class="col-md-6 col-12 section section-height scroll bg-grey">
+
       <h4 class="section-header">
+
         <i class="fas fa-users"></i>
+
         <span class="section-header-space">Students</span>
+
         <div class="float-right add-remove">
-          <i class="fas fa-plus" data-toggle="modal" data-target="#addstudent"></i>
+
+          <i
+            class="fas fa-plus"
+            data-toggle="modal"
+            data-target="#addstudent"
+          ></i>
+
         </div>
-        <%- include('partials/addstudents') -%>
+         <%- include('partials/addstudents') -%>
       </h4>
-      <hr>
+
+      <hr />
+
       <ol>
-        <% for( var i = 0; i < studentData.length; i++ ) { %>
+         <% for( var i = 0; i < studentData.length; i++ ) { %>
         <li>
-          <a class="student-link" href="/students/<%= studentData[i].id %>"> <%= studentData[i].last_name %>,
-            <%= studentData[i].first_name %></a>
-          <a class="float-right delete-btn student-delete-btn student-link" href="" name="<%= studentData[i].id %>"><i
-              class="fas fa-trash-alt"></i></a>
+
+          <a class="student-link" href="/students/<%= studentData[i].id %>">
+             <%= studentData[i].lastName %>, <%= studentData[i].firstName %>
+          </a>
+
+          <a
+            class="float-right delete-btn student-delete-btn student-link"
+            href=""
+            name="<%= studentData[i].id %>"
+          >
+
+            <i class="fas fa-trash-alt"></i>
+
+          </a>
+
         </li>
-        <% } %>
+         <% } %>
       </ol>
+
     </div>
 
     <div class="col-md-6 col-12 section section-height scroll bg-grey">
+
       <h4 class="section-header">
+
         <i class="fas fa-clipboard-list"></i>
+
         <span class="section-header-space">Assignments</span>
+
         <div class="float-right add-remove" id="#addassignment">
-          <i class="fas fa-plus" data-toggle="modal" data-target="#addassignment"></i>
+
+          <i
+            class="fas fa-plus"
+            data-toggle="modal"
+            data-target="#addassignment"
+          ></i>
+
         </div>
-        <%- include('partials/addassignment') -%>
+         <%- include('partials/addassignment') -%>
       </h4>
-      <hr>
+
+      <hr />
+
       <ul>
-        <% for( var i = 0; i < assignmentData.length; i++ ) { %>
+         <% for( var i = 0; i < assignmentData.length; i++ ) { %>
         <li>
-          <a class="student-link" href="/classes/assignments<%= assignmentData[i].id %>"> <%= assignmentData[i].assignment_name%></a>
-          <a class="float-right assignment-delete-btn student-link" name="<%= assignmentData[i].id %>" href="#"><i
-              class="fas fa-trash-alt"></i></a>
+
+          <a
+            class="student-link"
+            href="/classes/assignments<%= assignmentData[i].id %>"
+          >
+             <%= assignmentData[i].assignmentName %>
+          </a>
+
+          <a
+            class="float-right assignment-delete-btn student-link"
+            name="<%= assignmentData[i].id %>"
+            href="#"
+          >
+
+            <i class="fas fa-trash-alt"></i>
+
+          </a>
 
         </li>
-        <% } %>
+         <% } %>
       </ul>
-    </div>
-  </div>
-  <div class="row details-view">
-    <div class="col-12">
-      <div class="row details-view">
-        <div class="col-12 section section-height scroll bg-grey">
-          <h4 class="section-header">
-            <i class="fas fa-folder-open"></i>
-            <span class="section-header-space">Lesson Plans</span>
-            <div class="float-right add-remove">
-              <i class="fas fa-plus" data-toggle="modal" data-target="#lessonplan"></i>
-            </div>
-            <%- include('partials/addlessonplan') -%>
-          </h4>
-          <hr>
-          <% for( var i = 0; i < lessonplanData.length; i++ ) { %>
-          <div class="overview-item">
-            <h3 class="lesson-date">
-              <%= lessonplanData[i].lessonplan_name %>
-              <a class="float-right lessonplan-delete-btn student-link" href="#" name="<%= lessonplanData[i].id %>"><i
-                  class="fas fa-trash-alt"></i></a>
-            </h3>
-            <p><%= lessonplanData[i].notes %></p>
-          </div>
-          <% } %>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
-<%- include('partials/footer') -%>
+    </div>
+
+  </div>
+
+  <div class="row details-view">
+
+    <div class="col-12">
+
+      <div class="row details-view">
+
+        <div class="col-12 section section-height scroll bg-grey">
+
+          <h4 class="section-header">
+
+            <i class="fas fa-folder-open"></i>
+
+            <span class="section-header-space">Lesson Plans</span>
+
+            <div class="float-right add-remove">
+
+              <i
+                class="fas fa-plus"
+                data-toggle="modal"
+                data-target="#lessonplan"
+              ></i>
+
+            </div>
+             <%- include('partials/addlessonplan') -%>
+          </h4>
+
+          <hr />
+           <% for( var i = 0; i < lessonplanData.length; i++ ) { %>
+          <div class="overview-item">
+
+            <h3 class="lesson-date">
+               <%= lessonplanData[i].lessonplanName %>
+              <a
+                class="float-right lessonplan-delete-btn student-link"
+                href="#"
+                name="<%= lessonplanData[i].id %>"
+              >
+
+                <i class="fas fa-trash-alt"></i>
+
+              </a>
+
+            </h3>
+
+            <p><%= lessonplanData[i].notes %></p>
+
+          </div>
+           <% } %>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+ <%- include('partials/footer') -%>

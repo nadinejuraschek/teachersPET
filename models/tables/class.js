@@ -1,15 +1,16 @@
 import Sequelize from "sequelize";
+const { DataTypes } = Sequelize;
 
 export const Class = (sequelize) => {
   const ClassTable = sequelize.define(
     "Class",
     {
       className: {
-        type: Sequelize.DataTypes.STRING,
+        type: DataTypes.STRING,
         allowNull: false,
       },
       notes: {
-        type: Sequelize.DataTypes.STRING,
+        type: DataTypes.STRING,
         allowNull: false,
       },
     },

@@ -15,6 +15,10 @@ router
   .post(userApiController.login);
 
 router
+  .route('/guestaccount')
+  .post(userApiController.loginGuest);
+
+router
   .route('/user/signup')
   .post(userApiController.signup);
 

@@ -1,31 +1,32 @@
 import Sequelize from "sequelize";
+const { DataTypes } = Sequelize;
 
 export const Student = (sequelize) => {
   const StudentTable = sequelize.define(
     "Student",
     {
       firstName: {
-        type: Sequelize.DataTypes.STRING,
+        type: DataTypes.STRING,
         allowNull: false,
       },
       lastName: {
-        type: Sequelize.DataTypes.STRING,
+        type: DataTypes.STRING,
         allowNull: false,
       },
       email: {
-        type: Sequelize.DataTypes.STRING,
+        type: DataTypes.STRING,
       },
       contactName: {
-        type: Sequelize.DataTypes.STRING,
+        type: DataTypes.STRING,
       },
       contactPhone: {
-        type: Sequelize.DataTypes.STRING,
+        type: DataTypes.STRING,
       },
       address: {
-        type: Sequelize.DataTypes.STRING,
+        type: DataTypes.STRING,
       },
       notes: {
-        type: Sequelize.DataTypes.STRING,
+        type: DataTypes.STRING,
       },
     },
     {

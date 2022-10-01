@@ -1,19 +1,20 @@
 import Sequelize from "sequelize";
+const { DataTypes } = Sequelize;
 
 export const Assignment = (sequelize) => {
   const AssignmentTable = sequelize.define(
     "Assignment",
     {
       assignmentName: {
-        type: Sequelize.DataTypes.STRING,
+        type: DataTypes.STRING,
         allowNull: false,
       },
       pointsPossible: {
-        type: Sequelize.DataTypes.INTEGER,
+        type: DataTypes.INTEGER,
         allowNull: false,
       },
       notes: {
-        type: Sequelize.DataTypes.STRING,
+        type: DataTypes.STRING,
       },
     },
     {
