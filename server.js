@@ -1,27 +1,44 @@
 import * as dotenv from 'dotenv';
 
+import { assignmentApiRoutes } from './routes/api/assignment.js';
+import { classApiRoutes } from './routes/api/class.js';
+import { lessonplansApiRoutes } from './routes/api/lessonplans.js';
+import { studentNotesApiRoutes } from './routes/api/studentNotes.js';
+import { studentsApiRoutes } from './routes/api/students.js';
+import { userApiRoutes } from './routes/api/user.js';
+import { calendarHtmlRoutes } from './routes/html/calendar.js';
+import { classHtmlRoutes } from './routes/html/class.js';
+import { generalHtmlRoutes } from './routes/html/general.js';
+import { studentsHtmlRoutes } from './routes/html/students.js';
+import { userHtmlRoutes } from './routes/html/user.js';
 import cookieParser from 'cookie-parser';
+import chalk from 'chalk';
 import db from "./models/index.js";
 import ejs from "ejs";
 import express from "express";
 import favicon from 'serve-favicon';
+import {fileURLToPath} from 'url';
 import jwt from 'jsonwebtoken';
+import path from 'path';
 
 dotenv.config();
 
-// const app = express();
-// const PORT = process.env.PORT || 3000;
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // MIDDLEWARE
-// app.use(express.urlencoded({ extended: false }));
-// app.use(express.json());
-// app.use(express.static("public"));
-// app.use(favicon(__dirname + '/public/images/favicon.ico'));
-// app.use(cookieParser());
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+app.use(express.static("public"));
+app.use(favicon(__dirname + '/public/images/favicon.ico'));
+app.use(cookieParser());
 
 // LOGIN
-//decode the jwt token
-/* app.use((req, res, next) => {
+// decode the jwt token
+app.use((req, res, next) => {
   //destructure the token
   const { token } = req.cookies;
 
@@ -34,32 +51,38 @@ dotenv.config();
   }
   //carry on the request after the middleware
   next();
-}); */
+});
 
 // EJS
-// app.set("view engine", "ejs");
+app.set("view engine", "ejs");
 
 // ROUTES
-// require("./routes/apiRoutes")(app);
-// require("./routes/htmlRoutes")(app);
+app.use('/api', assignmentApiRoutes);
+app.use('/api/classes', classApiRoutes);
+app.use('/api/lessonplans', lessonplansApiRoutes);
+app.use('/api/students/notes', studentNotesApiRoutes);
+app.use('/api/students', studentsApiRoutes);
+app.use('/api', userApiRoutes);
+app.use('/calendar', calendarHtmlRoutes);
+app.use('/classes', classHtmlRoutes);
+app.use('/', generalHtmlRoutes);
+app.use('/students', studentsHtmlRoutes);
+app.use('/', userHtmlRoutes);
 
-// let syncOptions = { force: false };
+let syncOptions = { force: false };
 
 // If running a test, set syncOptions.force to true
-// clearing the `testdb`
-/* if (process.env.NODE_ENV === "test") {
+// clearing the `teachers_pet_testdb`
+if (process.env.NODE_ENV === "test") {
   syncOptions.force = false;
-} */
+}
 
-// Starting the server, syncing our models ------------------------------------/
-/* db.sequelize.sync(syncOptions).then(function () {
-  app.listen(PORT, function () {
-    console.log(
-      "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
-      PORT,
-      PORT
-    );
+// Starting the server, syncing our models ----------------------------------------------/
+db.sequelize.sync(syncOptions).then(() => {
+  app.listen(PORT, () => {
+    console.log(chalk.green(
+      `🌎 Listening on port ${PORT}. Visit http://localhost:${PORT}/ in your browser.`));
   });
-}); */
+});
 
-// module.exports = app;
+export default app;

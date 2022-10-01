@@ -3,12 +3,9 @@
 import envConfig from '../config/config.json' assert {type: 'json'};
 
 import Sequelize from "sequelize";
-import fs from "fs";
 import {logger} from '../logger/index.js';
-import path from "path";
 import { tables } from './tables/index.js';
 
-// const basename = path.basename(module.filename);
 const env = process.env.NODE_ENV || "development";
 const db = {};
 
@@ -31,25 +28,15 @@ if (config.use_env_variable) {
 }
 
 tables.forEach(table => {
-  table(sequelize).sync().then(data => {
+  db[table.name] = table;
+  /* table(sequelize).sync().then(data => {
     logger('Models').info(`Table ${table.name} synced successfully!`);
     logger('Models').debug('Data: ', data);
-  }).catch(err => logger('Models').error(`Table ${table.name} could not sync. Error: `, err));
-  // db[table.name] = table;
+  }).catch(err => logger('Models').error(`Table ${table.name} could not sync. Error: `, err)); */
 });
 
-/* fs.readdirSync(__dirname)
-.filter(function(file) {
-  return (
-    file.indexOf(".") !== 0 && file !== basename && file.slice(-3) === ".js"
-  );
-})
-.forEach(function(file) {
-  const model = sequelize.import(path.join(__dirname, file));
-  db[model.name] = model;
-});
 
-Object.keys(db).forEach(function(modelName) {
+Object.keys(db).forEach(modelName => {
   if (db[modelName].associate) {
     db[modelName].associate(db);
   }
@@ -57,6 +44,5 @@ Object.keys(db).forEach(function(modelName) {
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
-*/
 
 export default db;

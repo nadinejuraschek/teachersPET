@@ -1,11 +1,11 @@
-USE project2_db;
+USE teachers_pet;
 
-INSERT INTO Classes (class_name) VALUES 
+INSERT INTO Classes (className) VALUES
 ("Creative Writing"),
 ("Philosophy"),
 ("Composition");
 
-INSERT INTO Students (first_name, last_name, address, contact_phone, ClassId, notes) VALUES 
+INSERT INTO Students (firstName, lastName, address, contactPhone, ClassId, notes) VALUES
 ("Henry", "Jacobs", "jacobs@mail.com", "Jacobs, Mary", "521 Maple Rd", "555-257-9562", "2"),
 ("Jill", "Marks", "marks@mail.com", "Marks, Karen", "234 Oak Dr", "555-324-4213", "1", "Dyslexia"),
 ("Jackie", "Bronson", "bronson@mail.com", "Bronson, Tom", "809 Bronze St", "555-324-5679", "3"),
@@ -17,7 +17,7 @@ INSERT INTO Students (first_name, last_name, address, contact_phone, ClassId, no
 ('Sarah', 'Peterson', 'peterson@mail.com', 'Peterson, Oliver', '555-627-3924', '155 Oak Lane', '3')
 ;
 
-INSERT INTO Assignments (assignment_name, points_possible, ClassId) VALUES 
+INSERT INTO Assignments (assignmentName, pointsPossible, ClassId) VALUES
 ("Book Report", "100", "3"),
 ("Essay", "100", "1"),
 ("Argument", "50", "2"),
@@ -25,7 +25,7 @@ INSERT INTO Assignments (assignment_name, points_possible, ClassId) VALUES
 ("Outline", "10", "3"),
 ("Research Paper", "100", "2");
 
-INSERT INTO Lessonplans (lessonplan_name, notes, ClassId) VALUES 
+INSERT INTO Lessonplans (lessonplanName, notes, ClassId) VALUES
 ("Week 1", "Assign outline and book report.", "3"),
 ("Week 1", "Go over logic symbols for argument activity and assign the research paper.", "2"),
 ("Week 1", "Explain essay assignment and assign short story.", "1");

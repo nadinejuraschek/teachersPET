@@ -5,5 +5,13 @@
     "database": "teachers_pet",
     "host": "localhost",
     "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": "password",
+    "database": "teachers_pet_testdb",
+    "host": "localhost",
+    "dialect": "mysql",
+    "logging": false
   }
 }
