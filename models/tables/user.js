@@ -4,14 +4,26 @@ export const User = (sequelize) => {
   const UserTable = sequelize.define(
     "User",
     {
-      firstName: Sequelize.DataTypes.STRING,
-      lastName: Sequelize.DataTypes.STRING,
-      email: Sequelize.DataTypes.STRING,
-      password: Sequelize.DataTypes.STRING
+      firstName: {
+        type: Sequelize.DataTypes.STRING,
+        allowNull: false,
+      },
+      lastName: {
+        type: Sequelize.DataTypes.STRING,
+        allowNull: false,
+      },
+      email: {
+        type: Sequelize.DataTypes.STRING,
+        allowNull: false,
+      },
+      password: {
+        type: Sequelize.DataTypes.STRING,
+        allowNull: false,
+      },
     },
     {
-      timestamps: false
-    }
+      timestamps: false,
+    },
   );
 
   UserTable.associate = function(models) {

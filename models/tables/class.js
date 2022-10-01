@@ -6,9 +6,11 @@ export const Class = (sequelize) => {
     {
       className: {
         type: Sequelize.DataTypes.STRING,
+        allowNull: false,
       },
       notes: {
         type: Sequelize.DataTypes.STRING,
+        allowNull: false,
       },
     },
     {

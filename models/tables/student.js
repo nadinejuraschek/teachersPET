@@ -6,9 +6,11 @@ export const Student = (sequelize) => {
     {
       firstName: {
         type: Sequelize.DataTypes.STRING,
+        allowNull: false,
       },
       lastName: {
         type: Sequelize.DataTypes.STRING,
+        allowNull: false,
       },
       email: {
         type: Sequelize.DataTypes.STRING,

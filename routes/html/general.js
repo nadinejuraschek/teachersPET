@@ -11,7 +11,7 @@ router.
   .get(generalHtmlController.renderDashboard);
 
 router
-  .route('*')
+  .route('/*')
   .get(generalHtmlController.renderNotFound);
 
 export const generalHtmlRoutes = router;

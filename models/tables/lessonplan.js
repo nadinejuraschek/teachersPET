@@ -6,9 +6,11 @@ export const Lessonplan = (sequelize) => {
     {
       lessonplanName: {
         type: Sequelize.DataTypes.STRING,
+        allowNull: false,
       },
       notes: {
         type: Sequelize.DataTypes.STRING,
+        allowNull: false,
       },
     },
     {

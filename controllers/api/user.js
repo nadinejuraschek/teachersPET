@@ -1,4 +1,6 @@
 import db from "../../models/index.js";
+import bcrypt from 'bcryptjs';
+import jwt from 'jsonwebtoken';
 
 const createUser = (req, res) => {
   db.User.create(req.body)

@@ -1,25 +1,13 @@
 import * as dotenv from 'dotenv';
-
-import { assignmentApiRoutes } from './routes/api/assignment.js';
-import { classApiRoutes } from './routes/api/class.js';
-import { lessonplansApiRoutes } from './routes/api/lessonplans.js';
-import { studentNotesApiRoutes } from './routes/api/studentNotes.js';
-import { studentsApiRoutes } from './routes/api/students.js';
-import { userApiRoutes } from './routes/api/user.js';
-import { calendarHtmlRoutes } from './routes/html/calendar.js';
-import { classHtmlRoutes } from './routes/html/class.js';
-import { generalHtmlRoutes } from './routes/html/general.js';
-import { studentsHtmlRoutes } from './routes/html/students.js';
-import { userHtmlRoutes } from './routes/html/user.js';
 import cookieParser from 'cookie-parser';
 import chalk from 'chalk';
 import db from "./models/index.js";
-import ejs from "ejs";
 import express from "express";
 import favicon from 'serve-favicon';
 import {fileURLToPath} from 'url';
 import jwt from 'jsonwebtoken';
 import path from 'path';
+import {setRoutes} from './routes/index.js';
 
 dotenv.config();
 
@@ -57,19 +45,9 @@ app.use((req, res, next) => {
 app.set("view engine", "ejs");
 
 // ROUTES
-app.use('/api', assignmentApiRoutes);
-app.use('/api/classes', classApiRoutes);
-app.use('/api/lessonplans', lessonplansApiRoutes);
-app.use('/api/students/notes', studentNotesApiRoutes);
-app.use('/api/students', studentsApiRoutes);
-app.use('/api', userApiRoutes);
-app.use('/calendar', calendarHtmlRoutes);
-app.use('/classes', classHtmlRoutes);
-app.use('/', generalHtmlRoutes);
-app.use('/students', studentsHtmlRoutes);
-app.use('/', userHtmlRoutes);
+setRoutes(app);
 
-let syncOptions = { force: false };
+let syncOptions = { alter: true, force: false };
 
 // If running a test, set syncOptions.force to true
 // clearing the `teachers_pet_testdb`

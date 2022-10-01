@@ -6,9 +6,11 @@ export const Assignment = (sequelize) => {
     {
       assignmentName: {
         type: Sequelize.DataTypes.STRING,
+        allowNull: false,
       },
       pointsPossible: {
         type: Sequelize.DataTypes.INTEGER,
+        allowNull: false,
       },
       notes: {
         type: Sequelize.DataTypes.STRING,
@@ -16,7 +18,6 @@ export const Assignment = (sequelize) => {
     },
     {
       timestamps: false,
-      freezeName: true,
     },
   );
 

@@ -13,22 +13,22 @@
     "bcryptjs": "^2.4.3",
     "chalk": "^5.0.1",
     "cookie-parser": "^1.4.4",
-    "dotenv": "^8.2.0",
+    "dotenv": "^16.0.3",
     "ejs": "^3.0.1",
     "express": "^4.17.0",
     "googleapis": "^39.2.0",
     "jsonwebtoken": "^8.5.1",
     "mysql2": "^2.3.3",
-    "sequelize": "^6.21.4",
+    "sequelize": "^6.23.2",
     "serve-favicon": "^2.5.0"
   },
   "devDependencies": {
-    "cross-env": "^5.2.0",
-    "eslint": "^5.16.0",
-    "eslint-config-prettier": "^4.3.0",
-    "eslint-plugin-prettier": "^3.1.0",
-    "nodemon": "^2.0.2",
-    "prettier": "^1.17.1"
+    "cross-env": "^7.0.3",
+    "eslint": "^8.24.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "nodemon": "^2.0.20",
+    "prettier": "^2.7.1"
   },
   "repository": {
     "type": "git",
