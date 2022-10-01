@@ -1,16 +1,24 @@
 /****************************************************************
  COLORS
- #edf7fa background #364754
- #373F47 text
- #ffffff content
- #5f6caf
- #ffb677
- #ff8364
+****************************************************************/
+:root {
+  --primary: #5f6caf;
+  --secondary: #ffb677;
+  --tertiary: #ff8364;
+  --content: #ffffff;
+  --text: #373F47;
+  --background__light: #fafafa;
+  --background__dark: #364754;
+  --shadow: #eeeeee;
+}
+
+/****************************************************************
+ GENERAL
 ****************************************************************/
 html,
 body {
-  background-color: #364754;
-  color: #373F47;
+  background-color: var(--background__dark);
+  color: var(--text);
   font-family: "Lato", Arial, sans-serif;
   height: 100%;
 }
@@ -19,11 +27,11 @@ footer {
   margin-top: 1rem;
 }
 .bg-grey {
-  background-color: #fafafa;
+  background-color: var(--background__light);
 }
 .bg-purple {
-  background-color: #5f6caf;
-  color: #ffffff;
+  background-color: var(--primary);
+  color: var(--content);
 }
 .logo-text,
   .logo-text-lg,
@@ -45,7 +53,7 @@ footer {
  NAVBAR + FOOTER
 ****************************************************************/
 .navbar {
-  background-color: #364754;
+  background-color: var(--background__dark);
   height: 4rem;
 }
 .logo {
@@ -55,10 +63,10 @@ footer {
 }
 .navbar a,
   .footer a {
-  color: #ffffff;
+  color: var(--content);
 }
 .navbar a:hover {
-  color: #ffb677;
+  color: var(--secondary);
   text-decoration: none;
 }
 .logo-text {
@@ -71,17 +79,17 @@ footer {
   width: 95%;
 }
 .dev-name {
-  color: #ffffff;
+  color: var(--content);
   font-size: 1rem;
   margin-bottom: 0.15rem;
 }
 .dev-links {
-  color: #ffffff;
+  color: var(--content);
   font-size: 1.25rem;
   margin: 0 0.2rem 0 0;
 }
 .dev-links:hover {
-  color: #ffb677;
+  color: var(--secondary);
 }
 .icon-smaller {
   font-size: 1rem;
@@ -98,7 +106,7 @@ footer {
   align-items: center;
   padding-top: 40px;
   padding-bottom: 40px;
-  background-color: #ffffff;
+  background-color: var(--content);
 }
 .form-signin {
   width: 100%;
@@ -148,35 +156,35 @@ footer {
 }
 .add-remove:hover,
   .add-remove a:hover {
-    color: #ffb677;
+    color: var(--secondary);
 }
 #login-btn,
   #signup-btn {
-  background-color: #ff8364;
+  background-color: var(--tertiary);
   border: none;
   font-weight: 600;
 }
 #login-btn:hover,
   #signup-btn:hover {
-    background-color: #ffb677;
+    background-color: var(--secondary);
 }
 .signin-header,
   .signup-link-btn,
   .add-remove a,
   .section-header a {
-    color: #5f6caf;
+    color: var(--primary);
 }
 .signup-link-btn:hover {
-  color: #ffb677;
+  color: var(--secondary);
   text-decoration: none;
 }
 #logout-btn {
-  color: #ffffff;
+  color: var(--content);
   font-family: "Quicksand", Arial, sans-serif;
   font-weight: 600;
 }
 #logout-btn:hover {
-  color: #ffb677;
+  color: var(--secondary);
 }
 
 /*************************************************
@@ -196,11 +204,11 @@ footer {
   width: 25rem;
 }
 .back-btn {
-  color: #ffffff;
+  color: var(--content);
   font-size: 3rem;
 }
 .back-btn:hover {
-  color: #ffb677;
+  color: var(--secondary);
   font-size: 3rem;
 }
 
@@ -208,13 +216,15 @@ footer {
  STUDENT + CLASSES VIEW
 *************************************************/
 .content {
-  background-color: #ffffff;
+  background-color: var(--content);
   border: none;
   border-radius: 1rem;
   padding: 2rem 3rem;
+
+  height: 80vh;
 }
 .profile-img {
-  border: 2px solid #ffffff;
+  border: 2px solid var(--content);
   border-radius: 50%;
   padding: 4px;
   height: 6rem;
@@ -225,30 +235,30 @@ footer {
   margin-left: 1rem;
 }
 .badge-id {
-  background-color: #ff8364;
+  background-color: var(--tertiary);
   font-size: 0.75rem;
 }
 .add-btn {
   border: none;
-  color: #373F47;
+  color: var(--text);
 }
 .add-btn:hover,
   .muted-link:hover {
-  color: #ffb677;
+  color: var(--secondary);
   text-decoration: none;
 }
 .contact-details {
   margin-top: 1.5rem;
 }
 .muted-link {
-  color: #373F47;
+  color: var(--text);
 }
 .lesson-date {
   font-size: 1.25rem;
   font-weight: 700;
 }
 tr:first-child {
-  border-bottom: 1px solid #373F47;
+  border-bottom: 1px solid var(--text);
 }
 th {
   padding: 0.25rem;
@@ -257,7 +267,7 @@ td:first-child {
   width: 2rem;
 }
 td {
-  border-right: 1px solid #373F47;
+  border-right: 1px solid var(--text);
   padding: 0.25rem;
   width: 8rem;
 }
@@ -266,7 +276,7 @@ td:nth-child(4) {
   width: 14rem;
 }
 .student-link {
-  color: #373F47;
+  color: var(--text);
 }
 .student-link:hover {
   font-weight: 800;
@@ -292,23 +302,23 @@ td:nth-child(4) {
 
 /************************************************
  DASHBOARD
-************************************************/
-.welcome, 
-  .section, 
+***********************************************/
+.welcome,
+  .section,
   .content,
   .overview-item {
     border: none;
-    box-shadow: 0px 0px 4px #eee;
+    box-shadow: 0px 0px 4px var(--shadow);
     border-radius: 1rem;
 }
 .content {
-  box-shadow: 0px 0px 4px #364754;
+  box-shadow: 0px 0px 4px var(--background__dark);
 }
 .welcome {
   border: none;
-  box-shadow: 0px 0px 4px #eee;
+  box-shadow: 0px 0px 4px var(--shadow);
   border-radius: 1rem;
-  color: #ffffff;
+  color: var(--content);
   font-size: 4rem;
   height: 8rem;
   line-height: 7.5rem;
@@ -319,7 +329,7 @@ td:nth-child(4) {
   margin-top: 0.5rem;
 }
 .section-header {
-  color: #5f6caf;
+  color: var(--primary);
 }
 .section-header-space {
   margin-left: 0.5rem;
@@ -331,35 +341,35 @@ td:nth-child(4) {
 overflow: scroll;
 }
 .overview-item {
-  color: #ffffff;
+  color: var(--content);
   height: 5rem;
   margin: 0.25rem auto;
   padding: 0.75rem 1rem;
 }
 .overview-item:nth-child(odd) {
-  background-color: #ffb677;
+  background-color: var(--secondary);
 }
 .overview-item:nth-child(even) {
-  background-color: #ff8364;
+  background-color: var(--tertiary);
 }
 .overview-header {
   font-size: 1.25rem;
   font-weight: 700;
 }
 .overview-header a {
-  color: #ffffff;
+  color: var(--content);
 }
 .section-header a:hover,
   .overview-header a:hover {
-    color: #373F47;
+    color: var(--text);
     text-decoration: none;
 }
 .overview-text {
-  color: #ffffff;
+  color: var(--content);
   font-size: 1rem;
 }
 .more-overview-items {
-  color: #ffffff;
+  color: var(--content);
   height: 1.5rem;
   margin: 0.25rem auto;
   text-align: center;
@@ -380,12 +390,12 @@ overflow: scroll;
   font-weight: 600;
 }
 .input-title {
-  color: #373F47;
+  color: var(--text);
   font-size: 1rem;
 }
 .modal-btn, .btn {
-  background-color: #ffb677;
+  background-color: var(--secondary);
   border: none;
-  color: #ffffff;
+  color: var(--content);
   font-weight: 600;
 }
