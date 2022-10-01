@@ -1,18 +1,24 @@
-/* eslint-disable camelcase */
-export const LessonplanModel = (sequelize, DataTypes) => {
-  var Lessonplan = sequelize.define(
+import Sequelize from "sequelize";
+
+export const Lessonplan = (sequelize) => {
+  const LessonplanTable = sequelize.define(
     "Lessonplan",
     {
-      // eslint-disable-next-line camelcase
-      lessonplan_name: DataTypes.STRING,
-      notes: DataTypes.STRING
+      lessonplanName: {
+        type: Sequelize.DataTypes.STRING,
+      },
+      notes: {
+        type: Sequelize.DataTypes.STRING,
+      },
     },
     {
-      timestamps: false
-    }
+      timestamps: false,
+    },
   );
-  Lessonplan.associate = function(models) {
-    Lessonplan.belongsTo(models.Class);
+
+  LessonplanTable.associate = function(models) {
+    LessonplanTable.belongsTo(models.Class);
   };
-  return Lessonplan;
+
+  return LessonplanTable;
 };

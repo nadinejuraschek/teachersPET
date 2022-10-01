@@ -1,21 +1,27 @@
-export const ClassModel = (sequelize, DataTypes) => {
-  const Class = sequelize.define(
+import Sequelize from "sequelize";
+
+export const Class = (sequelize) => {
+  const ClassTable = sequelize.define(
     "Class",
     {
-      // eslint-disable-next-line camelcase
-      class_name: DataTypes.STRING,
-      notes: DataTypes.STRING
+      className: {
+        type: Sequelize.DataTypes.STRING,
+      },
+      notes: {
+        type: Sequelize.DataTypes.STRING,
+      },
     },
     {
-      timestamps: false
-    }
+      timestamps: false,
+    },
   );
-  Class.associate = function(models) {
-    Class.belongsTo(models.User);
-    Class.hasMany(models.Student);
-    Class.hasMany(models.Lessonplan);
-    Class.hasMany(models.Assignment);
+
+  ClassTable.associate = function(models) {
+    ClassTable.belongsTo(models.User);
+    ClassTable.hasMany(models.Student);
+    ClassTable.hasMany(models.Lessonplan);
+    ClassTable.hasMany(models.Assignment);
   };
 
-  return Class;
+  return ClassTable;
 };

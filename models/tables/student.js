@@ -1,23 +1,39 @@
-/* eslint-disable camelcase */
-export const StudentModel = (sequelize, DataTypes) => {
-  const Student = sequelize.define(
+import Sequelize from "sequelize";
+
+export const Student = (sequelize) => {
+  const StudentTable = sequelize.define(
     "Student",
     {
-      // eslint-disable-next-line camelcase
-      first_name: DataTypes.STRING,
-      last_name: DataTypes.STRING,
-      email: DataTypes.STRING,
-      contact_name: DataTypes.STRING,
-      contact_phone: DataTypes.STRING,
-      address: DataTypes.STRING,
-      notes: DataTypes.STRING
+      firstName: {
+        type: Sequelize.DataTypes.STRING,
+      },
+      lastName: {
+        type: Sequelize.DataTypes.STRING,
+      },
+      email: {
+        type: Sequelize.DataTypes.STRING,
+      },
+      contactName: {
+        type: Sequelize.DataTypes.STRING,
+      },
+      contactPhone: {
+        type: Sequelize.DataTypes.STRING,
+      },
+      address: {
+        type: Sequelize.DataTypes.STRING,
+      },
+      notes: {
+        type: Sequelize.DataTypes.STRING,
+      },
     },
     {
-      timestamps: false
-    }
+      timestamps: false,
+    },
   );
-  Student.associate = function(models) {
-    Student.belongsTo(models.Class);
+
+  StudentTable.associate = function(models) {
+    StudentTable.belongsTo(models.Class);
   };
-  return Student;
+
+  return StudentTable;
 };

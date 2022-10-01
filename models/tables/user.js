@@ -1,20 +1,22 @@
-/* eslint-disable camelcase */
-export const UserModel = (sequelize, DataTypes) => {
-  const User = sequelize.define(
+import Sequelize from "sequelize";
+
+export const User = (sequelize) => {
+  const UserTable = sequelize.define(
     "User",
     {
-      // eslint-disable-next-line camelcase
-      first_name: DataTypes.STRING,
-      last_name: DataTypes.STRING,
-      email: DataTypes.STRING,
-      password: DataTypes.STRING
+      firstName: Sequelize.DataTypes.STRING,
+      lastName: Sequelize.DataTypes.STRING,
+      email: Sequelize.DataTypes.STRING,
+      password: Sequelize.DataTypes.STRING
     },
     {
       timestamps: false
     }
   );
-  User.associate = function(models) {
-    User.hasMany(models.Class);
+
+  UserTable.associate = function(models) {
+    UserTable.hasMany(models.Class);
   };
-  return User;
+
+  return UserTable;
 };

@@ -1,21 +1,28 @@
-export const AssignmentModel = (sequelize, DataTypes) => {
-  const Assignment = sequelize.define(
+import Sequelize from "sequelize";
+
+export const Assignment = (sequelize) => {
+  const AssignmentTable = sequelize.define(
     "Assignment",
     {
-      // eslint-disable-next-line camelcase
-      assignment_name: DataTypes.STRING,
-      // eslint-disable-next-line camelcase
-      points_possible: DataTypes.INTEGER,
-      notes: DataTypes.STRING
+      assignmentName: {
+        type: Sequelize.DataTypes.STRING,
+      },
+      pointsPossible: {
+        type: Sequelize.DataTypes.INTEGER,
+      },
+      notes: {
+        type: Sequelize.DataTypes.STRING,
+      },
     },
     {
       timestamps: false,
-      freezeName: true
-    }
+      freezeName: true,
+    },
   );
-  Assignment.associate = function(models) {
-    Assignment.belongsTo(models.Class);
+
+  AssignmentTable.associate = function(models) {
+    AssignmentTable.belongsTo(models.Class);
   };
 
-  return Assignment;
+  return AssignmentTable;
 };
