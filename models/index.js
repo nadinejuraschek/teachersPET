@@ -1,32 +1,44 @@
 "use strict";
 
-var fs = require("fs");
-var path = require("path");
-var Sequelize = require("sequelize");
-var basename = path.basename(module.filename);
-var env = process.env.NODE_ENV || "development";
-var config = require(__dirname + "/../config/config.json")[env];
-var db = {};
+import envConfig from '../config/config.json' assert {type: 'json'};
+
+import Sequelize from "sequelize";
+import fs from "fs";
+import {logger} from '../logger/index.js';
+import path from "path";
+
+// const basename = path.basename(module.filename);
+const env = process.env.NODE_ENV || "development";
+const db = {};
+
+const config = envConfig[env];
+
+let sequelize;
 
 if (config.use_env_variable) {
-  var sequelize = new Sequelize(process.env[config.use_env_variable]);
+  sequelize = new Sequelize(process.env[config.use_env_variable]);
 } else {
-  var sequelize = new Sequelize(
+  sequelize = new Sequelize(
     config.database,
     config.username,
     config.password,
-    config
+    {
+      host: config.host,
+      dialect: config.dialect,
+    }
   );
 }
 
-fs.readdirSync(__dirname)
+sequelize.authenticate().then(() => logger('Models').info('Connection to DB successful.')).catch(err => logger('Models').error('Could not connect to database. Error: ', err))
+
+/* fs.readdirSync(__dirname)
 .filter(function(file) {
   return (
     file.indexOf(".") !== 0 && file !== basename && file.slice(-3) === ".js"
   );
 })
 .forEach(function(file) {
-  var model = sequelize.import(path.join(__dirname, file));
+  const model = sequelize.import(path.join(__dirname, file));
   db[model.name] = model;
 });
 
@@ -38,5 +50,6 @@ Object.keys(db).forEach(function(modelName) {
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
+*/
 
-module.exports = db;
+export default db;

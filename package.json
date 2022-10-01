@@ -6,44 +6,44 @@
   "scripts": {
     "start": "node server.js",
     "lint": "eslint --quiet .",
-    "fix": "eslint --fix .",
-    "test": "npm run lint && cross-env NODE_ENV=test mocha -u tdd --reporter spec --exit"
+    "fix": "eslint --fix ."
   },
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "chalk": "^5.0.1",
     "cookie-parser": "^1.4.4",
     "dotenv": "^8.2.0",
     "ejs": "^3.0.1",
     "express": "^4.17.0",
     "googleapis": "^39.2.0",
     "jsonwebtoken": "^8.5.1",
-    "mysql2": "^1.6.5",
-    "sequelize": "^5.8.6",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.21.4",
     "serve-favicon": "^2.5.0"
   },
   "devDependencies": {
-    "chai": "^4.2.0",
-    "chai-http": "^4.3.0",
     "cross-env": "^5.2.0",
     "eslint": "^5.16.0",
     "eslint-config-prettier": "^4.3.0",
     "eslint-plugin-prettier": "^3.1.0",
-    "mocha": "^6.1.4",
     "nodemon": "^2.0.2",
     "prettier": "^1.17.1"
-  },
-  "directories": {
-    "test": "test"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nadinejuraschek/teachersPET.git"
   },
   "keywords": [],
-  "author": "",
+  "contributors": [
+    "Tim Gangl <tim.gangl30@gmail.com> (www.timgangl.com)",
+    "Nadine Pesso <nadinejwebdev@gmail.com> (https://github.com/nadinejuraschek)",
+    "Jed Smit (https://github.com/jedsmit)",
+    "Loralee Smith (https://github.com/LoraleeSmith)"
+  ],
   "bugs": {
     "url": "https://github.com/nadinejuraschek/teachersPET/issues"
   },
-  "homepage": "https://github.com/nadinejuraschek/teachersPET#readme"
+  "homepage": "https://github.com/nadinejuraschek/teachersPET#readme",
+  "type": "module"
 }

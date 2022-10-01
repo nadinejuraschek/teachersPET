@@ -1,6 +1,6 @@
 /* eslint-disable camelcase */
-module.exports = function (sequelize, DataTypes) {
-  var Student = sequelize.define(
+export const StudentModel = (sequelize, DataTypes) => {
+  const Student = sequelize.define(
     "Student",
     {
       // eslint-disable-next-line camelcase
@@ -17,9 +17,7 @@ module.exports = function (sequelize, DataTypes) {
     }
   );
   Student.associate = function(models) {
-  Student.belongsTo(models.Class);
-  
-  
+    Student.belongsTo(models.Class);
   };
   return Student;
 };

@@ -1,5 +1,5 @@
 /* eslint-disable camelcase */
-module.exports = function(sequelize, DataTypes) {
+export const LessonplanModel = (sequelize, DataTypes) => {
   var Lessonplan = sequelize.define(
     "Lessonplan",
     {

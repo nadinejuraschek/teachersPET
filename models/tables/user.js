@@ -1,6 +1,6 @@
 /* eslint-disable camelcase */
-module.exports = function(sequelize, DataTypes) {
-  var User = sequelize.define(
+export const UserModel = (sequelize, DataTypes) => {
+  const User = sequelize.define(
     "User",
     {
       // eslint-disable-next-line camelcase
