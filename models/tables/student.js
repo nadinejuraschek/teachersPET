@@ -5,6 +5,12 @@ export const Student = (sequelize) => {
   const StudentTable = sequelize.define(
     "Student",
     {
+      _id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: true,
+      },
       firstName: {
         type: DataTypes.STRING,
         allowNull: false,

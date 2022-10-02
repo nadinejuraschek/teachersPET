@@ -4,11 +4,12 @@ $(document).ready(function() {
     var userObj = {
       email: $("#inputEmail")
         .val()
-        .trim(),
-      first_name: $("#first_name")
+        .trim()
+        .toLowerCase(),
+      firstName: $("#firstName")
         .val()
         .trim(),
-      last_name: $("#last_name")
+      lastName: $("#lastName")
         .val()
         .trim(),
       password: $("#inputPassword")
@@ -19,8 +20,9 @@ $(document).ready(function() {
     $.ajax({
       url: "/api/user/signup",
       method: "POST",
-      data: userObj
+      data: userObj,
     }).then(resData => {
+      console.log('%c User signed up successfully!', 'background: honeydew; color: green;');
       location.assign("/index");
     });
   });
@@ -39,7 +41,7 @@ $(document).ready(function() {
     $.ajax({
       url: "/api/user/login",
       method: "POST",
-      data: userObj
+      data: userObj,
     }).then(resData => {
       location.assign("/index");
     });
@@ -49,7 +51,7 @@ $(document).ready(function() {
     e.preventDefault();
     $.ajax({
       url: "/api/user/signout",
-      method: "POST"
+      method: "POST",
     }).then(resData => {
       location.assign("/login");
     });

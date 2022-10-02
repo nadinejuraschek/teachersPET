@@ -7,7 +7,7 @@ const getAllClasses = (req, res) => {
 };
 
 const getClassById = (req, res) => {
-  db.Class.findAll({ where: { id: req.params.id } }).then(data => {
+  db.Class.findAll({ where: { _id: req.params.id } }).then(data => {
     res.json(data);
   });
 };
@@ -19,7 +19,7 @@ const createClass = (req, res) => {
 };
 
 const deleteClassById = (req, res) => {
-  db.Class.destroy({ where: { id: req.params.id } }).then(data => {
+  db.Class.destroy({ where: { _id: req.params.id } }).then(data => {
     res.json(data);
   });
 };

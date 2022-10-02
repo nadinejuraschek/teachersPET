@@ -5,6 +5,12 @@ export const Assignment = (sequelize) => {
   const AssignmentTable = sequelize.define(
     "Assignment",
     {
+      _id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: true,
+      },
       assignmentName: {
         type: DataTypes.STRING,
         allowNull: false,

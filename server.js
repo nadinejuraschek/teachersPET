@@ -34,6 +34,7 @@ app.use((req, res, next) => {
   if (token) {
     //get the verified userID from jwt
     const { id } = jwt.verify(token, process.env.APP_SECRET);
+
     //set that  userId on the request object
     req.user = id;
   }

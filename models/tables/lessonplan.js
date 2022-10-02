@@ -5,6 +5,12 @@ export const Lessonplan = (sequelize) => {
   const LessonplanTable = sequelize.define(
     "Lessonplan",
     {
+      _id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: true,
+      },
       lessonplanName: {
         type: DataTypes.STRING,
         allowNull: false,

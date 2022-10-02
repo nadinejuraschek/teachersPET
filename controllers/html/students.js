@@ -5,7 +5,7 @@ const renderStudentsView = (req, res) => {
     const studentId = req.params.id;
     Promise.all(
       [
-        db.Student.findOne({ where: { id: studentId }}),
+        db.Student.findOne({ where: { _id: studentId }}),
       ])
       .then((data) => {
         const studentData = data[0];

@@ -1,16 +1,7 @@
 import db from "../../models/index.js";
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
-
-const createUser = (req, res) => {
-  db.User.create(req.body)
-    .then(data => {
-      res.json(data);
-    })
-    .catch(err => {
-      res.json({ message: `Could not create user. Error: ${err}` });
-    });
-};
+import { logger } from "../../logger/index.js";
 
 const getCurrentUser = (req, res) => {
   // console.log(req.user);
@@ -31,7 +22,7 @@ const login = async (req, res) => {
     return;
   };
 
-  const token = jwt.sign({ id: user.id }, process.env.APP_SECRET);
+  const token = jwt.sign({ id: user._id }, process.env.APP_SECRET);
   res.cookie('token', token, {
     httpOnly: true,
     maxAge: 1000 * 60 * 60 * 24 * 365
@@ -40,26 +31,27 @@ const login = async (req, res) => {
 };
 
 const signup = async (req, res) => {
-  req.body.email = req.body.email.toLowerCase();
   // has the password
   const password = await bcrypt.hash(req.body.password, 10);
 
   // create user in database
-  const user = await db.User.create({
-    firstName: req.body.first_name,
-    lastName: req.body.last_name,
-    email: req.body.email,
+  await db.User.create({
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    email: req.body.email.toLowerCase(),
     password: password,
   }).then(data => {
+    logger('controllers - api - user').debug('data: ', data);
     // create cookie for user
-    const token = jwt.sign({ id: user.id }, process.env.APP_SECRET);
+    const token = jwt.sign({ id: data._id }, process.env.APP_SECRET);
     res.cookie("token", token, {
       httpOnly: true,
       maxAge: 1000 * 60 * 60 * 24 * 365, // 1 year cookie
     });
-    res.json(user);
+    res.json(data);
   }).catch(err => {
-    res.json({ message: `Could not create user. Error: ${err}` });
+    throw new Error(err);
+    // res.json({ message: `Could not create user. Error: ${err}` });
   });
 };
 
@@ -77,7 +69,7 @@ export const loginGuestUser = async (req, res) => {
     return;
   };
 
-  const token = jwt.sign({ id: user.id }, process.env.APP_SECRET);
+  const token = jwt.sign({ id: user._id }, process.env.APP_SECRET);
   res.cookie('token', token, {
     httpOnly: true,
     maxAge: 1000 * 60 * 60 * 24 * 365
@@ -91,7 +83,6 @@ export const signout = (req, res) => {
 };
 
 export const userApiController = {
-  create: createUser,
   get: getCurrentUser,
   login: login,
   loginGuest: loginGuestUser,

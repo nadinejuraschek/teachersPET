@@ -5,7 +5,7 @@ const renderClassView = (req, res) => {
     const classId = req.params.id;
     Promise.all(
       [
-        db.Class.findOne({ where: { id: classId }}),
+        db.Class.findOne({ where: { _id: classId }}),
         db.Student.findAll({ where: { ClassId: classId }}),
         db.Lessonplan.findAll({ where: { ClassId: classId }}),
         db.Assignment.findAll({ where: { ClassId: classId }})

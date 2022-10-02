@@ -10,7 +10,7 @@ const renderHome = (req, res) => {
 const renderDashboard = (req, res) => {
   if (req.user) {
     Promise.all([
-      db.User.findOne({ where: {id: req.user }}),
+      db.User.findOne({ where: {_id: req.user }}),
       db.Class.findAll()
     ]).then(data => {
       const userName = data[0].firstName;

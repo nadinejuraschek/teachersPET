@@ -7,10 +7,6 @@ router
   .get(userApiController.get);
 
 router
-  .route('/user')
-  .post(userApiController.create);
-
-router
   .route('/user/login')
   .post(userApiController.login);
 

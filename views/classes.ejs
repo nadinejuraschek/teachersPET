@@ -9,7 +9,7 @@
 
     <span class="section-header-space"><%= classData.className %></span>
 
-    <span class="badge badge-id">CLASS ID: <%= classData.id %></span>
+    <span class="badge badge-id">CLASS ID: <%= classData._id %></span>
 
     <div class="float-right add-remove">
 
@@ -49,14 +49,14 @@
          <% for( var i = 0; i < studentData.length; i++ ) { %>
         <li>
 
-          <a class="student-link" href="/students/<%= studentData[i].id %>">
+          <a class="student-link" href="/students/<%= studentData[i]._id %>">
              <%= studentData[i].lastName %>, <%= studentData[i].firstName %>
           </a>
 
           <a
             class="float-right delete-btn student-delete-btn student-link"
             href=""
-            name="<%= studentData[i].id %>"
+            name="<%= studentData[i]._id %>"
           >
 
             <i class="fas fa-trash-alt"></i>
@@ -97,14 +97,14 @@
 
           <a
             class="student-link"
-            href="/classes/assignments<%= assignmentData[i].id %>"
+            href="/classes/assignments<%= assignmentData[i]._id %>"
           >
              <%= assignmentData[i].assignmentName %>
           </a>
 
           <a
             class="float-right assignment-delete-btn student-link"
-            name="<%= assignmentData[i].id %>"
+            name="<%= assignmentData[i]._id %>"
             href="#"
           >
 
@@ -155,7 +155,7 @@
               <a
                 class="float-right lessonplan-delete-btn student-link"
                 href="#"
-                name="<%= lessonplanData[i].id %>"
+                name="<%= lessonplanData[i]._id %>"
               >
 
                 <i class="fas fa-trash-alt"></i>
