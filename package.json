@@ -16,7 +16,7 @@
     "dotenv": "^16.0.3",
     "ejs": "^3.0.1",
     "express": "^4.17.0",
-    "googleapis": "^39.2.0",
+    "googleapis": "^108.0.0",
     "jsonwebtoken": "^8.5.1",
     "mysql2": "^2.3.3",
     "sequelize": "^6.23.2",
