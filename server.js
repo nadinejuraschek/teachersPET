@@ -1,15 +1,21 @@
-require("dotenv").config();
+import * as dotenv from 'dotenv';
+import cookieParser from 'cookie-parser';
+import chalk from 'chalk';
+import db from "./models/index.js";
+import express from "express";
+import favicon from 'serve-favicon';
+import {fileURLToPath} from 'url';
+import jwt from 'jsonwebtoken';
+import path from 'path';
+import {setRoutes} from './routes/index.js';
 
-const express = require("express"),
-  ejs = require("ejs"),
-  favicon = require('serve-favicon'),
-  jwt = require('jsonwebtoken');
-cookieParser = require('cookie-parser');
-
-const db = require("./models");
+dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // MIDDLEWARE
 app.use(express.urlencoded({ extended: false }));
@@ -18,50 +24,44 @@ app.use(express.static("public"));
 app.use(favicon(__dirname + '/public/images/favicon.ico'));
 app.use(cookieParser());
 
-// Login
-//decode the jwt token
+// LOGIN
+// decode the jwt token
 app.use((req, res, next) => {
   //destructure the token
   const { token } = req.cookies;
+
   //if the token exists
-
-  console.log('token', token);
-
   if (token) {
     //get the verified userID from jwt
     const { id } = jwt.verify(token, process.env.APP_SECRET);
-    //set that  userId on the request object 
 
+    //set that  userId on the request object
     req.user = id;
   }
   //carry on the request after the middleware
   next();
-})
+});
 
 // EJS
 app.set("view engine", "ejs");
 
 // ROUTES
-require("./routes/apiRoutes")(app);
-require("./routes/htmlRoutes")(app);
+setRoutes(app);
 
-let syncOptions = { force: false };
+let syncOptions = { alter: true, force: false };
 
 // If running a test, set syncOptions.force to true
-// clearing the `testdb`
+// clearing the `teachers_pet_testdb`
 if (process.env.NODE_ENV === "test") {
   syncOptions.force = false;
 }
 
-// Starting the server, syncing our models ------------------------------------/
-db.sequelize.sync(syncOptions).then(function () {
-  app.listen(PORT, function () {
-    console.log(
-      "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
-      PORT,
-      PORT
-    );
+// Starting the server, syncing our models ----------------------------------------------/
+db.sequelize.sync(syncOptions).then(() => {
+  app.listen(PORT, () => {
+    console.log(chalk.green(
+      `🌎 Listening on port ${PORT}. Visit http://localhost:${PORT}/ in your browser.`));
   });
 });
 
-module.exports = app;
+export default app;

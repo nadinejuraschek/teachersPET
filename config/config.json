@@ -2,20 +2,16 @@
   "development": {
     "username": "root",
     "password": "password",
-    "database": "project2_db",
+    "database": "teachers_pet",
     "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
     "password": "password",
-    "database": "project2_db",
+    "database": "teachers_pet_testdb",
     "host": "localhost",
     "dialect": "mysql",
     "logging": false
-  },
-  "production": {
-    "use_env_variable": "JAWSDB_URL",
-    "dialect": "mysql"
   }
 }

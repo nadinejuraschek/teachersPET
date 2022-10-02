@@ -1,22 +1,39 @@
-<%- include('partials/head') -%>
-
-<%- include('partials/navbar') -%>
-
+<%- include('partials/head') -%> <%- include('partials/navbar') -%>
 <!-- LESSON PLAN VIEW -->
-<div class="container content">
-  <h2>
-    <i class="fas fa-folder-open"></i>
-    <span class="section-header-space"><%= lessonplanData.lessonplan_name %></span>
-    <div class="float-right add-remove">
-      <a href="/classes/<%= lessonplanData.ClassId %>"><i class="fas fa-arrow-circle-left"></i></a>
-    </div>
-  </h2>
-  <hr>
-  <div class="row detail-view">
-    <div class="col-12 section section-height scroll bg-grey">
-      <p><%= lessonplanData.notes %></p>
-    </div>
-  </div>
-</div>
 
-<%- include('partials/footer') -%>
+<div class="container content">
+
+  <h2>
+
+    <i class="fas fa-folder-open"></i>
+
+    <span class="section-header-space">
+       <%= lessonplanData.lessonplanName %>
+    </span>
+
+    <div class="float-right add-remove">
+
+      <a href="/classes/<%= lessonplanData.ClassId %>">
+
+        <i class="fas fa-arrow-circle-left"></i>
+
+      </a>
+
+    </div>
+
+  </h2>
+
+  <hr />
+
+  <div class="row detail-view">
+
+    <div class="col-12 section section-height scroll bg-grey">
+
+      <p><%= lessonplanData.notes %></p>
+
+    </div>
+
+  </div>
+
+</div>
+ <%- include('partials/footer') -%>

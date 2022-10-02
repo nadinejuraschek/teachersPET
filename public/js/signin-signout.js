@@ -1,32 +1,33 @@
 $(document).ready(function() {
-  $("#signup-btn").on("click", function(e) {
+  $("#signup-btn").on("click", e => {
     e.preventDefault();
     var userObj = {
       email: $("#inputEmail")
         .val()
-        .trim(),
-      first_name: $("#first_name")
+        .trim()
+        .toLowerCase(),
+      firstName: $("#firstName")
         .val()
         .trim(),
-      last_name: $("#last_name")
+      lastName: $("#lastName")
         .val()
         .trim(),
       password: $("#inputPassword")
         .val()
         .trim()
     };
-    console.log(userObj);
 
     $.ajax({
       url: "/api/user/signup",
       method: "POST",
-      data: userObj
-    }).then(function(resData) {
+      data: userObj,
+    }).then(resData => {
+      console.log('%c User signed up successfully!', 'background: honeydew; color: green;');
       location.assign("/index");
     });
   });
 
-  $("#login-btn").on("click", function(e) {
+  $("#login-btn").on("click", e => {
     e.preventDefault();
     var userObj = {
       email: $("#inputEmail")
@@ -36,24 +37,34 @@ $(document).ready(function() {
         .val()
         .trim()
     };
-    console.log(userObj);
 
     $.ajax({
       url: "/api/user/login",
       method: "POST",
-      data: userObj
-    }).then(function(resData) {
+      data: userObj,
+    }).then(resData => {
       location.assign("/index");
     });
   });
 
-  $("#logout-btn").on("click", function(e) {
+  $("#logout-btn").on("click", e => {
     e.preventDefault();
     $.ajax({
       url: "/api/user/signout",
-      method: "POST"
-    }).then(function(resData) {
+      method: "POST",
+    }).then(resData => {
       location.assign("/login");
+    });
+  });
+
+  $("#login-guest-btn").on("click", e => {
+    e.preventDefault();
+
+    $.ajax({
+      url: "/api/guestaccount",
+      method: "POST",
+    }).then(resData => {
+      location.assign("/index");
     });
   });
 });

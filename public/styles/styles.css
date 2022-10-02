@@ -1,42 +1,53 @@
 /****************************************************************
  COLORS
- #edf7fa background #364754
- #373F47 text
- #ffffff content
- #5f6caf
- #ffb677
- #ff8364
+****************************************************************/
+:root {
+  --primary: #5f6caf;
+  --secondary: #ffb677;
+  --tertiary: #ff8364;
+  --content: #ffffff;
+  --text: #373F47;
+  --background__light: #fafafa;
+  --background__dark: #364754;
+  --shadow: #eeeeee;
+
+  --breakpoint-tablet: 768px;
+  --breakpoint-desktop: 992px;
+}
+
+/****************************************************************
+ GENERAL
 ****************************************************************/
 html,
 body {
-  background-color: #364754;
-  color: #373F47;
+  background-color: var(--background__dark);
+  color: var(--text);
   font-family: "Lato", Arial, sans-serif;
   height: 100%;
 }
-footer {
-  height: 4rem;
-  margin-top: 1rem;
+a:hover {
+  cursor: pointer;
+  text-decoration: none;
 }
 .bg-grey {
-  background-color: #fafafa;
+  background-color: var(--background__light);
 }
 .bg-purple {
-  background-color: #5f6caf;
-  color: #ffffff;
+  background-color: var(--primary);
+  color: var(--content);
 }
 .logo-text,
   .logo-text-lg,
   .signin-header,
   .section-header,
-  .overview-header,
-  .overview-header a,
+  .overview-title,
+  .overview-title a,
   .modal-title {
     font-family: "Quicksand", Arial, sans-serif;
 }
 .signin-header,
   .section-header,
-  .overview-header a,
+  .overview-title a,
   .modal-title {
     font-weight: 600;
 }
@@ -45,8 +56,7 @@ footer {
  NAVBAR + FOOTER
 ****************************************************************/
 .navbar {
-  background-color: #364754;
-  height: 4rem;
+  background-color: var(--background__dark);
 }
 .logo {
   height: 3rem;
@@ -55,40 +65,117 @@ footer {
 }
 .navbar a,
   .footer a {
-  color: #ffffff;
+  color: var(--content);
 }
 .navbar a:hover {
-  color: #ffb677;
+  color: var(--secondary);
+  cursor: pointer;
   text-decoration: none;
 }
+.navbar-collapse {
+  background-color: var(--background__dark);
+  border-bottom: 1px solid var(--text);
+  position: absolute;
+  top: 4rem;
+  left: 75vw;
+  right: 0;
+}
+.navbar-collapse .nav-link {
+  color: var(--content) !important;
+  font-family: 'Lato' !important;
+  font-weight: normal !important;
+  padding: 0.8rem 1.6rem;
+}
+.navbar-collapse .nav-link:hover {
+  color: var(--secondary) !important;
+}
+.navbar-collapse .nav-link .nav-link-label {
+  margin-left: 0.8rem;
+}
+
+@media screen and (min-width: 992px) {
+  .navbar-collapse {
+    background-color: unset;
+    border-bottom: unset;
+    position: unset;
+  }
+  .navbar-collapse .nav-link {
+    padding: unset;
+  }
+  .navbar-collapse .nav-link:not(:last-child) {
+    margin-right: 2rem;
+  }
+  .navbar-collapse .nav-link .nav-link-label {
+    margin-left: 0.4rem;
+  }
+}
+
 .logo-text {
   font-size: 1.7rem;
 }
 .list-group-item {
   line-height: 2.5;
 }
-.footer-div {
-  width: 95%;
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+footer.footer-mobile {
+  height: 2rem;
+  margin-top: 1rem;
+}
+.footer-mobile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer.footer-desktop {
+  height: 4rem;
+  margin-top: 0.8rem;
+}
+.footer-desktop {
+  display: none;
+}
+.dev-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  margin: 0;
 }
 .dev-name {
-  color: #ffffff;
-  font-size: 1rem;
+  color: var(--content);
+  font-size: 0.9rem;
   margin-bottom: 0.15rem;
 }
 .dev-links {
-  color: #ffffff;
+  margin-bottom: 0;
+}
+.dev-link {
+  color: var(--content);
   font-size: 1.25rem;
   margin: 0 0.2rem 0 0;
 }
-.dev-links:hover {
-  color: #ffb677;
+.dev-link:hover {
+  color: var(--secondary);
 }
 .icon-smaller {
   font-size: 1rem;
 }
-.logo-footer {
-  height: 2.5rem;
-  width: 2.5rem;
+
+@media screen and (min-width: 768px) {
+  .footer-mobile {
+    display: none;
+  }
+
+  .footer-desktop {
+    display: block;
+  }
 }
 
 /*************************************************
@@ -98,7 +185,7 @@ footer {
   align-items: center;
   padding-top: 40px;
   padding-bottom: 40px;
-  background-color: #ffffff;
+  background-color: var(--content);
 }
 .form-signin {
   width: 100%;
@@ -148,35 +235,36 @@ footer {
 }
 .add-remove:hover,
   .add-remove a:hover {
-    color: #ffb677;
+    color: var(--secondary);
+    cursor: pointer;
 }
 #login-btn,
   #signup-btn {
-  background-color: #ff8364;
+  background-color: var(--tertiary);
   border: none;
   font-weight: 600;
 }
 #login-btn:hover,
   #signup-btn:hover {
-    background-color: #ffb677;
+    background-color: var(--secondary);
 }
 .signin-header,
   .signup-link-btn,
   .add-remove a,
   .section-header a {
-    color: #5f6caf;
+    color: var(--primary) !important;
 }
 .signup-link-btn:hover {
-  color: #ffb677;
+  color: var(--secondary);
   text-decoration: none;
 }
 #logout-btn {
-  color: #ffffff;
+  color: var(--content);
   font-family: "Quicksand", Arial, sans-serif;
   font-weight: 600;
 }
 #logout-btn:hover {
-  color: #ffb677;
+  color: var(--secondary);
 }
 
 /*************************************************
@@ -196,11 +284,11 @@ footer {
   width: 25rem;
 }
 .back-btn {
-  color: #ffffff;
+  color: var(--content);
   font-size: 3rem;
 }
 .back-btn:hover {
-  color: #ffb677;
+  color: var(--secondary);
   font-size: 3rem;
 }
 
@@ -208,13 +296,69 @@ footer {
  STUDENT + CLASSES VIEW
 *************************************************/
 .content {
-  background-color: #ffffff;
+  background-color: var(--content);
   border: none;
   border-radius: 1rem;
   padding: 2rem 3rem;
+
+  height: calc(100vh - 123px);
+  width: calc(100vw - 32px);
+  max-width: unset;
 }
+@media screen and (min-width: 768px) {
+  .content {
+    height: calc(100vh - 155px);
+  }
+}
+@media screen and (min-width: 992px) {
+  .content {
+    width: calc(100vw - 64px);
+  }
+}
+
+.class-view {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 80px repeat(2, 1fr);
+  grid-gap: 1rem;
+
+  height: 100%;
+  width: 100%;
+}
+.class-view-header {
+  grid-column: 1 / 3;
+  grid-row: 1 / 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  font-size: 2rem;
+  margin-bottom: 0;
+}
+.class-view-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.class-view-title h2 {
+  margin: 0;
+}
+.class-view-students {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+}
+.class-view-assignments {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+.class-view-lessonplans {
+  grid-column: 1 / 3;
+  grid-row: 3 / 4;
+}
+
 .profile-img {
-  border: 2px solid #ffffff;
+  border: 2px solid var(--content);
   border-radius: 50%;
   padding: 4px;
   height: 6rem;
@@ -225,30 +369,30 @@ footer {
   margin-left: 1rem;
 }
 .badge-id {
-  background-color: #ff8364;
+  background-color: var(--tertiary);
   font-size: 0.75rem;
 }
 .add-btn {
   border: none;
-  color: #373F47;
+  color: var(--text);
 }
 .add-btn:hover,
   .muted-link:hover {
-  color: #ffb677;
+  color: var(--secondary);
   text-decoration: none;
 }
 .contact-details {
   margin-top: 1.5rem;
 }
 .muted-link {
-  color: #373F47;
+  color: var(--text);
 }
 .lesson-date {
   font-size: 1.25rem;
   font-weight: 700;
 }
 tr:first-child {
-  border-bottom: 1px solid #373F47;
+  border-bottom: 1px solid var(--text);
 }
 th {
   padding: 0.25rem;
@@ -257,7 +401,7 @@ td:first-child {
   width: 2rem;
 }
 td {
-  border-right: 1px solid #373F47;
+  border-right: 1px solid var(--text);
   padding: 0.25rem;
   width: 8rem;
 }
@@ -266,7 +410,7 @@ td:nth-child(4) {
   width: 14rem;
 }
 .student-link {
-  color: #373F47;
+  color: var(--text);
 }
 .student-link:hover {
   font-weight: 800;
@@ -292,84 +436,164 @@ td:nth-child(4) {
 
 /************************************************
  DASHBOARD
-************************************************/
-.welcome, 
-  .section, 
+***********************************************/
+.details-welcome,
+  .section,
   .content,
   .overview-item {
     border: none;
-    box-shadow: 0px 0px 4px #eee;
+    box-shadow: 0px 0px 4px var(--shadow);
     border-radius: 1rem;
 }
 .content {
-  box-shadow: 0px 0px 4px #364754;
+  box-shadow: 0px 0px 4px var(--background__dark);
 }
-.welcome {
+.details-view {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 80px calc(100% - 96px);
+  grid-gap: 1rem;
+
+  height: 100%;
+  overflow: hidden;
+}
+.details-welcome {
+  grid-column: 1 / 3;
+
+  display: flex;
+  align-items: center;
+
   border: none;
-  box-shadow: 0px 0px 4px #eee;
+  box-shadow: 0px 0px 4px var(--shadow);
   border-radius: 1rem;
-  color: #ffffff;
+  color: var(--content);
   font-size: 4rem;
-  height: 8rem;
-  line-height: 7.5rem;
-  margin-bottom: 1rem;
+  line-height: 1;
 }
 .section {
   padding: 1.25rem;
-  margin-top: 0.5rem;
+  height: 100%;
 }
 .section-header {
-  color: #5f6caf;
+  color: var(--primary);
 }
 .section-header-space {
   margin-left: 0.5rem;
 }
-.section-height {
-  height: 16rem;
+.details-classes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 .scroll {
-overflow: scroll;
+  overflow: scroll;
 }
-.overview-item {
-  color: #ffffff;
+a .overview-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
   height: 5rem;
-  margin: 0.25rem auto;
+  width: 100%;
+
+  background-color: var(--secondary);
+  color: var(--content);
   padding: 0.75rem 1rem;
 }
-.overview-item:nth-child(odd) {
-  background-color: #ffb677;
+a:hover .overview-item .overview-title {
+  color: var(--primary);
 }
-.overview-item:nth-child(even) {
-  background-color: #ff8364;
-}
-.overview-header {
+.overview-title {
   font-size: 1.25rem;
   font-weight: 700;
 }
-.overview-header a {
-  color: #ffffff;
+.class-delete-btn, .lessonplan-delete-btn {
+  background: transparent;
+  border: none;
+
+  display: flex;
+  height: min-content;
+}
+.class-delete-btn:hover i,
+.lessonplan-delete-btn:hover i {
+  color: var(--primary);
+  cursor: pointer;
+}
+.class-delete-btn i,
+.lessonplan-delete-btn i {
+  color: var(--content);
+  font-size: 1rem;
+}
+.overview-header {
+  display: flex;
+  justify-content: space-between;
+}
+.overview-title {
+  color: var(--content);
 }
 .section-header a:hover,
-  .overview-header a:hover {
-    color: #373F47;
+  .overview-title:hover {
     text-decoration: none;
 }
 .overview-text {
-  color: #ffffff;
+  color: var(--content);
   font-size: 1rem;
 }
 .more-overview-items {
-  color: #ffffff;
+  color: var(--content);
   height: 1.5rem;
   margin: 0.25rem auto;
   text-align: center;
 }
 .delete-btn,
-.class-delete-btn,
 .studnet-delete-btn,
-.lessonplan-delete-btn,
 .assignment-delete-btn {
   font-size: 0.8rem;
+}
+
+.students-view {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 80px 2fr 1fr;
+  grid-gap: 1rem;
+
+  height: 100%;
+  width: 100%;
+}
+.students-view-header {
+  grid-column: 1 / 6;
+  grid-row: 1 / 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  font-size: 2rem;
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
+}
+.students-view-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.students-view-title h2 {
+  margin: 0;
+}
+.students-view-contact {
+  grid-column: 1 / 3;
+  grid-row: 2 / 3;
+}
+.students-view-notes {
+  grid-column: 3 / 6;
+  grid-row: 2 / 3;
+}
+.students-view-grade {
+  grid-column: 1 / 3;
+  grid-row: 3 / 4;
+}
+.students-view-assignments {
+  grid-column: 3 / 6;
+  grid-row: 3 / 4;
 }
 
 /************************************************
@@ -380,12 +604,12 @@ overflow: scroll;
   font-weight: 600;
 }
 .input-title {
-  color: #373F47;
+  color: var(--text);
   font-size: 1rem;
 }
 .modal-btn, .btn {
-  background-color: #ffb677;
+  background-color: var(--secondary);
   border: none;
-  color: #ffffff;
+  color: var(--content);
   font-weight: 600;
 }
