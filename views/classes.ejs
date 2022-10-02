@@ -3,27 +3,29 @@
 
 <div class="container content">
 
-  <h2>
+  <div class="class-view">
 
-    <i class="fas fa-chalkboard"></i>
+    <div class="class-view-header">
 
-    <span class="section-header-space"><%= classData.className %></span>
+      <div class="class-view-title">
 
-    <span class="badge badge-id">CLASS ID: <%= classData._id %></span>
+        <i class="fas fa-chalkboard"></i>
 
-    <div class="float-right add-remove">
+        <h2 class="section-header-space"><%= classData.className %></h2>
 
-      <a href="/index"><i class="fas fa-arrow-circle-left"></i></a>
+        <div class="badge badge-id">CLASS ID: <%= classData._id %></div>
+
+      </div>
+
+      <div class="add-remove">
+
+        <a href="/index"><i class="fas fa-arrow-circle-left"></i></a>
+
+      </div>
 
     </div>
 
-  </h2>
-
-  <hr />
-
-  <div class="row detail-view">
-
-    <div class="col-md-6 col-12 section section-height scroll bg-grey">
+    <div class="section scroll bg-grey class-view-students">
 
       <h4 class="section-header">
 
@@ -69,7 +71,7 @@
 
     </div>
 
-    <div class="col-md-6 col-12 section section-height scroll bg-grey">
+    <div class="section scroll bg-grey class-view-assignments">
 
       <h4 class="section-header">
 
@@ -95,12 +97,9 @@
          <% for( var i = 0; i < assignmentData.length; i++ ) { %>
         <li>
 
-          <a
-            class="student-link"
-            href="/classes/assignments<%= assignmentData[i]._id %>"
-          >
+          <span class="student-link">
              <%= assignmentData[i].assignmentName %>
-          </a>
+          </span>
 
           <a
             class="float-right assignment-delete-btn student-link"
@@ -118,60 +117,55 @@
 
     </div>
 
-  </div>
+    <div class="section scroll bg-grey class-view-lessonplans">
 
-  <div class="row details-view">
+      <h4 class="section-header">
 
-    <div class="col-12">
+        <i class="fas fa-folder-open"></i>
 
-      <div class="row details-view">
+        <span class="section-header-space">Lesson Plans</span>
 
-        <div class="col-12 section section-height scroll bg-grey">
+        <div class="float-right add-remove">
 
-          <h4 class="section-header">
+          <i
+            class="fas fa-plus"
+            data-toggle="modal"
+            data-target="#lessonplan"
+          ></i>
 
-            <i class="fas fa-folder-open"></i>
+        </div>
+         <%- include('partials/addlessonplan') -%>
+      </h4>
 
-            <span class="section-header-space">Lesson Plans</span>
+      <hr />
+       <% for( var i = 0; i < lessonplanData.length; i++ ) { %>
+      <a href="/classes/lessonplan/<%= lessonplanData[i]._id %>">
 
-            <div class="float-right add-remove">
+        <div class="overview-item">
 
-              <i
-                class="fas fa-plus"
-                data-toggle="modal"
-                data-target="#lessonplan"
-              ></i>
-
-            </div>
-             <%- include('partials/addlessonplan') -%>
-          </h4>
-
-          <hr />
-           <% for( var i = 0; i < lessonplanData.length; i++ ) { %>
-          <div class="overview-item">
+          <div class="overview-header">
 
             <h3 class="lesson-date">
                <%= lessonplanData[i].lessonplanName %>
-              <a
-                class="float-right lessonplan-delete-btn student-link"
-                href="#"
-                name="<%= lessonplanData[i]._id %>"
-              >
-
-                <i class="fas fa-trash-alt"></i>
-
-              </a>
-
             </h3>
 
-            <p><%= lessonplanData[i].notes %></p>
+            <span
+              class="lessonplan-delete-btn student-link"
+              name="<%= lessonplanData[i]._id %>"
+            >
+
+              <i class="fas fa-trash-alt"></i>
+
+            </span>
 
           </div>
-           <% } %>
+
+          <p><%= lessonplanData[i].notes %></p>
+
         </div>
 
-      </div>
-
+      </a>
+       <% } %>
     </div>
 
   </div>

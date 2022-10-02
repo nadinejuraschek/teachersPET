@@ -74,13 +74,17 @@
 
           <span class="overview-item">
 
-            <h3 class="overview-header"> <%= classData[i].className %> </h3>
+            <div class="overview-header">
 
-            <button class="delete-btn class-delete-btn">
+              <h3 class="overview-title"> <%= classData[i].className %> </h3>
 
-              <i class="fas fa-trash-alt" id="<%= classData[i]._id %>"></i>
+              <button class="class-delete-btn">
 
-            </button>
+                <i class="fas fa-trash-alt" id="<%= classData[i]._id %>"></i>
+
+              </button>
+
+            </div>
 
           </span>
 

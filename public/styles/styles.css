@@ -40,14 +40,14 @@ a:hover {
   .logo-text-lg,
   .signin-header,
   .section-header,
-  .overview-header,
-  .overview-header a,
+  .overview-title,
+  .overview-title a,
   .modal-title {
     font-family: "Quicksand", Arial, sans-serif;
 }
 .signin-header,
   .section-header,
-  .overview-header a,
+  .overview-title a,
   .modal-title {
     font-weight: 600;
 }
@@ -252,7 +252,7 @@ footer.footer-desktop {
   .signup-link-btn,
   .add-remove a,
   .section-header a {
-    color: var(--primary);
+    color: var(--primary) !important;
 }
 .signup-link-btn:hover {
   color: var(--secondary);
@@ -305,17 +305,56 @@ footer.footer-desktop {
   width: calc(100vw - 32px);
   max-width: unset;
 }
-
 @media screen and (min-width: 768px) {
   .content {
     height: calc(100vh - 155px);
   }
 }
-
 @media screen and (min-width: 992px) {
   .content {
     width: calc(100vw - 64px);
   }
+}
+
+.class-view {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 80px repeat(2, 1fr);
+  grid-gap: 1rem;
+
+  height: 100%;
+  width: 100%;
+}
+.class-view-header {
+  grid-column: 1 / 3;
+  grid-row: 1 / 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  font-size: 2rem;
+  margin-bottom: 0;
+}
+.class-view-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.class-view-title h2 {
+  margin: 0;
+}
+.class-view-students {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+}
+.class-view-assignments {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+.class-view-lessonplans {
+  grid-column: 1 / 3;
+  grid-row: 3 / 4;
 }
 
 .profile-img {
@@ -412,7 +451,7 @@ td:nth-child(4) {
 .details-view {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 8rem calc(100% - 9rem);
+  grid-template-rows: 80px calc(100% - 96px);
   grid-gap: 1rem;
 
   height: 100%;
@@ -421,13 +460,15 @@ td:nth-child(4) {
 .details-welcome {
   grid-column: 1 / 3;
 
+  display: flex;
+  align-items: center;
+
   border: none;
   box-shadow: 0px 0px 4px var(--shadow);
   border-radius: 1rem;
   color: var(--content);
   font-size: 4rem;
-  height: 8rem;
-  line-height: 7.5rem;
+  line-height: 1;
 }
 .section {
   padding: 1.25rem;
@@ -449,7 +490,8 @@ td:nth-child(4) {
 }
 a .overview-item {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: flex-start;
 
   height: 5rem;
   width: 100%;
@@ -458,33 +500,39 @@ a .overview-item {
   color: var(--content);
   padding: 0.75rem 1rem;
 }
-a:hover .overview-item .overview-header {
+a:hover .overview-item .overview-title {
   color: var(--primary);
 }
-.overview-header {
+.overview-title {
   font-size: 1.25rem;
   font-weight: 700;
 }
-.class-delete-btn {
+.class-delete-btn, .lessonplan-delete-btn {
   background: transparent;
   border: none;
 
   display: flex;
   height: min-content;
 }
-.class-delete-btn:hover i {
+.class-delete-btn:hover i,
+.lessonplan-delete-btn:hover i {
   color: var(--primary);
   cursor: pointer;
 }
-.class-delete-btn i {
+.class-delete-btn i,
+.lessonplan-delete-btn i {
   color: var(--content);
   font-size: 1rem;
 }
 .overview-header {
+  display: flex;
+  justify-content: space-between;
+}
+.overview-title {
   color: var(--content);
 }
 .section-header a:hover,
-  .overview-header:hover {
+  .overview-title:hover {
     text-decoration: none;
 }
 .overview-text {
@@ -498,11 +546,54 @@ a:hover .overview-item .overview-header {
   text-align: center;
 }
 .delete-btn,
-.class-delete-btn,
 .studnet-delete-btn,
-.lessonplan-delete-btn,
 .assignment-delete-btn {
   font-size: 0.8rem;
+}
+
+.students-view {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 80px 2fr 1fr;
+  grid-gap: 1rem;
+
+  height: 100%;
+  width: 100%;
+}
+.students-view-header {
+  grid-column: 1 / 6;
+  grid-row: 1 / 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  font-size: 2rem;
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
+}
+.students-view-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.students-view-title h2 {
+  margin: 0;
+}
+.students-view-contact {
+  grid-column: 1 / 3;
+  grid-row: 2 / 3;
+}
+.students-view-notes {
+  grid-column: 3 / 6;
+  grid-row: 2 / 3;
+}
+.students-view-grade {
+  grid-column: 1 / 3;
+  grid-row: 3 / 4;
+}
+.students-view-assignments {
+  grid-column: 3 / 6;
+  grid-row: 3 / 4;
 }
 
 /************************************************

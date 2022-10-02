@@ -3,181 +3,173 @@
 
 <div class="container content">
 
-  <h2>
+  <div class="students-view">
 
-    <!-- <img class="profile-img" src="https://via.placeholder.com/150" alt="Student Picture"> -->
+    <div class="students-view-header">
 
-    <span class="section-header-space">
-       <%= studentData.lastName %>, <%= studentData.firstName %>
-    </span>
+      <div class="students-view-title">
 
-    <span class="badge badge-id">CLASS ID: <%= studentData._id %></span>
+        <i class="fas fa-user-graduate"></i>
 
-    <div class="float-right add-remove">
+        <h2 class="section-header-space">
+           <%= studentData.lastName %>, <%= studentData.firstName %>
+        </h2>
 
-      <a href="/classes/<%= studentData.ClassId %>">
-
-        <i class="fas fa-arrow-circle-left"></i>
-
-      </a>
-
-    </div>
-
-  </h2>
-
-  <hr />
-
-  <div class="student-body">
-
-    <div class="row detail-view">
-
-      <!-- CONTACT DETAILS -->
-
-      <div class="col-md-4 col-12 section section-height bg-grey">
-
-        <h4 class="section-header">
-
-          <i class="fas fa-address-book"></i>
-
-          <span class="section-header-space">Contact</span>
-
-        </h4>
-
-        <hr />
-
-        <div class="contact-details">
-
-          <p>
-
-            <a class="muted-link" href="mailto:<%= studentData.email %>">
-
-              <i class="fas fa-at"></i>
-
-              <span class="section-header-space"><%= studentData.email %></span>
-
-            </a>
-
-          </p>
-
-          <p>
-
-            <i class="fas fa-home"></i>
-
-            <span class="section-header-space"><%= studentData.address %></span>
-
-          </p>
-
-          <p>
-
-            <i class="fas fa-user-friends"></i>
-
-            <span class="section-header-space">
-               <%= studentData.contactName %>
-            </span>
-
-          </p>
-
-          <p>
-
-            <i class="fas fa-phone"></i>
-
-            <span class="section-header-space">
-               <%= studentData.contactPhone %>
-            </span>
-
-          </p>
-
-        </div>
+        <span class="badge badge-id">CLASS ID: <%= studentData._id %></span>
 
       </div>
 
-      <!-- NOTES -->
+      <div class="float-right add-remove">
 
-      <div class="col-md-8 col-12 section section-height scroll bg-grey">
+        <a href="/classes/<%= studentData.ClassId %>">
 
-        <h4 class="section-header">
+          <i class="fas fa-arrow-circle-left"></i>
 
-          <i class="far fa-edit"></i>
+        </a>
 
-          <span class="section-header-space">Notes</span>
+      </div>
 
-          <div class="float-right add-remove">
+    </div>
 
-            <i
-              class="fas fa-plus"
-              data-toggle="modal"
-              data-target="#addnote"
-            ></i>
+    <!-- CONTACT DETAILS -->
 
-          </div>
-           <%- include('partials/addnote') -%>
-        </h4>
+    <div class="students-view-contact section bg-grey">
 
-        <hr />
+      <h4 class="section-header">
 
-        <div class="overview-item">
-           <%= studentData.notes %>
-          <a class="float-right delete-btn student-link" href="#">
+        <i class="fas fa-address-book"></i>
 
-            <i class="fas fa-trash-alt"></i>
+        <span class="section-header-space">Contact</span>
+
+      </h4>
+
+      <hr />
+
+      <div class="contact-details">
+
+        <p>
+
+          <a class="muted-link" href="mailto:<%= studentData.email %>">
+
+            <i class="fas fa-at"></i>
+
+            <span class="section-header-space"><%= studentData.email %></span>
 
           </a>
 
-        </div>
+        </p>
+
+        <p>
+
+          <i class="fas fa-home"></i>
+
+          <span class="section-header-space"><%= studentData.address %></span>
+
+        </p>
+
+        <p>
+
+          <i class="fas fa-user-friends"></i>
+
+          <span class="section-header-space">
+             <%= studentData.contactName %>
+          </span>
+
+        </p>
+
+        <p>
+
+          <i class="fas fa-phone"></i>
+
+          <span class="section-header-space">
+             <%= studentData.contactPhone %>
+          </span>
+
+        </p>
 
       </div>
 
     </div>
 
-    <div class="row detail-view">
+    <!-- NOTES -->
 
-      <!-- GRADE -->
+    <div class="students-view-notes section scroll bg-grey">
 
-      <div class="col-md-4 col-12 section section-height bg-grey">
+      <h4 class="section-header">
 
-        <h4 class="section-header">
+        <i class="far fa-edit"></i>
 
-          <i class="fas fa-graduation-cap"></i>
+        <span class="section-header-space">Notes</span>
 
-          <span class="section-header-space">Overall Grade</span>
+        <div class="float-right add-remove">
 
-        </h4>
+          <i class="fas fa-plus" data-toggle="modal" data-target="#addnote"></i>
 
-        <hr />
+        </div>
+         <%- include('partials/addnote') -%>
+      </h4>
 
-        <p>math function to calculate grade</p>
+      <hr />
 
-      </div>
+      <div class="overview-item">
+         <%= studentData.notes %>
+        <a class="float-right delete-btn student-link" href="#">
 
-      <!-- ASSIGNMENTS -->
+          <i class="fas fa-trash-alt"></i>
 
-      <div class="col-12 col-md-8 section section-height scroll bg-grey">
-
-        <h4 class="section-header">
-
-          <i class="fas fa-clipboard-list"></i>
-
-          <span class="section-header-space">Assignments</span>
-
-          <div class="float-right add-remove">
-
-            <i
-              class="fas fa-plus"
-              data-toggle="modal"
-              data-target="#addstudentassignment"
-            ></i>
-
-          </div>
-           <%- include('partials/addstudentassignment') -%>
-        </h4>
-
-        <hr />
+        </a>
 
       </div>
+
+    </div>
+
+    <!-- GRADE -->
+
+    <div class="students-view-grade section section-height bg-grey">
+
+      <h4 class="section-header">
+
+        <i class="fas fa-graduation-cap"></i>
+
+        <span class="section-header-space">Overall Grade</span>
+
+      </h4>
+
+      <hr />
+
+      <p>math function to calculate grade</p>
+
+    </div>
+
+    <!-- ASSIGNMENTS -->
+
+    <div
+      class="students-view-assignments section section-height scroll bg-grey"
+    >
+
+      <h4 class="section-header">
+
+        <i class="fas fa-clipboard-list"></i>
+
+        <span class="section-header-space">Assignments</span>
+
+        <div class="float-right add-remove">
+
+          <i
+            class="fas fa-plus"
+            data-toggle="modal"
+            data-target="#addstudentassignment"
+          ></i>
+
+        </div>
+         <%- include('partials/addstudentassignment') -%>
+      </h4>
+
+      <hr />
 
     </div>
 
   </div>
-
+   <%- include('partials/footer') -%>
 </div>
- <%- include('partials/footer') -%>
+
