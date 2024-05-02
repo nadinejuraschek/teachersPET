@@ -14,7 +14,7 @@
     "chalk": "^5.0.1",
     "cookie-parser": "^1.4.4",
     "dotenv": "^16.0.3",
-    "ejs": "^3.0.1",
+    "ejs": "^3.1.10",
     "express": "^4.17.0",
     "googleapis": "^108.0.0",
     "jsonwebtoken": "^9.0.0",
